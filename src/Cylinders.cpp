@@ -1,0 +1,39 @@
+/*
+** EPITECH PROJECT, 2022
+** B-OOP-400-BAR-4-1-raytracer-thomas.laprie
+** File description:
+** Cylinders.cpp
+*/
+
+#include "Cylinders.hpp"
+
+Cylinders::Cylinders(const libconfig::Setting &setting)
+{
+    try
+    {
+        _position.setPoint(setting);
+        std::cout << _position << std::endl;
+        _color.setColor(setting["color"]);
+        std::cout << _color << std::endl;
+        _rotation.setPoint(setting["rotation"]);
+        std::cout << _rotation << std::endl;
+        setting.lookupValue("r", _radius);
+        std::cout << _radius << std::endl;
+        setting.lookupValue("limited", _isLimited);
+        std::cout << _isLimited << std::endl;
+        if (_isLimited)
+            setting.lookupValue("h", _height);
+        else
+            _height = 0;
+        std::cout << _height << std::endl;
+
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}
+
+Cylinders::~Cylinders()
+{
+}
