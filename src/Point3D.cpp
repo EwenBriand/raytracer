@@ -7,22 +7,22 @@
 
 #include "Point3D.hpp"
 
-Point3D::Point3D(int x, int y, int z): _x(x), _y(y), _z(z)
+Math::Point3D::Point3D(float x, float y, float z): _x(x), _y(y), _z(z)
 {
 }
 
-Point3D::~Point3D()
+Math::Point3D::~Point3D()
 {
 }
 
-void Point3D::setPoint(int x, int y, int z)
+void Math::Point3D::setPoint(float x, float y, float z)
 {
     _x = x;
     _y = y;
     _z = z;
 }
 
-void Point3D::setPoint(const libconfig::Setting &setting)
+void Math::Point3D::setPoint(const libconfig::Setting &setting)
 {
     try
     {
@@ -36,33 +36,38 @@ void Point3D::setPoint(const libconfig::Setting &setting)
     }
 }
 
-int Point3D::getX() const
+float Math::Point3D::getX() const
 {
     return _x;
 }
 
-int Point3D::getY() const
+float Math::Point3D::getY() const
 {
     return _y;
 }
 
-int Point3D::getZ() const
+float Math::Point3D::getZ() const
 {
     return _z;
 }
 
-Point3D Point3D::cross(const Point3D &point) const
+Math::Point3D Math::Point3D::cross(const Math::Point3D &point) const
 {
     return Point3D(_y * point.getZ() - _z * point.getY(), _z * point.getX() - _x * point.getZ(), _x * point.getY() - _y * point.getX());
 }
 
-std::ostream &operator<<(std::ostream &os, const Point3D &point)
+std::ostream &operator<<(std::ostream &os, const Math::Point3D &point)
 {
     os << "x: " << point.getX() << " y: " << point.getY() << " z: " << point.getZ();
     return os;
 }
 
-Point3D operator-(const Point3D &point1, const Point3D &point2)
+Math::Point3D operator-(const Math::Point3D &point1, const Math::Point3D &point2)
 {
-    return Point3D(point1.getX() - point2.getX(), point1.getY() - point2.getY(), point1.getZ() - point2.getZ());
+    return Math::Point3D(point1.getX() - point2.getX(), point1.getY() - point2.getY(), point1.getZ() - point2.getZ());
+}
+
+Math::Point3D operator+(const Math::Point3D &point1, const Math::Vector3D &vector)
+{
+    return Math::Point3D(point1.getX() + vector.getX(), point1.getY() + vector.getY(), point1.getZ() + vector.getZ());
 }

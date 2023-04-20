@@ -21,6 +21,7 @@ class Torus : public IPrimitives
     public:
         Torus(const libconfig::Setting &setting);
         ~Torus() override;
+        bool hit(const Ray &ray) override;
 };
 
 #endif /* D4E88905_726D_4F79_AFCA_7257590B44E5 */

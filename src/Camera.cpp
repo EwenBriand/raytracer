@@ -21,11 +21,18 @@ Camera::Camera(const libconfig::Setting &setting)
         std::cout << _rotation << std::endl;
         setting.lookupValue("fieldOfView", _fieldOfView);
         std::cout << _fieldOfView << std::endl;
+        _screen = Rectangle3D(Math::Point3D(0.0,0.0,0.0), Math::Vector3D(1.0,0.0,0.0), Math::Vector3D(0.0,1.0,0.0));
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+}
+
+Camera::Camera(Math::Point3D position, Rectangle3D screen)
+{
+    _position = position;
+    _screen = screen;
 }
 
 int Camera::getResolutionX() const
@@ -43,12 +50,19 @@ float Camera::getFieldOfView() const
     return _fieldOfView;
 }
 
-Point3D Camera::getPosition() const
+Math::Point3D Camera::getPosition() const
 {
     return _position;
 }
 
-Point3D Camera::getRotation() const
+Math::Point3D Camera::getRotation() const
 {
     return _rotation;
+}
+
+Ray Camera::getRay(float x, float y) const
+{
+    Math::Point3D point = _screen.pointAt(x, y);
+    Math::Vector3D direction = point - _position;
+    return Ray(_position, direction);
 }

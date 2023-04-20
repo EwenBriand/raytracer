@@ -15,7 +15,7 @@ Cones::Cones(const libconfig::Setting &setting)
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
@@ -43,4 +43,11 @@ Cones::Cones(const libconfig::Setting &setting)
 
 Cones::~Cones()
 {
+}
+
+bool Cones::hit(const Ray &ray)
+{
+    if (ray.getDirection().getY() == 0)
+        return false;
+    return false;
 }

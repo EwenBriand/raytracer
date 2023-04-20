@@ -13,7 +13,7 @@ Triangles::Triangles(const libconfig::Setting &setting)
     {
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
         _sommet1.setPoint(setting["sommet1"]);
         std::cout << _sommet1 << std::endl;
@@ -32,4 +32,9 @@ Triangles::Triangles(const libconfig::Setting &setting)
 
 Triangles::~Triangles()
 {
+}
+
+bool Triangles::hit(const Ray &ray)
+{
+    return false;
 }

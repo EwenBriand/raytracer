@@ -11,27 +11,33 @@
 #include <libconfig.h++>
 #include <iostream>
 
-class Point3D
+#include "Vector3D.hpp"
+
+namespace Math
 {
-    private:
-        int _x;
-        int _y;
-        int _z;
-    public:
-        Point3D(int x, int y, int z);
-        Point3D() = default;
-        ~Point3D();
-        void setPoint(int x, int y, int z);
-        void setPoint(const libconfig::Setting &setting);
-        int getX() const;
-        int getY() const;
-        int getZ() const;
-        Point3D cross(const Point3D &point) const;
-};
+    class Vector3D;
 
-std::ostream &operator<<(std::ostream &s, const Point3D &point);
+    class Point3D
+    {
+        private:
+            float _x;
+            float _y;
+            float _z;
+        public:
+            Point3D(float x, float y, float z);
+            Point3D() = default;
+            ~Point3D();
+            void setPoint(float x, float y, float z);
+            void setPoint(const libconfig::Setting &setting);
+            float getX() const;
+            float getY() const;
+            float getZ() const;
+            Point3D cross(const Point3D &point) const;
+    };
 
-Point3D operator-(const Point3D &point1, const Point3D &point2);
-
+}
+std::ostream &operator<<(std::ostream &s, const Math::Point3D &point);
+Math::Point3D operator-(const Math::Point3D &point1, const Math::Point3D &point2);
+Math::Point3D operator+(const Math::Point3D &point1, const Math::Vector3D &vector);
 
 #endif /* A9DE60FF_0966_4C55_9EB0_8ECE064F4322 */

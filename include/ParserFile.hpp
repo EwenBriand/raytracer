@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <libconfig.h++>
+#include <SFML/Graphics.hpp>
 
 #include "Camera.hpp"
 #include "IPrimitives.hpp"
@@ -25,9 +26,12 @@ class ParserFile
         void setCamera(const libconfig::Setting &root);
         void setPrimitives(const libconfig::Setting &root);
         void setLights(const libconfig::Setting &root);
+        Camera getCamera() const;
+        std::vector<IPrimitives *> getPrimitives() const;
+        std::vector<Lights> getLights() const;
     private:
         Camera _camera;
-        std::vector<IPrimitives > _primitives;
+        std::vector<IPrimitives *> _primitives;
         std::vector<Lights> _lights;
 };
 

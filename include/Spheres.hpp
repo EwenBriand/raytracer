@@ -16,10 +16,12 @@
 class Spheres : public IPrimitives
 {
     private:
-        int _radius;
+        double _radius;
     public:
         Spheres(const libconfig::Setting &setting);
+        Spheres(Math::Point3D origin, double radius);
         ~Spheres() override;
+        bool hit(const Ray &ray) override;
 };
 
 #endif /* BE5DD2F6_0056_455A_9E60_33757B907054 */

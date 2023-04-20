@@ -13,24 +13,28 @@
 #include <iostream>
 
 #include "Point3D.hpp"
-
+#include "Rectangle3D.hpp"
+#include "Ray.hpp"
 
 class Camera
 {
     private:
         int _resolution[2];
-        Point3D _position;
-        Point3D _rotation;
+        Math::Point3D _position;
+        Math::Point3D _rotation;
         float _fieldOfView;
+        Rectangle3D _screen;
     public:
         Camera(const libconfig::Setting &setting);
+        Camera(Math::Point3D position, Rectangle3D screen);
         Camera() = default;
         ~Camera() = default;
         int getResolutionX() const;
         int getResolutionY() const;
-        Point3D getPosition() const;
-        Point3D getRotation() const;
+        Math::Point3D getPosition() const;
+        Math::Point3D getRotation() const;
         float getFieldOfView() const;
+        Ray getRay(float x, float y) const;
 };
 
 #endif /* DEA2BC57_EC1D_42F7_906B_3BD0CB06AC65 */

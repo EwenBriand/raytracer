@@ -15,7 +15,7 @@ Planes::Planes(const libconfig::Setting &setting)
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
     }
     catch(const std::exception& e)
@@ -26,4 +26,10 @@ Planes::Planes(const libconfig::Setting &setting)
 
 Planes::~Planes()
 {
+}
+
+
+bool Planes::hit(const Ray &ray)
+{
+    return false;
 }

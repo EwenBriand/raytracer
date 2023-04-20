@@ -21,10 +21,15 @@ SRC 	=	src/Boxes.cpp \
 			src/Spheres.cpp \
 			src/Torus.cpp \
 			src/Triangles.cpp \
+			src/Vector3D.cpp \
+			src/Ray.cpp \
+			src/Rectangle3D.cpp \
 
 MAIN	=	main.cpp
 
 OBJ  	=	$(SRC:.cpp=.o)
+
+OBJ		+=	$(MAIN:.cpp=.o)
 
 CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++
 
@@ -33,7 +38,7 @@ SFLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 all:	$(NAME)
 
 $(NAME):   $(OBJ)
-	$(CCPP) $(MAIN) -o $(NAME) $(OBJ) $(CPPFLAGS) $(SFLAGS)
+	$(CCPP) -o $(NAME) $(OBJ) $(CPPFLAGS) $(SFLAGS)
 
 clean:
 	rm -f $(OBJ)

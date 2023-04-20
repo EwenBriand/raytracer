@@ -19,7 +19,7 @@ Spheres::Spheres(const libconfig::Setting &setting)
             std::cout << _radius << std::endl;
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
     }
     catch(const std::exception& e)
@@ -28,6 +28,28 @@ Spheres::Spheres(const libconfig::Setting &setting)
     }
 }
 
+Spheres::Spheres(Math::Point3D position, double radius)
+{
+    _position = position;
+    _radius = radius;
+}
+
 Spheres::~Spheres()
 {
+}
+
+bool Spheres::hit(const Ray &ray)
+{
+    Math::Vector3D oc = ray.getOrigin() - _position;
+    double a = ray.getDirection().length();
+    double half_b = oc.dot(ray.getDirection());
+    double c = oc.length() - _radius * _radius;
+    double discriminant = half_b * half_b - a * c;
+
+    if (discriminant < 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }

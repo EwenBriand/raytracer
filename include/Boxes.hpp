@@ -22,6 +22,7 @@ class Boxes : public IPrimitives
     public:
         Boxes(const libconfig::Setting &setting);
         ~Boxes() override;
+        bool hit(const Ray &ray) override;
 };
 
 #endif /* D428BE3F_E861_4C23_A929_D74DB520103F */

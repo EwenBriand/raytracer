@@ -15,7 +15,7 @@ Torus::Torus(const libconfig::Setting &setting)
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
         setting.lookupValue("r", _radiusMinor);
         std::cout << _radiusMinor << std::endl;
@@ -30,4 +30,9 @@ Torus::Torus(const libconfig::Setting &setting)
 
 Torus::~Torus()
 {
+}
+
+bool Torus::hit(const Ray &ray)
+{
+    return false;
 }

@@ -22,7 +22,7 @@ class Lights
         float _diffuse;
         bool _isAmbientLight;
         bool _isDirectionalLight;
-        Point3D _point;
+        Math::Point3D _point;
         Color _color;
 
     public:

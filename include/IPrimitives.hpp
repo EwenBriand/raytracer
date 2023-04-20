@@ -11,16 +11,19 @@
 #include <iostream>
 
 #include "Point3D.hpp"
+#include "Vector3D.hpp"
 #include "Color.hpp"
+#include "Ray.hpp"
 
 class IPrimitives
 {
     protected:
-        Point3D _position;
+        Math::Point3D _position;
         Color _color;
-        Point3D _rotation;
+        Math::Vector3D _rotation;
     public:
         virtual ~IPrimitives() = default;
+        virtual bool hit(const Ray &ray) = 0;
 };
 
 #endif /* D0BF50CA_8DC2_492F_8976_E70BDD268926 */

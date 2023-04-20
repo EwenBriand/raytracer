@@ -15,7 +15,7 @@ Cylinders::Cylinders(const libconfig::Setting &setting)
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
-        _rotation.setPoint(setting["rotation"]);
+        _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
         setting.lookupValue("r", _radius);
         std::cout << _radius << std::endl;
@@ -36,4 +36,11 @@ Cylinders::Cylinders(const libconfig::Setting &setting)
 
 Cylinders::~Cylinders()
 {
+}
+
+bool Cylinders::hit(const Ray &ray)
+{
+    if (ray.getDirection().getY() == 0)
+        return false;
+    return false;
 }
