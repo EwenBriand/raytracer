@@ -14,8 +14,6 @@ int main(int ac, char **av)
     ParserFile file(av[1]);
     std::vector<IPrimitives *> primitives = file.getPrimitives();
     Camera camera = file.getCamera();
-    // Camera camera2(Math::Point3D(0, 0, -10), Rectangle3D(Math::Point3D(-0.5, -0.5, 0), Math::Vector3D(1, 0, 0), Math::Vector3D(0, 1, 0)));
-    // Spheres sphere(Math::Point3D(0, 0, 10), 0.5);
     sf::RenderWindow window(sf::VideoMode(camera.getResolutionX(), camera.getResolutionY()), "Raytracer");
     sf::Image image;
     image.create(camera.getResolutionX(), camera.getResolutionY());
@@ -27,7 +25,7 @@ int main(int ac, char **av)
             image.setPixel(i, j, sf::Color::Black);
             for (long unsigned int k = 0; k < primitives.size(); k++) {
                 if (primitives[k]->hit(ray)) {
-                    image.setPixel(i, j, sf::Color::Red);
+                    image.setPixel(i, j, sf::Color(primitives[k]->getColor().getR(), primitives[k]->getColor().getG(), primitives[k]->getColor().getB()));
                     break;
                 }
             }

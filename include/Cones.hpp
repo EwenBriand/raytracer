@@ -25,6 +25,7 @@ class Cones : public IPrimitives
         Cones(const libconfig::Setting &setting);
         ~Cones() override;
         bool hit(const Ray &ray) override;
+        Color getColor() const override;
 };
 
 #endif /* C7304198_8C73_4EEC_BDEE_FF214F9B8958 */

@@ -24,6 +24,7 @@ class Triangles : public IPrimitives
         Triangles(const libconfig::Setting &setting);
         ~Triangles() override;
         bool hit(const Ray &ray) override;
+        Color getColor() const override;
 };
 
 #endif /* E6FB8944_93AB_44F6_84DC_8F965B067DC4 */

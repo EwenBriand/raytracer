@@ -20,6 +20,7 @@ class Planes : public IPrimitives
         Planes(const libconfig::Setting &setting);
         ~Planes() override;
         bool hit(const Ray &ray) override;
+        Color getColor() const override;
 };
 
 #endif /* F2AA8B37_71DB_4B85_9E0D_E45189DC1639 */
