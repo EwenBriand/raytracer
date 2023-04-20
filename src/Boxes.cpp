@@ -40,3 +40,8 @@ bool Boxes::hit(const Ray &ray)
         return false;
     return false;
 }
+
+Color Boxes::getColor() const
+{
+    return _color;
+}

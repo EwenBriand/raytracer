@@ -52,3 +52,8 @@ bool Spheres::hit(const Ray &ray)
         return true;
     return false;
 }
+
+Color Spheres::getColor() const
+{
+    return _color;
+}

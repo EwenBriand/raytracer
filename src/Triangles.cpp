@@ -38,3 +38,8 @@ bool Triangles::hit(const Ray &ray)
 {
     return false;
 }
+
+Color Triangles::getColor() const
+{
+    return _color;
+}

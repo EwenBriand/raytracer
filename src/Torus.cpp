@@ -36,3 +36,8 @@ bool Torus::hit(const Ray &ray)
 {
     return false;
 }
+
+Color Torus::getColor() const
+{
+    return _color;
+}

@@ -44,3 +44,8 @@ bool Cylinders::hit(const Ray &ray)
         return false;
     return false;
 }
+
+Color Cylinders::getColor() const
+{
+    return _color;
+}

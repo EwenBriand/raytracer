@@ -28,8 +28,12 @@ Planes::~Planes()
 {
 }
 
-
 bool Planes::hit(const Ray &ray)
 {
     return false;
+}
+
+Color Planes::getColor() const
+{
+    return _color;
 }

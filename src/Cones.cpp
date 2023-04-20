@@ -51,3 +51,8 @@ bool Cones::hit(const Ray &ray)
         return false;
     return false;
 }
+
+Color Cones::getColor() const
+{
+    return _color;
+}
