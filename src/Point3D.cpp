@@ -56,6 +56,11 @@ Math::Point3D Math::Point3D::cross(const Math::Point3D &point) const
     return Point3D(_y * point.getZ() - _z * point.getY(), _z * point.getX() - _x * point.getZ(), _x * point.getY() - _y * point.getX());
 }
 
+float Math::Point3D::dot(const Math::Point3D &point) const
+{
+    return _x * point.getX() + _y * point.getY() + _z * point.getZ();
+}
+
 std::ostream &operator<<(std::ostream &os, const Math::Point3D &point)
 {
     os << "x: " << point.getX() << " y: " << point.getY() << " z: " << point.getZ();

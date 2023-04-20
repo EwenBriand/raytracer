@@ -35,8 +35,5 @@ Math::Vector3D Rectangle3D::getLeft() const
 
 Math::Point3D Rectangle3D::pointAt(float u, float v) const
 {
-    Math::Vector3D horizontal = _bottom * u;
-    Math::Vector3D vertical = _left * v;
-    Math::Point3D point = _origin + horizontal + vertical;
-    return point;
+    return _origin + _bottom * u + _left * v;
 }

@@ -33,6 +33,7 @@ namespace Math
             float getY() const;
             float getZ() const;
             Point3D cross(const Point3D &point) const;
+            float dot(const Point3D &point) const;
     };
 
 }

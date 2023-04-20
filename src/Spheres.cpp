@@ -40,16 +40,15 @@ Spheres::~Spheres()
 
 bool Spheres::hit(const Ray &ray)
 {
-    Math::Vector3D oc = ray.getOrigin() - _position;
-    double a = ray.getDirection().length();
-    double half_b = oc.dot(ray.getDirection());
-    double c = oc.length() - _radius * _radius;
-    double discriminant = half_b * half_b - a * c;
-
-    if (discriminant < 0) {
+    float a = ray.getDirection().dot(ray.getDirection());
+    float b = 2 * ray.getDirection().dot(ray.getOrigin() - _position);
+    float c = (ray.getOrigin() - _position).dot(ray.getOrigin() - _position) - _radius * _radius;
+    float delta = b * b - 4 * a * c;
+    if (delta < 0)
         return false;
-    }
-    else {
+    float t1 = (-b + sqrt(delta)) / (2 * a);
+    float t2 = (-b - sqrt(delta)) / (2 * a);
+    if (t1 > 0 && t2 > 0)
         return true;
-    }
+    return false;
 }
