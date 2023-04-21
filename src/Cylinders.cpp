@@ -40,9 +40,28 @@ Cylinders::~Cylinders()
 
 bool Cylinders::hit(const Ray &ray)
 {
-    if (ray.getDirection().getY() == 0)
+    double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2);
+    double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX())
+                    + ray.getDirection().getZ() * (ray.getOrigin().getZ() - _position.getZ()));
+    double c = pow(ray.getOrigin().getX() - _position.getX(), 2) + pow(ray.getOrigin().getZ() - _position.getZ(), 2)
+                - pow(_radius, 2);
+
+    double discriminant = pow(b, 2) - 4 * a * c;
+
+    if (discriminant < 0) {
         return false;
-    return false;
+    }
+    double t = (-b - sqrt(discriminant)) / (2 * a);
+
+    if (t < 0) {
+        return false;
+    }
+    double y = ray.getOrigin().getY() + t * ray.getDirection().getY();
+
+    if (_isLimited && (y < _position.getY() || y > _position.getY() + _height)) {
+        return false;
+    }
+    return true;
 }
 
 Color Cylinders::getColor() const

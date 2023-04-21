@@ -16,7 +16,7 @@
 class Cylinders : public IPrimitives
 {
     private:
-        int _radius;
+        float _radius;
         int _height;
         bool _isLimited;
     public:
