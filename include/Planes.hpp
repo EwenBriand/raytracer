@@ -16,6 +16,9 @@
 class Planes : public IPrimitives
 {
     private:
+        Math::Point3D _p2;
+        Math::Point3D _p3;
+        Math::Vector3D _normal;
     public:
         Planes(const libconfig::Setting &setting);
         ~Planes() override;

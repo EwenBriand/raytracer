@@ -9,9 +9,9 @@
 
 Math::Vector3D::Vector3D()
 {
-    _x = 0;
-    _y = 0;
-    _z = 0;
+    _x = 0.0;
+    _y = 0.0;
+    _z = 0.0;
 }
 
 Math::Vector3D::Vector3D(float x, float y, float z)

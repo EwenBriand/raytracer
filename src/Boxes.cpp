@@ -36,9 +36,23 @@ Boxes::~Boxes()
 
 bool Boxes::hit(const Ray &ray)
 {
-    if (ray.getOrigin().getX() > _position.getX() && ray.getOrigin().getX() < _position.getX() + _width)
+    float tmin = (_position.getX() - ray.getOrigin().getX()) / ray.getDirection().getX();
+    float tmax = ((_position.getX() + _width) - ray.getOrigin().getX()) / ray.getDirection().getX();
+    float tymin = (_position.getY() - ray.getOrigin().getY()) / ray.getDirection().getY();
+    float tymax = ((_position.getY() + _height) - ray.getOrigin().getY()) / ray.getDirection().getY();
+    float tzmin = (_position.getZ() - ray.getOrigin().getZ()) / ray.getDirection().getZ();
+    float tzmax = ((_position.getZ() + _depth) - ray.getOrigin().getZ()) / ray.getDirection().getZ();
+
+    float t0 = std::max(std::max(std::min(tmin, tmax), std::min(tymin, tymax)), std::min(tzmin, tzmax));
+    float t1 = std::min(std::min(std::max(tmin, tmax), std::max(tymin, tymax)), std::max(tzmin, tzmax));
+
+    if (t1 < 0) {
         return false;
-    return false;
+    }
+    if (t0 > t1) {
+        return false;
+    }
+    return true;
 }
 
 Color Boxes::getColor() const
