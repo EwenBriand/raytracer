@@ -24,6 +24,8 @@ SRC 	=	src/Boxes.cpp \
 			src/Vector3D.cpp \
 			src/Ray.cpp \
 			src/Rectangle3D.cpp \
+			src/RaytracerCore.cpp \
+			src/RaytracerInterface.cpp \
 
 MAIN	=	main.cpp
 
