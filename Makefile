@@ -33,12 +33,20 @@ OBJ		+=	$(MAIN:.cpp=.o)
 
 CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++
 
-SFLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+ifeq ($(shell uname -s),Darwin)
+	CPPFLAGS += -I/opt/homebrew/include
+	LDFLAGS += -L/opt/homebrew/lib
+	SFLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio \
+				-L/opt/homebrew/lib \
+				-framework OpenAL
+else
+	SFLAGS	=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+endif
 
 all:	$(NAME)
 
 $(NAME):   $(OBJ)
-	$(CCPP) -o $(NAME) $(OBJ) $(CPPFLAGS) $(SFLAGS)
+	$(CCPP) -o $(NAME) $(OBJ) $(CPPFLAGS) $(LDFLAGS) $(SFLAGS)
 
 clean:
 	rm -f $(OBJ)
