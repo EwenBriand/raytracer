@@ -2,17 +2,17 @@
 ** EPITECH PROJECT, 2023
 ** B-OOP-400-BAR-4-1-raytracer-thomas.laprie
 ** File description:
-** RaytracerInterface
+** RaytracerGraphic
 */
 
-#ifndef RAYTRACERINTERFACE_HPP_
-    #define RAYTRACERINTERFACE_HPP_
+#ifndef RAYTRACERGRAPHIC_HPP_
+    #define RAYTRACERGRAPHIC_HPP_
     #include "RaytracerCore.hpp"
     #include <SFML/Graphics.hpp>
 
-class RaytracerInterface {
+class RaytracerGraphic {
     public:
-        RaytracerInterface(std::shared_ptr<sf::Image> image);
+        RaytracerGraphic(std::shared_ptr<sf::Image> image);
         void run();
 
     private:
@@ -31,4 +31,4 @@ class RaytracerInterface {
         int _selectedOption;
 };
 
-#endif /* !RAYTRACERINTERFACE_HPP_ */
+#endif /* !RAYTRACERGRAPHIC_HPP_ */
