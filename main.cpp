@@ -6,7 +6,7 @@
 */
 
 #include "RaytracerCore.hpp"
-#include "RaytracerInterface.hpp"
+#include "RaytracerGraphic.hpp"
 
 int main(int ac, char **av)
 {
@@ -15,7 +15,7 @@ int main(int ac, char **av)
 
     RaytracerCore core(av[1]);
     std::shared_ptr<sf::Image> image = core.renderImage();
-    RaytracerInterface interface(image);
+    RaytracerGraphic interface(image);
     interface.run();
 
     return 0;

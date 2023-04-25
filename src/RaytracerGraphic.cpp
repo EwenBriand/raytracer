@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2023
 ** B-OOP-400-BAR-4-1-raytracer-thomas.laprie
 ** File description:
-** RaytracerInterface
+** RaytracerGraphic
 */
 
-#include "RaytracerInterface.hpp"
+#include "RaytracerGraphic.hpp"
 
-RaytracerInterface::RaytracerInterface(std::shared_ptr<sf::Image> image)
+RaytracerGraphic::RaytracerGraphic(std::shared_ptr<sf::Image> image)
     : _image(image),
       _window(sf::VideoMode(_image->getSize().x, _image->getSize().y), "Raytracer"),
       _showMenu(true), _selectedOption(0)
@@ -37,7 +37,7 @@ RaytracerInterface::RaytracerInterface(std::shared_ptr<sf::Image> image)
     _menuBackground.setFillColor(sf::Color(0, 0, 0, 200));
 }
 
-void RaytracerInterface::processMenuInput(const sf::Event &event)
+void RaytracerGraphic::processMenuInput(const sf::Event &event)
 {
     if (_showMenu) {
         if (event.type == sf::Event::KeyPressed) {
@@ -56,14 +56,14 @@ void RaytracerInterface::processMenuInput(const sf::Event &event)
     }
 }
 
-void RaytracerInterface::updateMenuSelection()
+void RaytracerGraphic::updateMenuSelection()
 {
     _selectedOption = (_selectedOption + 1) % 2;
     _startText.setFillColor(_selectedOption == 0 ? sf::Color::Magenta : sf::Color::White);
     _exitText.setFillColor(_selectedOption == 1 ? sf::Color::Magenta : sf::Color::White);
 }
 
-void RaytracerInterface::renderMenu(sf::RenderWindow& window)
+void RaytracerGraphic::renderMenu(sf::RenderWindow& window)
 {
     if (_showMenu) {
         window.draw(_menuBackground);
@@ -73,7 +73,7 @@ void RaytracerInterface::renderMenu(sf::RenderWindow& window)
     }
 }
 
-void RaytracerInterface::run()
+void RaytracerGraphic::run()
 {
     sf::Texture texture;
     texture.loadFromImage(*_image);
