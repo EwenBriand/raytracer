@@ -4,18 +4,10 @@
 ** File description:
 ** main
 */
-#include "main.hpp"
-#include "PluginLoader.hpp"
-#include "badWord.hpp"
+#include "Core.hpp"
 
-int main(void)
+int main(int ac, char **av)
 {
-    std::cout << "Hello World!" << std::endl;
-    PluginLoader pl;
-    BadWord *bw = pl.loadPlugin<BadWord>("./plugins/libBadWord.so");
-
-    bw->setWord("Shitty");
-    std::cout << bw->getWord() << "World!" << std::endl;
-
-    return 0;
+    int returnCode = core::Core(ac, av).run();
+    return returnCode;
 }

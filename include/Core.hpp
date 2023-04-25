@@ -5,17 +5,33 @@
 ** Core
 */
 #ifndef CORE_HPP_
-#define CORE_HPP_
+    #define CORE_HPP_
+    #include <string>
+    #include <map>
+    #include <fstream>
+    #include <iostream>
 
-class Core {
-    public:
-        Core();
-        ~Core();
-        
+namespace core {
 
+    class CoreException : public std::exception {
+        public:
+            CoreException(const std::string &message);
+            const char *what() const noexcept override;
+        private:
+            std::string _msg;
+    };
 
-    protected:
-    private:
-};
+    class Core {
+        public:
+            Core(int ac, char **av);
+            ~Core() = default;
+            std::map<std::string, std::string> loadConfig(std::string path);
+            std::string checkSceneFile(std::string path);
+            int run();
+        private:
+            std::map<std::string, std::string> _plugins;
+            std::string _sceneFile;
+    };
+}
 
 #endif /* !CORE_HPP_ */

@@ -14,14 +14,14 @@ include_directories(./include)
 
 set(SOURCES
     src/main.cpp
-    pluginLoader/PluginLoader.cpp
+    src/Core.cpp
 )
 
 add_executable(raytracer ${SOURCES})
 
 set(PLUGIN
-    plugins/badWord.cpp
-    plugins/entryPoint.cpp
+    badWords/badWord.cpp
+    badWords/entryPoint.cpp
 )
 
 add_library(BadWord SHARED ${PLUGIN})

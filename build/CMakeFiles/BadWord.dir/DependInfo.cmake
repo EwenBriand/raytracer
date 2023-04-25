@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/badWord.cpp" "CMakeFiles/BadWord.dir/plugins/badWord.cpp.o" "gcc" "CMakeFiles/BadWord.dir/plugins/badWord.cpp.o.d"
-  "/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/entryPoint.cpp" "CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o" "gcc" "CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o.d"
+  "/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/badWord.cpp" "CMakeFiles/BadWord.dir/badWords/badWord.cpp.o" "gcc" "CMakeFiles/BadWord.dir/badWords/badWord.cpp.o.d"
+  "/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/entryPoint.cpp" "CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o" "gcc" "CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o.d"
   )
 
 # Targets to which this target links.

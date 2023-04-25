@@ -83,30 +83,30 @@ CMakeFiles/raytracer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/src/main.cpp -o CMakeFiles/raytracer.dir/src/main.cpp.s
 
-CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o: CMakeFiles/raytracer.dir/flags.make
-CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/pluginLoader/PluginLoader.cpp
-CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o: CMakeFiles/raytracer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o -MF CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o.d -o CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/pluginLoader/PluginLoader.cpp
+CMakeFiles/raytracer.dir/src/Core.cpp.o: CMakeFiles/raytracer.dir/flags.make
+CMakeFiles/raytracer.dir/src/Core.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/src/Core.cpp
+CMakeFiles/raytracer.dir/src/Core.cpp.o: CMakeFiles/raytracer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/raytracer.dir/src/Core.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/raytracer.dir/src/Core.cpp.o -MF CMakeFiles/raytracer.dir/src/Core.cpp.o.d -o CMakeFiles/raytracer.dir/src/Core.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/src/Core.cpp
 
-CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/pluginLoader/PluginLoader.cpp > CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.i
+CMakeFiles/raytracer.dir/src/Core.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/raytracer.dir/src/Core.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/src/Core.cpp > CMakeFiles/raytracer.dir/src/Core.cpp.i
 
-CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/pluginLoader/PluginLoader.cpp -o CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.s
+CMakeFiles/raytracer.dir/src/Core.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/raytracer.dir/src/Core.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/src/Core.cpp -o CMakeFiles/raytracer.dir/src/Core.cpp.s
 
 # Object files for target raytracer
 raytracer_OBJECTS = \
 "CMakeFiles/raytracer.dir/src/main.cpp.o" \
-"CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o"
+"CMakeFiles/raytracer.dir/src/Core.cpp.o"
 
 # External object files for target raytracer
 raytracer_EXTERNAL_OBJECTS =
 
 raytracer: CMakeFiles/raytracer.dir/src/main.cpp.o
-raytracer: CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o
+raytracer: CMakeFiles/raytracer.dir/src/Core.cpp.o
 raytracer: CMakeFiles/raytracer.dir/build.make
 raytracer: CMakeFiles/raytracer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable raytracer"

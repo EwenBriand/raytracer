@@ -142,77 +142,77 @@ BadWord/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/build
 .PHONY : BadWord/fast
 
-pluginLoader/PluginLoader.o: pluginLoader/PluginLoader.cpp.o
-.PHONY : pluginLoader/PluginLoader.o
+badWords/badWord.o: badWords/badWord.cpp.o
+.PHONY : badWords/badWord.o
 
 # target to build an object file
-pluginLoader/PluginLoader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o
-.PHONY : pluginLoader/PluginLoader.cpp.o
+badWords/badWord.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/badWord.cpp.o
+.PHONY : badWords/badWord.cpp.o
 
-pluginLoader/PluginLoader.i: pluginLoader/PluginLoader.cpp.i
-.PHONY : pluginLoader/PluginLoader.i
+badWords/badWord.i: badWords/badWord.cpp.i
+.PHONY : badWords/badWord.i
 
 # target to preprocess a source file
-pluginLoader/PluginLoader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.i
-.PHONY : pluginLoader/PluginLoader.cpp.i
+badWords/badWord.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/badWord.cpp.i
+.PHONY : badWords/badWord.cpp.i
 
-pluginLoader/PluginLoader.s: pluginLoader/PluginLoader.cpp.s
-.PHONY : pluginLoader/PluginLoader.s
+badWords/badWord.s: badWords/badWord.cpp.s
+.PHONY : badWords/badWord.s
 
 # target to generate assembly for a file
-pluginLoader/PluginLoader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.s
-.PHONY : pluginLoader/PluginLoader.cpp.s
+badWords/badWord.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/badWord.cpp.s
+.PHONY : badWords/badWord.cpp.s
 
-plugins/badWord.o: plugins/badWord.cpp.o
-.PHONY : plugins/badWord.o
+badWords/entryPoint.o: badWords/entryPoint.cpp.o
+.PHONY : badWords/entryPoint.o
 
 # target to build an object file
-plugins/badWord.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/badWord.cpp.o
-.PHONY : plugins/badWord.cpp.o
+badWords/entryPoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o
+.PHONY : badWords/entryPoint.cpp.o
 
-plugins/badWord.i: plugins/badWord.cpp.i
-.PHONY : plugins/badWord.i
+badWords/entryPoint.i: badWords/entryPoint.cpp.i
+.PHONY : badWords/entryPoint.i
 
 # target to preprocess a source file
-plugins/badWord.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/badWord.cpp.i
-.PHONY : plugins/badWord.cpp.i
+badWords/entryPoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.i
+.PHONY : badWords/entryPoint.cpp.i
 
-plugins/badWord.s: plugins/badWord.cpp.s
-.PHONY : plugins/badWord.s
+badWords/entryPoint.s: badWords/entryPoint.cpp.s
+.PHONY : badWords/entryPoint.s
 
 # target to generate assembly for a file
-plugins/badWord.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/badWord.cpp.s
-.PHONY : plugins/badWord.cpp.s
+badWords/entryPoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.s
+.PHONY : badWords/entryPoint.cpp.s
 
-plugins/entryPoint.o: plugins/entryPoint.cpp.o
-.PHONY : plugins/entryPoint.o
+src/Core.o: src/Core.cpp.o
+.PHONY : src/Core.o
 
 # target to build an object file
-plugins/entryPoint.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o
-.PHONY : plugins/entryPoint.cpp.o
+src/Core.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/Core.cpp.o
+.PHONY : src/Core.cpp.o
 
-plugins/entryPoint.i: plugins/entryPoint.cpp.i
-.PHONY : plugins/entryPoint.i
+src/Core.i: src/Core.cpp.i
+.PHONY : src/Core.i
 
 # target to preprocess a source file
-plugins/entryPoint.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.i
-.PHONY : plugins/entryPoint.cpp.i
+src/Core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/Core.cpp.i
+.PHONY : src/Core.cpp.i
 
-plugins/entryPoint.s: plugins/entryPoint.cpp.s
-.PHONY : plugins/entryPoint.s
+src/Core.s: src/Core.cpp.s
+.PHONY : src/Core.s
 
 # target to generate assembly for a file
-plugins/entryPoint.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BadWord.dir/build.make CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.s
-.PHONY : plugins/entryPoint.cpp.s
+src/Core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/raytracer.dir/build.make CMakeFiles/raytracer.dir/src/Core.cpp.s
+.PHONY : src/Core.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -248,15 +248,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... BadWord"
 	@echo "... raytracer"
-	@echo "... pluginLoader/PluginLoader.o"
-	@echo "... pluginLoader/PluginLoader.i"
-	@echo "... pluginLoader/PluginLoader.s"
-	@echo "... plugins/badWord.o"
-	@echo "... plugins/badWord.i"
-	@echo "... plugins/badWord.s"
-	@echo "... plugins/entryPoint.o"
-	@echo "... plugins/entryPoint.i"
-	@echo "... plugins/entryPoint.s"
+	@echo "... badWords/badWord.o"
+	@echo "... badWords/badWord.i"
+	@echo "... badWords/badWord.s"
+	@echo "... badWords/entryPoint.o"
+	@echo "... badWords/entryPoint.i"
+	@echo "... badWords/entryPoint.s"
+	@echo "... src/Core.o"
+	@echo "... src/Core.i"
+	@echo "... src/Core.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

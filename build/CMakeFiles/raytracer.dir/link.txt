@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/raytracer.dir/src/main.cpp.o CMakeFiles/raytracer.dir/pluginLoader/PluginLoader.cpp.o -o raytracer  -lsfml-system -lsfml-window -lsfml-graphics -ldl 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/raytracer.dir/src/main.cpp.o CMakeFiles/raytracer.dir/src/Core.cpp.o -o raytracer  -lsfml-system -lsfml-window -lsfml-graphics -ldl 

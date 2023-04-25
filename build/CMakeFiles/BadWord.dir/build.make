@@ -69,44 +69,44 @@ include CMakeFiles/BadWord.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/BadWord.dir/flags.make
 
-CMakeFiles/BadWord.dir/plugins/badWord.cpp.o: CMakeFiles/BadWord.dir/flags.make
-CMakeFiles/BadWord.dir/plugins/badWord.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/badWord.cpp
-CMakeFiles/BadWord.dir/plugins/badWord.cpp.o: CMakeFiles/BadWord.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BadWord.dir/plugins/badWord.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BadWord.dir/plugins/badWord.cpp.o -MF CMakeFiles/BadWord.dir/plugins/badWord.cpp.o.d -o CMakeFiles/BadWord.dir/plugins/badWord.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/badWord.cpp
+CMakeFiles/BadWord.dir/badWords/badWord.cpp.o: CMakeFiles/BadWord.dir/flags.make
+CMakeFiles/BadWord.dir/badWords/badWord.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/badWord.cpp
+CMakeFiles/BadWord.dir/badWords/badWord.cpp.o: CMakeFiles/BadWord.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BadWord.dir/badWords/badWord.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BadWord.dir/badWords/badWord.cpp.o -MF CMakeFiles/BadWord.dir/badWords/badWord.cpp.o.d -o CMakeFiles/BadWord.dir/badWords/badWord.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/badWord.cpp
 
-CMakeFiles/BadWord.dir/plugins/badWord.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BadWord.dir/plugins/badWord.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/badWord.cpp > CMakeFiles/BadWord.dir/plugins/badWord.cpp.i
+CMakeFiles/BadWord.dir/badWords/badWord.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BadWord.dir/badWords/badWord.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/badWord.cpp > CMakeFiles/BadWord.dir/badWords/badWord.cpp.i
 
-CMakeFiles/BadWord.dir/plugins/badWord.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BadWord.dir/plugins/badWord.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/badWord.cpp -o CMakeFiles/BadWord.dir/plugins/badWord.cpp.s
+CMakeFiles/BadWord.dir/badWords/badWord.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BadWord.dir/badWords/badWord.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/badWord.cpp -o CMakeFiles/BadWord.dir/badWords/badWord.cpp.s
 
-CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o: CMakeFiles/BadWord.dir/flags.make
-CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/entryPoint.cpp
-CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o: CMakeFiles/BadWord.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o -MF CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o.d -o CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/entryPoint.cpp
+CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o: CMakeFiles/BadWord.dir/flags.make
+CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o: /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/entryPoint.cpp
+CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o: CMakeFiles/BadWord.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o -MF CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o.d -o CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o -c /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/entryPoint.cpp
 
-CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/entryPoint.cpp > CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.i
+CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/entryPoint.cpp > CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.i
 
-CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/plugins/entryPoint.cpp -o CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.s
+CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/badWords/entryPoint.cpp -o CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.s
 
 # Object files for target BadWord
 BadWord_OBJECTS = \
-"CMakeFiles/BadWord.dir/plugins/badWord.cpp.o" \
-"CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o"
+"CMakeFiles/BadWord.dir/badWords/badWord.cpp.o" \
+"CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o"
 
 # External object files for target BadWord
 BadWord_EXTERNAL_OBJECTS =
 
-libBadWord.so: CMakeFiles/BadWord.dir/plugins/badWord.cpp.o
-libBadWord.so: CMakeFiles/BadWord.dir/plugins/entryPoint.cpp.o
+libBadWord.so: CMakeFiles/BadWord.dir/badWords/badWord.cpp.o
+libBadWord.so: CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o
 libBadWord.so: CMakeFiles/BadWord.dir/build.make
 libBadWord.so: CMakeFiles/BadWord.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libBadWord.so"
