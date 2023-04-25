@@ -10,6 +10,7 @@
 ParserFile::ParserFile(std::string filename)
 {
     libconfig::Config cfg;
+    _factory = new AbstractFactory();
     try
     {
         cfg.readFile(filename.c_str());
@@ -78,7 +79,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["spheres"].getLength(); i++)
             {
                 const libconfig::Setting &sphere = primitives["spheres"][i];
-                _primitives.push_back(new Spheres(sphere));
+                _primitives.push_back(_factory->createPrimitive("spheres", sphere));
             }
         }
         if (primitives.exists("cylinders"))
@@ -87,7 +88,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["cylinders"].getLength(); i++)
             {
                 const libconfig::Setting &cylinder = primitives["cylinders"][i];
-                _primitives.push_back(new Cylinders(cylinder));
+                _primitives.push_back(_factory->createPrimitive("cylinders", cylinder));
             }
         }
         if (primitives.exists("planes"))
@@ -96,7 +97,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["planes"].getLength(); i++)
             {
                 const libconfig::Setting &plane = primitives["planes"][i];
-                _primitives.push_back(new Planes(plane));
+                _primitives.push_back(_factory->createPrimitive("planes", plane));
             }
         }
         if (primitives.exists("cones"))
@@ -105,7 +106,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["cones"].getLength(); i++)
             {
                 const libconfig::Setting &cone = primitives["cones"][i];
-                _primitives.push_back(new Cones(cone));
+                _primitives.push_back(_factory->createPrimitive("cones", cone));
             }
         }
         if (primitives.exists("triangles"))
@@ -114,7 +115,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["triangles"].getLength(); i++)
             {
                 const libconfig::Setting &triangle = primitives["triangles"][i];
-                _primitives.push_back(new Triangles(triangle));
+                _primitives.push_back(_factory->createPrimitive("triangles", triangle));
             }
         }
         if (primitives.exists("torus"))
@@ -123,7 +124,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["torus"].getLength(); i++)
             {
                 const libconfig::Setting &torus = primitives["torus"][i];
-                _primitives.push_back(new Torus(torus));
+                _primitives.push_back(_factory->createPrimitive("torus", torus));
             }
         }
         if (primitives.exists("boxes"))
@@ -132,7 +133,7 @@ void ParserFile::setPrimitives(const libconfig::Setting &root)
             for (int i = 0; i < primitives["boxes"].getLength(); i++)
             {
                 const libconfig::Setting &box = primitives["boxes"][i];
-                _primitives.push_back(new Boxes(box));
+                _primitives.push_back(_factory->createPrimitive("boxes", box));
             }
         }
 
@@ -153,7 +154,7 @@ std::vector<Lights> ParserFile::getLights() const
     return _lights;
 }
 
-std::vector<IPrimitives *> ParserFile::getPrimitives() const
+std::vector<std::shared_ptr<IPrimitives>> ParserFile::getPrimitives() const
 {
     return _primitives;
 }

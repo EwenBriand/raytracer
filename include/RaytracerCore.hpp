@@ -18,7 +18,7 @@ class RaytracerCore {
 
     private:
         ParserFile _file;
-        std::vector<IPrimitives *> _primitives;
+        std::vector<std::shared_ptr<IPrimitives>> _primitives;
         Camera _camera;
 };
 
