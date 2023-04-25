@@ -1,0 +1,4 @@
+/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles/raytracer.dir
+/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles/BadWord.dir
+/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles/edit_cache.dir
+/home/gxby/Epitech/delivery/project/semestre4/OOP/B-OOP-400-BAR-4-1-raytracer-thomas.laprie/build/CMakeFiles/rebuild_cache.dir

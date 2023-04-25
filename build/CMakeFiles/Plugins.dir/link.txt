@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libPlugins.so -o libPlugins.so CMakeFiles/Plugins.dir/plugins/badWord.cpp.o CMakeFiles/Plugins.dir/plugins/entryPoint.cpp.o 
