@@ -7,7 +7,7 @@
 
 #include "Cones.hpp"
 
-Cones::Cones(const libconfig::Setting &setting)
+Cones::Cones(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
 {
     try
     {
@@ -42,8 +42,7 @@ Cones::Cones(const libconfig::Setting &setting)
 }
 
 Cones::~Cones()
-{
-}
+{}
 
 bool Cones::hitUnlimited(const Ray &ray)
 {
@@ -98,4 +97,14 @@ bool Cones::hit(const Ray &ray)
 Color Cones::getColor() const
 {
     return _color;
+}
+
+void Cones::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Cones::getType() const
+{
+    return _type;
 }

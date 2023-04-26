@@ -10,13 +10,13 @@
 
 #include <iostream>
 
+#include "IPlugins.hpp"
 #include "Point3D.hpp"
 #include "Vector3D.hpp"
 #include "Color.hpp"
 #include "Ray.hpp"
 
-class IPrimitives
-{
+class IPrimitives : public IPlugins {
     protected:
         Math::Point3D _position;
         Color _color;
@@ -25,6 +25,8 @@ class IPrimitives
         virtual ~IPrimitives() = default;
         virtual bool hit(const Ray &ray) = 0;
         virtual Color getColor() const = 0;
+        virtual int getType() const = 0;
+        virtual void setType(pluginType type) = 0;
 };
 
 #endif /* D0BF50CA_8DC2_492F_8976_E70BDD268926 */

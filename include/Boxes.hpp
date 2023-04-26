@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <libconfig.h++>
-
 #include "IPrimitives.hpp"
 
 class Boxes : public IPrimitives
@@ -24,6 +23,9 @@ class Boxes : public IPrimitives
         ~Boxes() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
+        int getType() const override;
+        void setType(pluginType type) override;
+
 };
 
 #endif /* D428BE3F_E861_4C23_A929_D74DB520103F */

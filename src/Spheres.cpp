@@ -7,7 +7,7 @@
 
 #include "Spheres.hpp"
 
-Spheres::Spheres(const libconfig::Setting &setting)
+Spheres::Spheres(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
 {
     try
     {
@@ -56,4 +56,14 @@ bool Spheres::hit(const Ray &ray)
 Color Spheres::getColor() const
 {
     return _color;
+}
+
+void Cones::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Cones::getType() const
+{
+    return _type;
 }

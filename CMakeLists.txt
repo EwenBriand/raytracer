@@ -63,9 +63,9 @@ include_directories(${LIBCONFIG_INCLUDE_DIR})
 # Linker les bibliothèques
 target_link_libraries(
     raytracer
-    sfml-system
-    sfml-window
-    sfml-graphics
     ${LIBCONFIG_LIBRARY}
-    dl
+    -lsfml-system
+    -lsfml-window
+    -lsfml-graphics
+    -ldl
 )

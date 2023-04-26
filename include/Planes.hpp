@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <libconfig.h++>
-
+#include "IPlugins.hpp"
 #include "IPrimitives.hpp"
 
 class Planes : public IPrimitives
@@ -24,6 +24,8 @@ class Planes : public IPrimitives
         ~Planes() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
+        virtual int getType() = 0;
+        virtual void setType(pluginType type) = 0;
 };
 
 #endif /* F2AA8B37_71DB_4B85_9E0D_E45189DC1639 */

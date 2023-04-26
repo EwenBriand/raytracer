@@ -6,7 +6,7 @@
 */
 
 #ifndef DB10493E_C4E9_4028_A886_D4E2B0BD85CF
-#define DB10493E_C4E9_4028_A886_D4E2B0BD85CF
+    #define DB10493E_C4E9_4028_A886_D4E2B0BD85CF
 
 #include "Planes.hpp"
 #include "Spheres.hpp"

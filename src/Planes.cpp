@@ -7,7 +7,7 @@
 
 #include "Planes.hpp"
 
-Planes::Planes(const libconfig::Setting &setting)
+Planes::Planes(const libconfig::Setting &setting) : : _type(pluginType::PRIMITIVE)
 {
     try
     {
@@ -60,4 +60,14 @@ bool Planes::hit(const Ray &ray)
 Color Planes::getColor() const
 {
     return _color;
+}
+
+void Cones::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Cones::getType() const
+{
+    return _type;
 }

@@ -12,9 +12,12 @@
     #include <fstream>
     #include <stdexcept>
     #include <memory>
+    #include <vector>
     #include <SFML/Graphics.hpp>
     #include "RaytracerCore.hpp"
     #include "RaytracerGraphic.hpp"
+    #include "PluginManager.hpp"
+    #include "IPlugins.hpp"
 
 namespace core {
 
@@ -30,12 +33,15 @@ namespace core {
         public:
             Core(int ac, char **av);
             ~Core() = default;
-            std::map<std::string, std::string> loadConfig(std::string path);
-            std::string checkSceneFile(std::string path);
+            void loadConfig(std::string path);
             int run();
         private:
-            std::map<std::string, std::string> _plugins;
+            std::string checkFile(std::string path);
+
             std::string _sceneFile;
+            plugin::PluginManager _pluginManager;
+            std::vector<IPlugins *> _plugins;
+
     };
 }
 

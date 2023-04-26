@@ -7,7 +7,7 @@
 
 #include "Boxes.hpp"
 
-Boxes::Boxes(const libconfig::Setting &setting)
+Boxes::Boxes(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
 {
     try
     {
@@ -58,4 +58,15 @@ bool Boxes::hit(const Ray &ray)
 Color Boxes::getColor() const
 {
     return _color;
+}
+
+
+void Boxes::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Boxes::getType() const
+{
+    return _type;
 }

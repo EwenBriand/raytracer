@@ -7,7 +7,7 @@
 
 #include "Torus.hpp"
 
-Torus::Torus(const libconfig::Setting &setting)
+Torus::Torus(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
 {
     try
     {
@@ -40,4 +40,14 @@ bool Torus::hit(const Ray &/*ray*/)
 Color Torus::getColor() const
 {
     return _color;
+}
+
+void Torus::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Torus::getType() const
+{
+    return _type;
 }
