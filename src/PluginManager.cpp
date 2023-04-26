@@ -26,18 +26,6 @@ void plugin::PluginManager::closePlugins()
         dlclose(plugin);
 }
 
-template <typename T>
-T *plugin::PluginManager::loadPlugin(const std::string &id, const std::string &path) {
-    void *lib = dlopen(path.c_str(), RTLD_LAZY);
-    if (!lib)
-        throw PluginManagerException(path + ": " + dlerror());
-    void *(*entry_point)() = (void *(*)()) dlsym(lib, "entry_point");
-    if (!entry_point)
-        throw PluginManagerException(path + ": entry Point not found.");
-    _handlers.push_back(lib);
-    return ((T *(*)()) entry_point)();
-};
-
 std::vector<std::string> plugin::PluginManager::listPlugins(const std::string &dir)
 {
     std::vector<std::string> libs;

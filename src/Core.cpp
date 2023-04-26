@@ -58,7 +58,7 @@ void core::Core::loadConfig(std::string path)
         std::string path = line.substr(line.find('=') + 1, line.size());
         if (name.empty() || path.empty() || checkFile(path).empty())
             throw CoreException("Invalid plugin at line: " + line + ".");
-        _plugins.push_back(_pluginManager.loadPlugin<IPlugins>(path, name));
+        _plugins.push_back(_pluginManager.loadPlugin<IPlugins>(path));
     }
     file.close();
 }
