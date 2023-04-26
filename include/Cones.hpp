@@ -17,16 +17,14 @@
 class Cones : public IPrimitives
 {
     private:
-        int _radius;
+        float _radius;
         int _height;
-        int _angle;
+        float _angle;
         bool _isLimited;
     public:
         Cones(const libconfig::Setting &setting);
         ~Cones() override;
         bool hit(const Ray &ray) override;
-        bool hitLimited(const Ray &ray);
-        bool hitUnlimited(const Ray &ray);
         Color getColor() const override;
 };
 

@@ -16,8 +16,8 @@
 class Torus : public IPrimitives
 {
     private:
-        int _radiusMinor;
-        int _radiusMajor;
+        float _radiusMinor;
+        float _radiusMajor;
     public:
         Torus(const libconfig::Setting &setting);
         ~Torus() override;

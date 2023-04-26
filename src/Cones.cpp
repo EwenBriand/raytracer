@@ -25,14 +25,16 @@ Cones::Cones(const libconfig::Setting &setting)
             std::cout << _radius << std::endl;
             setting.lookupValue("h", _height);
             std::cout << _height << std::endl;
+            std::cout << "la" << std::endl;
             if (_height == 0)
                 _angle = 0;
             else
-                _angle = 2 * atan(_radius / _height);
+                _angle = atan(_height / (sqrtf(_radius * _radius + _height * _height))) * 180 / M_PI;
             std::cout << _angle << std::endl;
         } else {
             setting.lookupValue("angle", _angle);
             std::cout << _angle << std::endl;
+            _height = 1000000000;
         }
     }
     catch(const std::exception& e)
@@ -45,54 +47,29 @@ Cones::~Cones()
 {
 }
 
-bool Cones::hitUnlimited(const Ray &ray)
-{
-    double a = ray.getDirection().getX() * ray.getDirection().getX() + ray.getDirection().getY() * ray.getDirection().getY() - _angle * _angle * ray.getDirection().getZ() * ray.getDirection().getZ();
-    double b = 2 * (ray.getOrigin().getX() * ray.getDirection().getX() + ray.getOrigin().getY() * ray.getDirection().getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getZ() - _position.getX() * ray.getDirection().getX() - _position.getY() * ray.getDirection().getY() + _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getY() * (_position.getY() + 1) / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getX() * _position.getX() / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)));
-    double c = ray.getOrigin().getX() * ray.getOrigin().getX() + ray.getOrigin().getY() * ray.getOrigin().getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * (ray.getOrigin().getZ() - _position.getZ()) - 2 * (ray.getOrigin().getX() * _position.getX() + ray.getOrigin().getY() * _position.getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * (_position.getY() + 1) / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) * _position.getY() / (_position.getY() + 1) - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * _position.getX() / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) * _position.getX() / _position.getX());
-
-    double discriminant = b * b - 4 * a * c;
-    if (discriminant < 0) {
-        return false;
-    }
-
-    double t1 = (-b + std::sqrt(discriminant)) / (2 * a);
-    double t2 = (-b - std::sqrt(discriminant)) / (2 * a);
-
-    if (t1 < 0 && t2 < 0) {
-        return false;
-    }
-
-    return true;
-}
-
-bool Cones::hitLimited(const Ray &ray)
-{
-    double a = ray.getDirection().getX() * ray.getDirection().getX() + ray.getDirection().getY() * ray.getDirection().getY() - ray.getDirection().getZ() * ray.getDirection().getZ() * _radius * _radius / (_height * _height);
-    double b = 2 * (ray.getOrigin().getX() * ray.getDirection().getX() + ray.getOrigin().getY() * ray.getDirection().getY() - (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getZ() * _radius * _radius / (_height * _height) - _position.getX() * ray.getDirection().getX() - _position.getY() * ray.getDirection().getY() + (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius * _height / (_height * _height));
-    double c = ray.getOrigin().getX() * ray.getOrigin().getX() + ray.getOrigin().getY() * ray.getOrigin().getY() - (ray.getOrigin().getZ() - _position.getZ()) * (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius / (_height * _height) - 2 * (ray.getOrigin().getX() * _position.getX() + ray.getOrigin().getY() * _position.getY() - (ray.getOrigin().getZ() - _position.getZ()) * _height) + _position.getX() * _position.getX() + _position.getY() * _position.getY() - _height * _height;
-
-    double discriminant = b * b - 4 * a * c;
-    if (discriminant < 0) {
-        return false;
-    }
-
-    double t1 = (-b + sqrt(discriminant)) / (2 * a);
-    double t2 = (-b - sqrt(discriminant)) / (2 * a);
-
-    if (t1 < 0 && t2 < 0) {
-        return false;
-    }
-
-    return true;
-}
-
 bool Cones::hit(const Ray &ray)
 {
-    if (_isLimited)
-        return hitLimited(ray);
-    else
-        return hitUnlimited(ray);
+    double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2) - pow(ray.getDirection().getY(), 2) * pow(tan(_angle), 2);
+    double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX())
+                    + ray.getDirection().getZ() * (ray.getOrigin().getZ() - _position.getZ())
+                    - ray.getDirection().getY() * (ray.getOrigin().getY() - _position.getY()) * pow(tan(_angle), 2));
+    double c = pow(ray.getOrigin().getX() - _position.getX(), 2) + pow(ray.getOrigin().getZ() - _position.getZ(), 2) - pow(ray.getOrigin().getY() - _position.getY(), 2) * pow(tan(_angle), 2);
+
+    double discriminant = pow(b, 2) - 4 * a * c;
+
+    if (discriminant < 0) {
+        return false;
+    }
+    double t = (-b - sqrt(discriminant)) / (2 * a);
+
+    if (t < 0) {
+        return false;
+    }
+    double y = ray.getOrigin().getY() + t * ray.getDirection().getY();
+
+    if (y > _position.getY() && y < _position.getY() + _height)
+        return true;
+    return false;
 }
 
 Color Cones::getColor() const
