@@ -7,8 +7,9 @@
 
 #include "Boxes.hpp"
 
-Boxes::Boxes(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
+Boxes::Boxes(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);

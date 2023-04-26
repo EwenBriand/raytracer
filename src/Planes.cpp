@@ -7,8 +7,9 @@
 
 #include "Planes.hpp"
 
-Planes::Planes(const libconfig::Setting &setting) : : _type(pluginType::PRIMITIVE)
+Planes::Planes(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting["p1"]);
@@ -62,12 +63,12 @@ Color Planes::getColor() const
     return _color;
 }
 
-void Cones::setType(pluginType type)
+void Planes::setType(pluginType type)
 {
     _type = type;
 }
 
-int Cones::getType() const
+int Planes::getType() const
 {
     return _type;
 }

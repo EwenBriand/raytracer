@@ -7,8 +7,9 @@
 
 #include "Spheres.hpp"
 
-Spheres::Spheres(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
+Spheres::Spheres(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -58,12 +59,12 @@ Color Spheres::getColor() const
     return _color;
 }
 
-void Cones::setType(pluginType type)
+void Spheres::setType(pluginType type)
 {
     _type = type;
 }
 
-int Cones::getType() const
+int Spheres::getType() const
 {
     return _type;
 }

@@ -25,7 +25,7 @@ class Triangles : public IPrimitives
         ~Triangles() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
-        virtual int getType() = 0;
+        virtual int getType() const = 0;
         virtual void setType(pluginType type) = 0;
 };
 

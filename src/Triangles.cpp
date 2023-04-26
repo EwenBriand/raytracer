@@ -9,6 +9,7 @@
 
 Triangles::Triangles(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _color.setColor(setting["color"]);

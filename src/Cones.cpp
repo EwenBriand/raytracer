@@ -7,8 +7,9 @@
 
 #include "Cones.hpp"
 
-Cones::Cones(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
+Cones::Cones(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);

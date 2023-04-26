@@ -7,8 +7,9 @@
 
 #include "Cylinders.hpp"
 
-Cylinders::Cylinders(const libconfig::Setting &setting) : _type(pluginType::PRIMITIVE)
+Cylinders::Cylinders(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -69,12 +70,12 @@ Color Cylinders::getColor() const
     return _color;
 }
 
-void Cones::setType(pluginType type)
+void Cylinders::setType(pluginType type)
 {
     _type = type;
 }
 
-int Cones::getType() const
+int Cylinders::getType() const
 {
     return _type;
 }
