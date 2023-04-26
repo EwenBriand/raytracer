@@ -32,7 +32,7 @@ Torus::~Torus()
 {
 }
 
-bool Torus::hit(const Ray &ray)
+bool Torus::hit(const Ray &/*ray*/)
 {
     return false;
 }

@@ -7,9 +7,14 @@
 #ifndef CORE_HPP_
     #define CORE_HPP_
     #include <string>
+    #include <iostream>
     #include <map>
     #include <fstream>
-    #include <iostream>
+    #include <stdexcept>
+    #include <memory>
+    #include <SFML/Graphics.hpp>
+    #include "RaytracerCore.hpp"
+    #include "RaytracerGraphic.hpp"
 
 namespace core {
 

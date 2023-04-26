@@ -8,6 +8,11 @@
 
 int main(int ac, char **av)
 {
-    int returnCode = core::Core(ac, av).run();
-    return returnCode;
+    try {
+        int returnCode = core::Core(ac, av).run();
+        return returnCode;
+    } catch (const core::CoreException& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
 }

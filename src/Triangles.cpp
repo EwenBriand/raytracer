@@ -34,7 +34,7 @@ Triangles::~Triangles()
 {
 }
 
-bool Triangles::hit(const Ray &ray)
+bool Triangles::hit(const Ray &/*ray*/)
 {
     return false;
 }

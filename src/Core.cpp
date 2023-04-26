@@ -42,6 +42,12 @@ int core::Core::run()
         std::cout << "Name:" << key << " Path:" << value << std::endl;
     }
     std::cout << "Path to the file:" << _sceneFile << std::endl;
+
+    RaytracerCore core(_sceneFile);
+    std::shared_ptr<sf::Image> image = core.renderImage();
+    RaytracerGraphic interface(image);
+    interface.run();
+
     return 0;
 }
 
