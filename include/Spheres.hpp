@@ -24,8 +24,8 @@ class Spheres : public IPrimitives
         ~Spheres() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
-        virtual int getType() const = 0;
-        virtual void setType(pluginType type) = 0;
+        int getType() const;
+        void setType(pluginType type);
 };
 
 #endif /* BE5DD2F6_0056_455A_9E60_33757B907054 */

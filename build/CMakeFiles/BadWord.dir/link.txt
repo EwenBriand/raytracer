@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libBadWord.so -o libBadWord.so CMakeFiles/BadWord.dir/badWords/badWord.cpp.o CMakeFiles/BadWord.dir/badWords/entryPoint.cpp.o 

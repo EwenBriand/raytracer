@@ -34,7 +34,7 @@ T *plugin::PluginManager::loadPlugin(const std::string &id, const std::string &p
     void *(*entry_point)() = (void *(*)()) dlsym(lib, "entry_point");
     if (!entry_point)
         throw PluginManagerException(path + ": entry Point not found.");
-    _handlers[id] = lib;
+    _handlers.push_back(lib);
     return ((T *(*)()) entry_point)();
 };
 

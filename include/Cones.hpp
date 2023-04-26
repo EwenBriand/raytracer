@@ -27,8 +27,8 @@ class Cones : public IPrimitives
         bool hitLimited(const Ray &ray);
         bool hitUnlimited(const Ray &ray);
         Color getColor() const override;
-        virtual int getType() const = 0;
-        virtual void setType(pluginType type) = 0;
+        int getType() const;
+        void setType(pluginType type);
 };
 
 #endif /* C7304198_8C73_4EEC_BDEE_FF214F9B8958 */

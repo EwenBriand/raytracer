@@ -36,6 +36,7 @@ set(SOURCES
     src/Spheres.cpp
     src/Torus.cpp
     src/Triangles.cpp
+    src/PluginManager.cpp
 )
 
 add_executable(raytracer ${SOURCES})

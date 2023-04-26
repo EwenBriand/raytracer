@@ -44,3 +44,13 @@ Color Triangles::getColor() const
 {
     return _color;
 }
+
+void Triangles::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Triangles::getType() const
+{
+    return _type;
+}
