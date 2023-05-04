@@ -154,7 +154,7 @@ std::vector<Lights> ParserFile::getLights() const
     return _lights;
 }
 
-std::vector<std::shared_ptr<IPrimitives>> ParserFile::getPrimitives() const
+std::vector<std::shared_ptr<IPrimitives> > ParserFile::getPrimitives() const
 {
     return _primitives;
 }

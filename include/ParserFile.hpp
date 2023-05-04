@@ -28,11 +28,11 @@ class ParserFile
         void setPrimitives(const libconfig::Setting &root);
         void setLights(const libconfig::Setting &root);
         Camera getCamera() const;
-        std::vector<std::shared_ptr<IPrimitives>> getPrimitives() const;
+        std::vector<std::shared_ptr<IPrimitives> > getPrimitives() const;
         std::vector<Lights> getLights() const;
     private:
         Camera _camera;
-        std::vector<std::shared_ptr<IPrimitives>> _primitives;
+        std::vector<std::shared_ptr<IPrimitives> > _primitives;
         std::vector<Lights> _lights;
         AbstractFactory *_factory;
 };

@@ -34,7 +34,7 @@ OBJ  	=	$(SRC:.cpp=.o)
 
 OBJ		+=	$(MAIN:.cpp=.o)
 
-CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++
+CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++ -std=c++20
 
 ifeq ($(shell uname -s),Darwin)
 	CPPFLAGS += -I/opt/homebrew/include
