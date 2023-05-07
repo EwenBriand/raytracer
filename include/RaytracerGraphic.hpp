@@ -7,6 +7,8 @@
 
 #ifndef RAYTRACERGRAPHIC_HPP_
     #define RAYTRACERGRAPHIC_HPP_
+    #include <fstream>
+
     #include "RaytracerCore.hpp"
     #include <SFML/Graphics.hpp>
 
@@ -14,6 +16,7 @@ class RaytracerGraphic {
     public:
         RaytracerGraphic(std::shared_ptr<sf::Image> image);
         void run();
+        void drawPPM();
 
     private:
         void processMenuInput(const sf::Event &event);

@@ -17,6 +17,7 @@ int main(int ac, char **av)
     std::shared_ptr<sf::Image> image = core.renderImage();
     RaytracerGraphic interface(image);
     interface.run();
-
+    image->saveToFile("image.png");
+    interface.drawPPM();
     return 0;
 }

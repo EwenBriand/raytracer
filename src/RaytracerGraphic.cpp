@@ -37,6 +37,23 @@ RaytracerGraphic::RaytracerGraphic(std::shared_ptr<sf::Image> image)
     _menuBackground.setFillColor(sf::Color(0, 0, 0, 200));
 }
 
+void RaytracerGraphic::drawPPM()
+{
+    std::ofstream file("image.ppm");
+    if (!file.is_open())
+        throw std::runtime_error("cannot open file");
+    file << "P3" << std::endl;
+    file << _image->getSize().x << " " << _image->getSize().y << std::endl;
+    file << "255" << std::endl;
+    for (unsigned int i = 0; i < _image->getSize().y; i++) {
+        for (unsigned int j = 0; j < _image->getSize().x; j++) {
+            sf::Color color = _image->getPixel(j, i);
+            file << static_cast<int>(color.r) << " " << static_cast<int>(color.g) << " " << static_cast<int>(color.b) << "  ";
+        }
+        file << std::endl;
+    }
+}
+
 void RaytracerGraphic::processMenuInput(const sf::Event &event)
 {
     if (_showMenu) {
