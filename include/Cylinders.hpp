@@ -23,8 +23,6 @@ class Cylinders : public IPrimitives
         ~Cylinders() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
-        int getType() const;
-        void setType(pluginType type);
 };
 
 #endif /* CAEFB936_1C79_48F5_B406_9DC688A7D20F */

@@ -9,7 +9,6 @@
 
 Planes::Planes(const libconfig::Setting &setting)
 {
-    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting["p1"]);
@@ -61,14 +60,4 @@ bool Planes::hit(const Ray &ray)
 Color Planes::getColor() const
 {
     return _color;
-}
-
-void Planes::setType(pluginType type)
-{
-    _type = type;
-}
-
-int Planes::getType() const
-{
-    return _type;
 }

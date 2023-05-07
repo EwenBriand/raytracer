@@ -9,7 +9,6 @@
 
 Cones::Cones(const libconfig::Setting &setting)
 {
-    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -75,14 +74,4 @@ bool Cones::hit(const Ray &ray)
 Color Cones::getColor() const
 {
     return _color;
-}
-
-void Cones::setType(pluginType type)
-{
-    _type = type;
-}
-
-int Cones::getType() const
-{
-    return _type;
 }

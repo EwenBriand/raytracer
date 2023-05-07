@@ -8,13 +8,13 @@ project(Raytracer
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_compile_options(-Wall -Wextra -Werror -O3)
+add_compile_options(-Wall -Wextra -O3)
 
 include_directories(./include)
 
 set(SOURCES
     src/main.cpp
-    src/Core.cpp
+    src/AbstractFactory.cpp
     src/Boxes.cpp
     src/Camera.cpp
     src/Color.cpp
@@ -33,15 +33,9 @@ set(SOURCES
     src/Spheres.cpp
     src/Torus.cpp
     src/Triangles.cpp
-    src/PluginManager.cpp
 )
 
 add_executable(raytracer ${SOURCES})
-
-# set(PLUGIN
-# )
-
-# add_library(BadWord SHARED ${PLUGIN})
 
 target_link_libraries(
     raytracer
@@ -50,4 +44,9 @@ target_link_libraries(
     -lsfml-graphics
     -ldl
     -lconfig++
+)
+
+add_custom_target(move_file
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/build/raytracer ${CMAKE_BINARY_DIR}
+    COMMENT "Moving file from ${CMAKE_SOURCE_DIR}/build/*.so to ${CMAKE_BINARY_DIR}/plugins"
 )

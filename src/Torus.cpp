@@ -9,7 +9,6 @@
 
 Torus::Torus(const libconfig::Setting &setting)
 {
-    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -33,7 +32,7 @@ Torus::~Torus()
 {
 }
 
-bool Torus::hit(const Ray &/*ray*/)
+bool Torus::hit(const Ray &ray)
 {
     // Définir les constantes pour la formule du tore
     const float R = _radiusMajor;
@@ -132,14 +131,4 @@ bool Torus::hit(const Ray &/*ray*/)
 Color Torus::getColor() const
 {
     return _color;
-}
-
-void Torus::setType(pluginType type)
-{
-    _type = type;
-}
-
-int Torus::getType() const
-{
-    return _type;
 }

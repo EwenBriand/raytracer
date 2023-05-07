@@ -9,7 +9,6 @@
 
 Cylinders::Cylinders(const libconfig::Setting &setting)
 {
-    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -68,14 +67,4 @@ bool Cylinders::hit(const Ray &ray)
 Color Cylinders::getColor() const
 {
     return _color;
-}
-
-void Cylinders::setType(pluginType type)
-{
-    _type = type;
-}
-
-int Cylinders::getType() const
-{
-    return _type;
 }

@@ -16,8 +16,6 @@
     #include <SFML/Graphics.hpp>
     #include "RaytracerCore.hpp"
     #include "RaytracerGraphic.hpp"
-    #include "PluginManager.hpp"
-    #include "IPlugins.hpp"
 
 namespace core {
 
@@ -37,11 +35,6 @@ namespace core {
             int run();
         private:
             std::string checkFile(std::string path);
-
-            std::string _sceneFile;
-            plugin::PluginManager _pluginManager;
-            std::vector<IPlugins *> _plugins;
-
     };
 }
 

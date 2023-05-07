@@ -24,8 +24,6 @@ class Planes : public IPrimitives
         ~Planes() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
-        int getType() const;
-        void setType(pluginType type);
 };
 
 #endif /* F2AA8B37_71DB_4B85_9E0D_E45189DC1639 */

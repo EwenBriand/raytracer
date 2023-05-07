@@ -9,7 +9,6 @@
 
 Boxes::Boxes(const libconfig::Setting &setting)
 {
-    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -59,15 +58,4 @@ bool Boxes::hit(const Ray &ray)
 Color Boxes::getColor() const
 {
     return _color;
-}
-
-
-void Boxes::setType(pluginType type)
-{
-    _type = type;
-}
-
-int Boxes::getType() const
-{
-    return _type;
 }

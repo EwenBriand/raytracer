@@ -4,17 +4,20 @@
 ** File description:
 ** main
 */
-#include "Core.hpp"
+
+#include "RaytracerCore.hpp"
+#include "RaytracerGraphic.hpp"
 
 int main(int ac, char **av)
 {
-    int returnCode = 0;
-
-    try {
-        returnCode = core::Core(ac, av).run();
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
+    if (ac != 2)
         return 84;
-    }
-    return returnCode;
+
+    RaytracerCore core(av[1]);
+    std::shared_ptr<sf::Image> image = core.renderImage();
+    RaytracerGraphic interface(image);
+    interface.run();
+    image->saveToFile("image.png");
+    interface.drawPPM();
+    return 0;
 }

@@ -11,6 +11,7 @@ CCPP    =	g++
 
 SRC 	=	src/Boxes.cpp \
 			src/Camera.cpp \
+			src/Core.cpp \
 			src/Color.cpp \
 			src/Cones.cpp \
 			src/Cylinders.cpp \
@@ -27,14 +28,15 @@ SRC 	=	src/Boxes.cpp \
 			src/RaytracerCore.cpp \
 			src/RaytracerGraphic.cpp \
 			src/AbstractFactory.cpp \
+			src/PluginManager.cpp \
 
-MAIN	=	main.cpp
+MAIN	=	src/main.cpp
 
 OBJ  	=	$(SRC:.cpp=.o)
 
 OBJ		+=	$(MAIN:.cpp=.o)
 
-CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++ -std=c++20
+CPPFLAGS =	-W -Wall -Wextra -g3 -I ./include -lconfig++ -std=c++20 -ldl
 
 ifeq ($(shell uname -s),Darwin)
 	CPPFLAGS += -I/opt/homebrew/include
