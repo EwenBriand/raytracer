@@ -10,8 +10,10 @@
 
 int main(int ac, char **av)
 {
-    if (ac != 2)
+    if (ac != 2) {
+        printf("Usage: ./raytracer [scene_file]\n");
         return 84;
+    }
 
     RaytracerCore core(av[1]);
     std::shared_ptr<sf::Image> image = core.renderImage();

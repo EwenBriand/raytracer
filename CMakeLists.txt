@@ -37,6 +37,9 @@ set(SOURCES
 
 add_executable(raytracer ${SOURCES})
 
+# # Add the move_file target as a dependency of the raytracer target to ensure it is executed during the build
+# add_dependencies(raytracer move_file)
+
 target_link_libraries(
     raytracer
     -lsfml-system
@@ -46,7 +49,8 @@ target_link_libraries(
     -lconfig++
 )
 
-add_custom_target(move_file
-    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/build/raytracer ${CMAKE_BINARY_DIR}
-    COMMENT "Moving file from ${CMAKE_SOURCE_DIR}/build/*.so to ${CMAKE_BINARY_DIR}/plugins"
+add_custom_command(
+    TARGET raytracer POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:raytracer> ${CMAKE_BINARY_DIR}/..
+    COMMENT "Moving file from $<TARGET_FILE:raytracer> to ${CMAKE_BINARY_DIR}/raytracer."
 )
