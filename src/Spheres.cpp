@@ -9,6 +9,7 @@
 
 Spheres::Spheres(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _position.setPoint(setting);
@@ -56,4 +57,14 @@ bool Spheres::hit(const Ray &ray)
 Color Spheres::getColor() const
 {
     return _color;
+}
+
+void Spheres::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Spheres::getType() const
+{
+    return _type;
 }

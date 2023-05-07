@@ -23,6 +23,8 @@ class Torus : public IPrimitives
         ~Torus() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
+        int getType() const override;
+        void setType(pluginType type) override;
 };
 
 #endif /* D4E88905_726D_4F79_AFCA_7257590B44E5 */

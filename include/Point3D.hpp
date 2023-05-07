@@ -10,7 +10,6 @@
 
 #include <libconfig.h++>
 #include <iostream>
-
 #include "Vector3D.hpp"
 
 namespace Math

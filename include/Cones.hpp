@@ -11,7 +11,6 @@
 #include <iostream>
 #include <libconfig.h++>
 #include <cmath>
-
 #include "IPrimitives.hpp"
 
 class Cones : public IPrimitives
@@ -26,6 +25,8 @@ class Cones : public IPrimitives
         ~Cones() override;
         bool hit(const Ray &ray) override;
         Color getColor() const override;
+        int getType() const;
+        void setType(pluginType type);
 };
 
 #endif /* C7304198_8C73_4EEC_BDEE_FF214F9B8958 */

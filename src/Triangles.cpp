@@ -9,6 +9,7 @@
 
 Triangles::Triangles(const libconfig::Setting &setting)
 {
+    _type = pluginType::PRIMITIVE;
     try
     {
         _color.setColor(setting["color"]);
@@ -34,7 +35,7 @@ Triangles::~Triangles()
 {
 }
 
-bool Triangles::hit(const Ray &ray)
+bool Triangles::hit(const Ray &/*ray*/)
 {
     return false;
 }
@@ -42,4 +43,14 @@ bool Triangles::hit(const Ray &ray)
 Color Triangles::getColor() const
 {
     return _color;
+}
+
+void Triangles::setType(pluginType type)
+{
+    _type = type;
+}
+
+int Triangles::getType() const
+{
+    return _type;
 }
