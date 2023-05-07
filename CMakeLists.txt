@@ -38,10 +38,10 @@ set(SOURCES
 
 add_executable(raytracer ${SOURCES})
 
-set(PLUGIN
-)
+# set(PLUGIN
+# )
 
-add_library(BadWord SHARED ${PLUGIN})
+# add_library(BadWord SHARED ${PLUGIN})
 
 target_link_libraries(
     raytracer
