@@ -8,12 +8,18 @@
 #pragma once
 
 #include <memory>
+#include <map>
 #include "IPrimitives.hpp"
+#include "AllPrimitives.hpp"
+#include "PrimitiveBuilder.hpp"
 
 class AbstractFactory
 {
     public:
-        virtual ~AbstractFactory() = delete;
-        std::shared_ptr<IPrimitives> createPrimitive(const std::string type,
-            const libconfig::Setting &setting);
+        AbstractFactory();
+        virtual ~AbstractFactory() = default;
+        std::shared_ptr<IPrimitives> createPrimitive(const std::string type, const libconfig::Setting &setting);
+
+    private:
+        std::map<std::string, std::shared_ptr<PrimitiveBuilder>> builders_;
 };

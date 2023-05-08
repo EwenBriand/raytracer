@@ -11,7 +11,6 @@ CCPP    =	g++
 
 SRC 	=	src/Boxes.cpp \
 			src/Camera.cpp \
-			src/Core.cpp \
 			src/Color.cpp \
 			src/Cones.cpp \
 			src/Cylinders.cpp \
