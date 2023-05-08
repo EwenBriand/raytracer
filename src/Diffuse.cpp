@@ -48,10 +48,10 @@ IPrimitives *Diffuse::getPrimitive() const
     return nullptr;
 }
 
-float Diffuse::getPower() const
-{
-    return 0;
-}
+// float Diffuse::getPower() const
+// {
+//     return 0;
+// }
 
 bool Diffuse::is_cut(const Math::Point3D &point,
     const std::vector<IPrimitives *> primitives) const

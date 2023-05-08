@@ -33,7 +33,7 @@ class Diffuse : public ILights {
     Math::Point3D getPoint() const override;
     Math::Vector3D getDirection() const override;
     IPrimitives *getPrimitive() const override;
-    float getPower() const override;
+    // float getPower() const override;
 
     bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const override;

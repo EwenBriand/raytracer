@@ -24,7 +24,7 @@ class ILights {
     virtual Math::Point3D getPoint() const = 0;
     virtual Math::Vector3D getDirection() const = 0;
     virtual IPrimitives *getPrimitive() const = 0;
-    virtual float getPower() const = 0;
+    // virtual float getPower() const = 0;
 
     virtual bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const = 0;

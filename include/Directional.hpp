@@ -24,7 +24,7 @@ class Directional : public ILights {
     Color _color;
     Math::Vector3D _direction;
     IPrimitives *_primitive;
-    float _power;
+    // float _power;
 
   public:
     Directional(const libconfig::Setting &setting);
@@ -35,7 +35,7 @@ class Directional : public ILights {
     Math::Point3D getPoint() const;
     Math::Vector3D getDirection() const;
     IPrimitives *getPrimitive() const;
-    float getPower() const;
+    // float getPower() const;
 
     bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const;

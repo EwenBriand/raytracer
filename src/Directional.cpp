@@ -21,7 +21,7 @@ Directional::Directional(const libconfig::Setting &setting)
         std::cout << _color << std::endl;
         _primitive = new Spheres(setting["spheres"]);
         std::cout << "primitive " << _primitive << std::endl;
-        _power = 10;
+        // _power = 10;
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -51,10 +51,10 @@ IPrimitives *Directional::getPrimitive() const
     return _primitive;
 }
 
-float Directional::getPower() const
-{
-    return _power;
-}
+// float Directional::getPower() const
+// {
+//     return _power;
+// }
 
 bool Directional::is_cut(const Math::Point3D &point,
     const std::vector<IPrimitives *> primitives) const
