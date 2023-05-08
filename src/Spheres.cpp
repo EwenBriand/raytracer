@@ -21,6 +21,13 @@ Spheres::Spheres(const libconfig::Setting &setting)
         std::cout << _color << std::endl;
         _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
+        setting.lookupValue("scale", _scale);
+        if (!_scale) {
+            _scale = 1;
+        } else {
+            _radius *= _scale;
+        }
+        std::cout << "scale " << _scale << std::endl;
     }
     catch(const std::exception& e)
     {

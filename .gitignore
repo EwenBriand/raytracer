@@ -35,3 +35,4 @@ raytracer
 .vscode
 
 build
+Makefile

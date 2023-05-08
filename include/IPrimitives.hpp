@@ -20,6 +20,7 @@ class IPrimitives {
         Math::Point3D _position;
         Color _color;
         Math::Vector3D _rotation;
+        float _scale;
     public:
         virtual ~IPrimitives() = default;
         virtual bool hit(const Ray &ray) = 0;

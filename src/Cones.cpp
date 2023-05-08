@@ -30,6 +30,12 @@ Cones::Cones(const libconfig::Setting &setting)
                 _angle = 0;
             else
                 _angle = atan(_height / (sqrtf(_radius * _radius + _height * _height))) * 180 / M_PI;
+            setting.lookupValue("scale", _scale);
+            if (!_scale)
+                _scale = 1;
+            _radius *= _scale;
+            _height *= _scale;
+            std::cout << "scale " << _scale << std::endl;
             std::cout << _angle << std::endl;
         } else {
             setting.lookupValue("angle", _angle);
@@ -65,7 +71,6 @@ bool Cones::hit(const Ray &ray)
         return false;
     }
     double y = ray.getOrigin().getY() + t * ray.getDirection().getY();
-
     if (y > _position.getY() && y < _position.getY() + _height)
         return true;
     return false;

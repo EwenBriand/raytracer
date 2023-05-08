@@ -17,6 +17,7 @@ class Cylinders : public IPrimitives
     private:
         float _radius;
         int _height;
+        float scale;
         bool _isLimited;
     public:
         Cylinders(const libconfig::Setting &setting);
