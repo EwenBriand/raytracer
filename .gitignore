@@ -36,3 +36,5 @@ raytracer
 
 build
 Makefile
+*.png
+*.ppm
