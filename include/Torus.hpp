@@ -24,6 +24,7 @@ class Torus : public IPrimitives {
     bool hit(const Ray &ray) override;
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* D4E88905_726D_4F79_AFCA_7257590B44E5 */

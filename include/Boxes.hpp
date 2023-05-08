@@ -25,6 +25,7 @@ class Boxes : public IPrimitives {
     bool hit(const Ray &ray) override;
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* D428BE3F_E861_4C23_A929_D74DB520103F */

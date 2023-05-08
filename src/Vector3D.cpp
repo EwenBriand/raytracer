@@ -90,6 +90,12 @@ Math::Vector3D operator*(const Math::Vector3D &vector, const float &scalar)
         vector.getZ() * scalar);
 }
 
+Math::Vector3D operator/(const Math::Vector3D &vector, const float &scalar)
+{
+    return Math::Vector3D(vector.getX() / scalar, vector.getY() / scalar,
+        vector.getZ() / scalar);
+}
+
 Math::Vector3D operator-(const Math::Vector3D &a, const Math::Vector3D &b)
 {
     Math::Vector3D result = {
@@ -97,7 +103,7 @@ Math::Vector3D operator-(const Math::Vector3D &a, const Math::Vector3D &b)
     return result;
 }
 
-Math::Vector3D operator+(const Math::Vector3D &a, const Math::Vector3D b)
+Math::Vector3D operator+(const Math::Vector3D &a, const Math::Vector3D &b)
 {
     Math::Vector3D result = {
         a.getX() + b.getX(), a.getY() + b.getY(), a.getZ() + b.getZ()};

@@ -24,6 +24,7 @@ class Spheres : public IPrimitives {
     bool hit(const Ray &ray) override;
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* BE5DD2F6_0056_455A_9E60_33757B907054 */

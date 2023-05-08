@@ -29,6 +29,7 @@ class Cones : public IPrimitives {
     bool hitUnlimited(const Ray &ray);
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* C7304198_8C73_4EEC_BDEE_FF214F9B8958 */

@@ -24,12 +24,12 @@ class ILights {
     virtual Math::Point3D getPoint() const = 0;
     virtual Math::Vector3D getDirection() const = 0;
     virtual IPrimitives *getPrimitive() const = 0;
-    // virtual float getPower() const = 0;
+    virtual float getPower() const = 0;
 
     virtual bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const = 0;
-    virtual Color define_color(
-        const Color &origin_color, double distance, bool is_cut) = 0;
+    virtual Color define_color(Math::Point3D inter, Math::Vector3D normal,
+        const Color &origin_color, double t, bool is_cut) = 0;
 };
 
 #endif /* D7777FC2_C7BD_4BDA_BC6A_E26393F1EFD6 */

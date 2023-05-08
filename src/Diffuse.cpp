@@ -48,10 +48,10 @@ IPrimitives *Diffuse::getPrimitive() const
     return nullptr;
 }
 
-// float Diffuse::getPower() const
-// {
-//     return 0;
-// }
+float Diffuse::getPower() const
+{
+    return 0;
+}
 
 bool Diffuse::is_cut(const Math::Point3D &point,
     const std::vector<IPrimitives *> primitives) const
@@ -59,7 +59,8 @@ bool Diffuse::is_cut(const Math::Point3D &point,
     return false;
 }
 
-Color Diffuse::define_color(const Color &origin_color, double t, bool is_cut)
+Color Diffuse::define_color(Math::Point3D inter, Math::Vector3D normal,
+    const Color &origin_color, double t, bool is_cut)
 {
     int r =
         (unsigned char) ((1.0 - t) * origin_color.getR() + t * _color.getR());

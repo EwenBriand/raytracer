@@ -24,7 +24,7 @@ class Directional : public ILights {
     Color _color;
     Math::Vector3D _direction;
     IPrimitives *_primitive;
-    // float _power;
+    float _power = 10.0;
 
   public:
     Directional(const libconfig::Setting &setting);
@@ -35,14 +35,15 @@ class Directional : public ILights {
     Math::Point3D getPoint() const;
     Math::Vector3D getDirection() const;
     IPrimitives *getPrimitive() const;
-    // float getPower() const;
+    float getPower() const;
 
     bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const;
 
-    // Color blinn_phong(Math::Point3D &inter, Math::Vector3D &dir, )
-    Color define_color(
-        const Color &origin_color, double distance, bool is_cut) override;
+    Color blinn_phong(Math::Point3D inter, Math::Vector3D dir,
+        Math::Vector3D normal, Color c);
+    Color define_color(Math::Point3D inter, Math::Vector3D normal,
+        const Color &origin_color, double t, bool is_cut) override;
 };
 
 #endif /* A6948A32_3AC8_4519_A3CC_636F8DF1EEF3 */

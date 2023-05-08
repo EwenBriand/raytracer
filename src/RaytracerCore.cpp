@@ -25,7 +25,6 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
             float v = (float) j / _camera.getResolutionY();
             Ray ray = _camera.getRay(u, v);
             image->setPixel(i, j, sf::Color::Black);
-
             for (long unsigned int k = 0; k < _primitives.size(); k++) {
                 if (_primitives[k]->hit(ray)) {
                     auto temp = Color(_primitives[k]->getColor().getR(),
@@ -34,9 +33,13 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
                     for (long unsigned int l = 0; l < _lights.size(); l++)
                         if (!_lights[l]->is_cut(
                                 _primitives[k]->getIntersexe(), _primitives))
-                            temp = _lights[l]->define_color(temp, 0.2, false);
+                            temp = _lights[l]->define_color(
+                                _primitives[k]->getIntersexe(),
+                                _primitives[k]->getNormal(), temp, 0.2, false);
                         else
-                            temp = _lights[l]->define_color(temp, 0.2, true);
+                            temp = _lights[l]->define_color(
+                                _primitives[k]->getIntersexe(),
+                                _primitives[k]->getNormal(), temp, 0.2, true);
                     image->setPixel(i, j,
                         sf::Color(temp.getR(), temp.getG(), temp.getB()));
                     break;

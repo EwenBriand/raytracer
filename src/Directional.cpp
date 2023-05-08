@@ -6,6 +6,7 @@
 */
 
 #include "Directional.hpp"
+#include <cmath>
 #include "Spheres.hpp"
 
 Directional::Directional(const libconfig::Setting &setting)
@@ -19,9 +20,10 @@ Directional::Directional(const libconfig::Setting &setting)
 
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
+        setting["power"].lookupValue("p", _power);
+        std::cout << "power " << _power << std::endl;
         _primitive = new Spheres(setting["spheres"]);
         std::cout << "primitive " << _primitive << std::endl;
-        // _power = 10;
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -51,10 +53,10 @@ IPrimitives *Directional::getPrimitive() const
     return _primitive;
 }
 
-// float Directional::getPower() const
-// {
-//     return _power;
-// }
+float Directional::getPower() const
+{
+    return _power;
+}
 
 bool Directional::is_cut(const Math::Point3D &point,
     const std::vector<IPrimitives *> primitives) const
@@ -93,15 +95,62 @@ bool Directional::is_cut(const Math::Point3D &point,
     return hited;
 }
 
-Color Directional::define_color(
+float max(float a, float b)
+{
+    return (a > b) ? a : b;
+}
+
+float pow(float base, float exponent)
+{
+    return powf(base, exponent);
+}
+
+float saturate(float a)
+{
+    float y = a / std::pow(10, std::floor(std::log10(a)) + 1);
+    return y;
+}
+
+Color Directional::blinn_phong(
+    Math::Point3D inter, Math::Vector3D dir, Math::Vector3D normal, Color c)
+{
+    Math::Vector3D light_direction = (_point - inter).normalize();
+    Math::Vector3D halfway_direction = (light_direction + dir).normalize();
+
+    float diffuse_factor = max(normal.dot(light_direction), 0.0);
+    Color diffuse_term = (c * _color) * diffuse_factor;
+
+    return diffuse_term.normalized();
+
+    // Math::Vector3D light_direction = (_point - inter);
+    // float distance = light_direction.length();
+    // light_direction = light_direction / distance;
+    // distance = distance * distance;
+    // float NdotL = normal.dot(light_direction);
+    // float intensity = saturate(NdotL);
+
+    // Color diffuse = (c * intensity * _power) / distance;
+    // Math::Vector3D H = (light_direction + dir).normalize();
+
+    // float NdotH = normal.dot(H);
+    // intensity = pow(saturate(NdotH), 1);
+    // Color Specular = (c * intensity) / distance;
+
+    // return (diffuse + Specular).normalized();
+}
+
+Color Directional::define_color(Math::Point3D inter, Math::Vector3D normal,
     const Color &origin_color, double t, bool is_cut)
 {
+    Color blended = blinn_phong(inter, inter.vectorTo(_point), normal, _color);
+    // Color blended = _color;
+    std::cout << "blended " << blended << std::endl;
     int r =
-        (unsigned char) ((1.0 - t) * origin_color.getR() + t * _color.getR());
+        (unsigned char) ((1.0 - t) * origin_color.getR() + t * blended.getR());
     int g =
-        (unsigned char) ((1.0 - t) * origin_color.getG() + t * _color.getG());
+        (unsigned char) ((1.0 - t) * origin_color.getG() + t * blended.getG());
     int b =
-        (unsigned char) ((1.0 - t) * origin_color.getB() + t * _color.getB());
+        (unsigned char) ((1.0 - t) * origin_color.getB() + t * blended.getB());
 
     if (is_cut) {
         r = (unsigned char) ((1.0 - t) * origin_color.getR() + t * 0);

@@ -41,7 +41,8 @@ namespace Math
 } // namespace Math
 std::ostream &operator<<(std::ostream &s, const Math::Vector3D &vector);
 Math::Vector3D operator*(const Math::Vector3D &vector, const float &scalar);
-Math::Vector3D operator-(const Math::Vector3D &v1, const Math::Vector3D v2);
-Math::Vector3D operator+(const Math::Vector3D &v1, const Math::Vector3D v2);
+Math::Vector3D operator/(const Math::Vector3D &vector, const float &scalar);
+Math::Vector3D operator-(const Math::Vector3D &v1, const Math::Vector3D &v2);
+Math::Vector3D operator+(const Math::Vector3D &v1, const Math::Vector3D &v2);
 
 #endif /* EC1D4C7D_1C94_4522_BD2A_74CFFAA13F3E */

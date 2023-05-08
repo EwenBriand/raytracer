@@ -33,13 +33,13 @@ class Diffuse : public ILights {
     Math::Point3D getPoint() const override;
     Math::Vector3D getDirection() const override;
     IPrimitives *getPrimitive() const override;
-    // float getPower() const override;
+    float getPower() const override;
 
     bool is_cut(const Math::Point3D &point,
         const std::vector<IPrimitives *> primitives) const override;
 
-    Color define_color(
-        const Color &origin_color, double distance, bool is_cut) override;
+    Color define_color(Math::Point3D inter, Math::Vector3D normal,
+        const Color &origin_color, double t, bool is_cut) override;
 };
 
 #endif /* A6948A32_3AC8_4519_A3CC_636F8DF1EEF3 */

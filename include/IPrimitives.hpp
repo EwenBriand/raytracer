@@ -27,6 +27,7 @@ class IPrimitives {
     virtual bool hit(const Ray &ray) = 0;
     virtual Color getColor() const = 0;
     virtual Math::Point3D getIntersexe() const = 0;
+    virtual Math::Vector3D getNormal() const = 0;
 };
 
 #endif /* D0BF50CA_8DC2_492F_8976_E70BDD268926 */

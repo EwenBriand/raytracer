@@ -64,3 +64,15 @@ Math::Point3D Spheres::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Spheres::getNormal() const
+{
+    float nx = _intersexe.getX() - _position.getX();
+    float ny = _intersexe.getY() - _position.getY();
+    float nz = _intersexe.getZ() - _position.getZ();
+    float length = sqrt(nx * nx + ny * ny + nz * nz);
+
+    // std::cout << "length: " << length << std::endl;
+
+    return (Math::Vector3D){nx / length, ny / length, nz / length};
+}

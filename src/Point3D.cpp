@@ -123,3 +123,9 @@ Math::Vector3D Math::Point3D::vectorTo(const Math::Point3D &point) const
     float dz = point.getZ() - _z;
     return Math::Vector3D(dx, dy, dz);
 }
+
+Math::Point3D Math::Point3D::normalize() const
+{
+    float length = sqrt(pow(_x, 2) + pow(_y, 2) + pow(_z, 2));
+    return Math::Point3D(_x / length, _y / length, _z / length);
+}

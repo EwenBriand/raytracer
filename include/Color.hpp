@@ -26,10 +26,13 @@ class Color {
     int getR() const;
     int getG() const;
     int getB() const;
+    Color normalized();
 };
 
 std::ostream &operator<<(std::ostream &s, const Color &color);
-Color operator*(const Color &c, const float &scalar);
-Color operator+(const Color &c1, const Color c2);
+Color operator*(const Color &c, float &scalar);
+Color operator/(const Color &c, float &scalar);
+Color operator*(const Color &c1, const Color &c2);
+Color operator+(const Color &c1, const Color &c2);
 
 #endif /* AA3F6387_7A9D_46F0_8695_EF3803BB196D */

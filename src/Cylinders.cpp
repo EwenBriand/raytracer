@@ -77,3 +77,8 @@ Math::Point3D Cylinders::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Cylinders::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
+}

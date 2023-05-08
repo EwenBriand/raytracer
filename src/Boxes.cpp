@@ -70,3 +70,8 @@ Math::Point3D Boxes::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Boxes::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
+}

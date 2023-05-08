@@ -67,3 +67,8 @@ Math::Point3D Planes::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Planes::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
+}

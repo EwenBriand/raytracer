@@ -61,9 +61,34 @@ Color operator*(const Color &c, float &factor)
     return result;
 }
 
+Color operator/(const Color &c, float &factor)
+{
+    Color result = {c.getR() / factor, c.getG() / factor, c.getB() / factor};
+    return result;
+}
+
 Color operator+(const Color &a, const Color &b)
 {
     Color result = {
         a.getR() + b.getR(), a.getG() + b.getG(), a.getB() + b.getB()};
     return result;
+}
+
+Color operator*(const Color &c1, const Color &c2)
+{
+    Color result = {
+        c1.getR() * c2.getR(), c1.getG() * c2.getG(), c1.getB() * c2.getB()};
+    return result;
+}
+
+Color Color::normalized()
+{
+    if (_r > 255)
+        _r = 255;
+    if (_g > 255)
+        _g = 255;
+    if (_b > 255)
+        _b = 255;
+
+    return Color(_r, _g, _b);
 }

@@ -46,3 +46,8 @@ Math::Point3D Triangles::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Triangles::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
+}

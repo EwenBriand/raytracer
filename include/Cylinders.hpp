@@ -25,6 +25,7 @@ class Cylinders : public IPrimitives {
     bool hit(const Ray &ray) override;
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* CAEFB936_1C79_48F5_B406_9DC688A7D20F */

@@ -157,3 +157,8 @@ Math::Point3D Cones::getIntersexe() const
 {
     return _intersexe;
 }
+
+Math::Vector3D Cones::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
+}

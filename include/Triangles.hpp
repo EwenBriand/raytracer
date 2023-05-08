@@ -26,6 +26,7 @@ class Triangles : public IPrimitives {
     bool hit(const Ray &ray) override;
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
+    Math::Vector3D getNormal() const;
 };
 
 #endif /* E6FB8944_93AB_44F6_84DC_8F965B067DC4 */
