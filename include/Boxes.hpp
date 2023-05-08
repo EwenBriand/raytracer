@@ -13,17 +13,18 @@
 
 #include "IPrimitives.hpp"
 
-class Boxes : public IPrimitives
-{
-    private:
-        int _width;
-        int _height;
-        int _depth;
-    public:
-        Boxes(const libconfig::Setting &setting);
-        ~Boxes() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
+class Boxes : public IPrimitives {
+  private:
+    int _width;
+    int _height;
+    int _depth;
+
+  public:
+    Boxes(const libconfig::Setting &setting);
+    ~Boxes() override;
+    bool hit(const Ray &ray) override;
+    Color getColor() const override;
+    Math::Point3D getIntersexe() const override;
 };
 
 #endif /* D428BE3F_E861_4C23_A929_D74DB520103F */

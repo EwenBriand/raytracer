@@ -7,7 +7,7 @@
 
 #include "Color.hpp"
 
-Color::Color(int r, int g, int b): _r(r), _g(g), _b(b)
+Color::Color(int r, int g, int b) : _r(r), _g(g), _b(b)
 {
 }
 
@@ -24,14 +24,11 @@ void Color::setColor(int r, int g, int b)
 
 void Color::setColor(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         setting.lookupValue("r", _r);
         setting.lookupValue("g", _g);
         setting.lookupValue("b", _b);
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -53,6 +50,20 @@ int Color::getB() const
 
 std::ostream &operator<<(std::ostream &s, const Color &color)
 {
-    s << "r: " << color.getR() << " g: " << color.getG() << " b: " << color.getB();
+    s << "r: " << color.getR() << " g: " << color.getG()
+      << " b: " << color.getB();
     return s;
+}
+
+Color operator*(const Color &c, float &factor)
+{
+    Color result = {c.getR() * factor, c.getG() * factor, c.getB() * factor};
+    return result;
+}
+
+Color operator+(const Color &a, const Color &b)
+{
+    Color result = {
+        a.getR() + b.getR(), a.getG() + b.getG(), a.getB() + b.getB()};
+    return result;
 }

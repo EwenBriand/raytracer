@@ -13,17 +13,18 @@
 
 #include "IPrimitives.hpp"
 
-class Cylinders : public IPrimitives
-{
-    private:
-        float _radius;
-        int _height;
-        bool _isLimited;
-    public:
-        Cylinders(const libconfig::Setting &setting);
-        ~Cylinders() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
+class Cylinders : public IPrimitives {
+  private:
+    float _radius;
+    int _height;
+    bool _isLimited;
+
+  public:
+    Cylinders(const libconfig::Setting &setting);
+    ~Cylinders() override;
+    bool hit(const Ray &ray) override;
+    Color getColor() const override;
+    Math::Point3D getIntersexe() const override;
 };
 
 #endif /* CAEFB936_1C79_48F5_B406_9DC688A7D20F */

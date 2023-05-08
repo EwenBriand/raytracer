@@ -9,8 +9,7 @@
 
 Planes::Planes(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _position.setPoint(setting["p1"]);
         std::cout << _position << std::endl;
         _p2.setPoint(setting["p2"]);
@@ -24,9 +23,7 @@ Planes::Planes(const libconfig::Setting &setting)
         Math::Point3D tmp((_p2 - _position).cross(_p3 - _position));
         std::cout << tmp << std::endl;
         _normal.setVector3D(tmp.getX(), tmp.getY(), tmp.getZ());
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -39,25 +36,34 @@ bool Planes::hit(const Ray &ray)
 {
     double denominator = _normal.dot(ray.getDirection());
 
-        // Check if the ray is parallel to the plane
-        if (denominator == 0) {
-            return false;
-        }
+    // Check if the ray is parallel to the plane
+    if (denominator == 0) {
+        return false;
+    }
 
-        // Compute the t parameter of the intersection point
-        double t = ((_position.getX() - ray.getOrigin().getX()) * _normal.getX() +
-                    (_position.getY()- ray.getOrigin().getY()) * _normal.getY() +
-                    (_position.getZ() - ray.getOrigin().getZ()) * _normal.getZ()) / denominator;
+    // Compute the t parameter of the intersection point
+    double t =
+        ((_position.getX() - ray.getOrigin().getX()) * _normal.getX()
+            + (_position.getY() - ray.getOrigin().getY()) * _normal.getY()
+            + (_position.getZ() - ray.getOrigin().getZ()) * _normal.getZ())
+        / denominator;
 
-        // Check if the intersection point is in front of the ray origin
-        if (t < 0) {
-            return false;
-        }
+    // Check if the intersection point is in front of the ray origin
+    if (t < 0) {
+        return false;
+    }
 
-        return true;
+    _intersexe = ray.getOrigin() + (ray.getDirection() * (t));
+
+    return true;
 }
 
 Color Planes::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Planes::getIntersexe() const
+{
+    return _intersexe;
 }

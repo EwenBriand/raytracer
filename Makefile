@@ -14,7 +14,8 @@ SRC 	=	src/Boxes.cpp \
 			src/Color.cpp \
 			src/Cones.cpp \
 			src/Cylinders.cpp \
-			src/Lights.cpp \
+			src/Diffuse.cpp \
+			src/Directional.cpp \
 			src/ParserFile.cpp \
 			src/Planes.cpp \
 			src/Point3D.cpp \

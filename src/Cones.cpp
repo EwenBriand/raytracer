@@ -9,8 +9,7 @@
 
 Cones::Cones(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _position.setPoint(setting);
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
@@ -19,8 +18,7 @@ Cones::Cones(const libconfig::Setting &setting)
         std::cout << _rotation << std::endl;
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
-        if (_isLimited)
-        {
+        if (_isLimited) {
             setting.lookupValue("r", _radius);
             std::cout << _radius << std::endl;
             setting.lookupValue("h", _height);
@@ -34,9 +32,7 @@ Cones::Cones(const libconfig::Setting &setting)
             setting.lookupValue("angle", _angle);
             std::cout << _angle << std::endl;
         }
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -47,9 +43,42 @@ Cones::~Cones()
 
 bool Cones::hitUnlimited(const Ray &ray)
 {
-    double a = ray.getDirection().getX() * ray.getDirection().getX() + ray.getDirection().getY() * ray.getDirection().getY() - _angle * _angle * ray.getDirection().getZ() * ray.getDirection().getZ();
-    double b = 2 * (ray.getOrigin().getX() * ray.getDirection().getX() + ray.getOrigin().getY() * ray.getDirection().getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getZ() - _position.getX() * ray.getDirection().getX() - _position.getY() * ray.getDirection().getY() + _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getY() * (_position.getY() + 1) / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getX() * _position.getX() / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)));
-    double c = ray.getOrigin().getX() * ray.getOrigin().getX() + ray.getOrigin().getY() * ray.getOrigin().getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * (ray.getOrigin().getZ() - _position.getZ()) - 2 * (ray.getOrigin().getX() * _position.getX() + ray.getOrigin().getY() * _position.getY() - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * (_position.getY() + 1) / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) * _position.getY() / (_position.getY() + 1) - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ()) * _position.getX() / (_position.getX() * _position.getX() + (_position.getY() + 1) * (_position.getY() + 1)) * _position.getX() / _position.getX());
+    double a = ray.getDirection().getX() * ray.getDirection().getX()
+        + ray.getDirection().getY() * ray.getDirection().getY()
+        - _angle * _angle * ray.getDirection().getZ()
+            * ray.getDirection().getZ();
+    double b = 2
+        * (ray.getOrigin().getX() * ray.getDirection().getX()
+            + ray.getOrigin().getY() * ray.getDirection().getY()
+            - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+                * ray.getDirection().getZ()
+            - _position.getX() * ray.getDirection().getX()
+            - _position.getY() * ray.getDirection().getY()
+            + _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+                * ray.getDirection().getY() * (_position.getY() + 1)
+                / (_position.getX() * _position.getX()
+                    + (_position.getY() + 1) * (_position.getY() + 1))
+            - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+                * ray.getDirection().getX() * _position.getX()
+                / (_position.getX() * _position.getX()
+                    + (_position.getY() + 1) * (_position.getY() + 1)));
+    double c = ray.getOrigin().getX() * ray.getOrigin().getX()
+        + ray.getOrigin().getY() * ray.getOrigin().getY()
+        - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+            * (ray.getOrigin().getZ() - _position.getZ())
+        - 2
+            * (ray.getOrigin().getX() * _position.getX()
+                + ray.getOrigin().getY() * _position.getY()
+                - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+                    * (_position.getY() + 1)
+                    / (_position.getX() * _position.getX()
+                        + (_position.getY() + 1) * (_position.getY() + 1))
+                    * _position.getY() / (_position.getY() + 1)
+                - _angle * _angle * (ray.getOrigin().getZ() - _position.getZ())
+                    * _position.getX()
+                    / (_position.getX() * _position.getX()
+                        + (_position.getY() + 1) * (_position.getY() + 1))
+                    * _position.getX() / _position.getX());
 
     double discriminant = b * b - 4 * a * c;
     if (discriminant < 0) {
@@ -63,14 +92,38 @@ bool Cones::hitUnlimited(const Ray &ray)
         return false;
     }
 
+    _intersexe = ray.getOrigin() + ray.getDirection() * std::min(t1, t2);
+
     return true;
 }
 
 bool Cones::hitLimited(const Ray &ray)
 {
-    double a = ray.getDirection().getX() * ray.getDirection().getX() + ray.getDirection().getY() * ray.getDirection().getY() - ray.getDirection().getZ() * ray.getDirection().getZ() * _radius * _radius / (_height * _height);
-    double b = 2 * (ray.getOrigin().getX() * ray.getDirection().getX() + ray.getOrigin().getY() * ray.getDirection().getY() - (ray.getOrigin().getZ() - _position.getZ()) * ray.getDirection().getZ() * _radius * _radius / (_height * _height) - _position.getX() * ray.getDirection().getX() - _position.getY() * ray.getDirection().getY() + (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius * _height / (_height * _height));
-    double c = ray.getOrigin().getX() * ray.getOrigin().getX() + ray.getOrigin().getY() * ray.getOrigin().getY() - (ray.getOrigin().getZ() - _position.getZ()) * (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius / (_height * _height) - 2 * (ray.getOrigin().getX() * _position.getX() + ray.getOrigin().getY() * _position.getY() - (ray.getOrigin().getZ() - _position.getZ()) * _height) + _position.getX() * _position.getX() + _position.getY() * _position.getY() - _height * _height;
+    double a = ray.getDirection().getX() * ray.getDirection().getX()
+        + ray.getDirection().getY() * ray.getDirection().getY()
+        - ray.getDirection().getZ() * ray.getDirection().getZ() * _radius
+            * _radius / (_height * _height);
+    double b = 2
+        * (ray.getOrigin().getX() * ray.getDirection().getX()
+            + ray.getOrigin().getY() * ray.getDirection().getY()
+            - (ray.getOrigin().getZ() - _position.getZ())
+                * ray.getDirection().getZ() * _radius * _radius
+                / (_height * _height)
+            - _position.getX() * ray.getDirection().getX()
+            - _position.getY() * ray.getDirection().getY()
+            + (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius
+                * _height / (_height * _height));
+    double c = ray.getOrigin().getX() * ray.getOrigin().getX()
+        + ray.getOrigin().getY() * ray.getOrigin().getY()
+        - (ray.getOrigin().getZ() - _position.getZ())
+            * (ray.getOrigin().getZ() - _position.getZ()) * _radius * _radius
+            / (_height * _height)
+        - 2
+            * (ray.getOrigin().getX() * _position.getX()
+                + ray.getOrigin().getY() * _position.getY()
+                - (ray.getOrigin().getZ() - _position.getZ()) * _height)
+        + _position.getX() * _position.getX()
+        + _position.getY() * _position.getY() - _height * _height;
 
     double discriminant = b * b - 4 * a * c;
     if (discriminant < 0) {
@@ -98,4 +151,9 @@ bool Cones::hit(const Ray &ray)
 Color Cones::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Cones::getIntersexe() const
+{
+    return _intersexe;
 }

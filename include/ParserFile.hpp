@@ -11,28 +11,30 @@
 #include <iostream>
 #include <vector>
 #include <libconfig.h++>
+
+#include "AllLight.hpp"
+#include "AllPrimitives.hpp"
+#include "Camera.hpp"
+#include "ILights.hpp"
+#include "IPrimitives.hpp"
+
 #include <SFML/Graphics.hpp>
 
-#include "Camera.hpp"
-#include "IPrimitives.hpp"
-#include "Lights.hpp"
-#include "AllPrimitives.hpp"
+class ParserFile {
+  public:
+    ParserFile(std::string filename);
+    ~ParserFile();
+    void setCamera(const libconfig::Setting &root);
+    void setPrimitives(const libconfig::Setting &root);
+    void setLights(const libconfig::Setting &root);
+    Camera getCamera() const;
+    std::vector<IPrimitives *> getPrimitives() const;
+    std::vector<ILights *> getLights() const;
 
-class ParserFile
-{
-    public:
-        ParserFile(std::string filename);
-        ~ParserFile();
-        void setCamera(const libconfig::Setting &root);
-        void setPrimitives(const libconfig::Setting &root);
-        void setLights(const libconfig::Setting &root);
-        Camera getCamera() const;
-        std::vector<IPrimitives *> getPrimitives() const;
-        std::vector<Lights> getLights() const;
-    private:
-        Camera _camera;
-        std::vector<IPrimitives *> _primitives;
-        std::vector<Lights> _lights;
+  private:
+    Camera _camera;
+    std::vector<IPrimitives *> _primitives;
+    std::vector<ILights *> _lights;
 };
 
 #endif /* DEA803B7_0073_403F_AFAB_9646A6CEAFEC */

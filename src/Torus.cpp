@@ -9,8 +9,7 @@
 
 Torus::Torus(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _position.setPoint(setting);
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
@@ -21,9 +20,7 @@ Torus::Torus(const libconfig::Setting &setting)
         std::cout << _radiusMinor << std::endl;
         setting.lookupValue("R", _radiusMajor);
         std::cout << _radiusMajor << std::endl;
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -34,10 +31,16 @@ Torus::~Torus()
 
 bool Torus::hit(const Ray &ray)
 {
+    _intersexe = Math::Point3D(0, 0, 0);
     return false;
 }
 
 Color Torus::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Torus::getIntersexe() const
+{
+    return _intersexe;
 }

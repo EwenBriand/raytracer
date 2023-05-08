@@ -9,8 +9,7 @@
 
 Triangles::Triangles(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
         _rotation.setVector3D(setting["rotation"]);
@@ -23,9 +22,7 @@ Triangles::Triangles(const libconfig::Setting &setting)
         std::cout << _sommet3 << std::endl;
         _normal = (_sommet2 - _sommet1).cross(_sommet3 - _sommet1);
         std::cout << _normal << std::endl;
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -36,10 +33,16 @@ Triangles::~Triangles()
 
 bool Triangles::hit(const Ray &ray)
 {
+    _intersexe = Math::Point3D(0, 0, 0);
     return false;
 }
 
 Color Triangles::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Triangles::getIntersexe() const
+{
+    return _intersexe;
 }
