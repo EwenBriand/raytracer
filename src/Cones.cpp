@@ -53,21 +53,10 @@ Primitive::Cones::~Cones()
 
 bool Primitive::Cones::hit(const Math::Ray &ray)
 {
-    double a = pow(ray.getDirection().getX(), 2)
-        + pow(ray.getDirection().getZ(), 2)
-        - pow(ray.getDirection().getY(), 2) * pow(tan(_angle), 2);
-    double b = 2
-        * (ray.getDirection().getX()
-                * (ray.getOrigin().getX() - _position.getX())
-            + ray.getDirection().getZ()
-                * (ray.getOrigin().getZ() - _position.getZ())
-            - ray.getDirection().getY()
-                * (ray.getOrigin().getY() - _position.getY())
-                * pow(tan(_angle), 2));
-    double c = pow(ray.getOrigin().getX() - _position.getX(), 2)
-        + pow(ray.getOrigin().getZ() - _position.getZ(), 2)
-        - pow(ray.getOrigin().getY() - _position.getY(), 2)
-            * pow(tan(_angle), 2);
+    double k = pow(tan(_angle), 2);
+    double a = ray.getDirection().dot(ray.getDirection()) - (1 + k) * pow(ray.getDirection().getY(), 2);
+    double b = 2 * (ray.getDirection().dot(ray.getOrigin() - _position) - (1 + k) * ray.getDirection().getY() * (ray.getOrigin().getY() - _position.getY()));
+    double c = (ray.getOrigin() - _position).dot(ray.getOrigin() - _position) - (1 + k) * pow(ray.getOrigin().getY() - _position.getY(), 2);
 
     double discriminant = pow(b, 2) - 4 * a * c;
 
@@ -80,8 +69,10 @@ bool Primitive::Cones::hit(const Math::Ray &ray)
         return false;
     }
     double y = ray.getOrigin().getY() + t * ray.getDirection().getY();
-    if (y > _position.getY() && y < _position.getY() + _height)
+    if (y > _position.getY() && y < _position.getY() + _height) {
+        _intersexe = ray.getOrigin() + ray.getDirection() * t;
         return true;
+    }
     return false;
 }
 
@@ -97,5 +88,10 @@ Math::Point3D Primitive::Cones::getIntersexe() const
 
 Math::Vector3D Primitive::Cones::getNormal() const
 {
-    return Math::Vector3D(0, 0, 0);
+    Math::Vector3D normal = Math::Vector3D(
+        2 * (_intersexe.getX() - _position.getX()),
+        2 * (_intersexe.getY() - _position.getY()) * -pow(tan(_angle), 2),
+        2 * (_intersexe.getZ() - _position.getZ())
+    );
+    return normal.normalize();
 }
