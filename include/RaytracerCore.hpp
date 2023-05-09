@@ -45,7 +45,7 @@ class RaytracerCore {
      * @brief Vector of all the lights
      *
      */
-    std::vector<Light::ILights *> _lights;
+    std::vector<std::shared_ptr<Light::ILights>> _lights;
 };
 
 #endif /* !RAYTRACERCORE_HPP_ */
