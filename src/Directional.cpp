@@ -102,11 +102,6 @@ float max(float a, float b)
     return (a > b) ? a : b;
 }
 
-float pow(float base, float exponent)
-{
-    return powf(base, exponent);
-}
-
 float saturate(float a)
 {
     float y = a / std::pow(10, std::floor(std::log10(a)) + 1);

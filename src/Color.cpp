@@ -57,13 +57,13 @@ std::ostream &operator<<(std::ostream &s, const Color &color)
 
 Color operator*(const Color &c, float &factor)
 {
-    Color result = {c.getR() * factor, c.getG() * factor, c.getB() * factor};
+    Color result = {static_cast<int>(c.getR() * factor), static_cast<int>(c.getG() * factor), static_cast<int>(c.getB() * factor)};
     return result;
 }
 
 Color operator/(const Color &c, float &factor)
 {
-    Color result = {c.getR() / factor, c.getG() / factor, c.getB() / factor};
+    Color result = {static_cast<int>(c.getR() / factor), static_cast<int>(c.getG() / factor), static_cast<int>(c.getB() / factor)};
     return result;
 }
 
