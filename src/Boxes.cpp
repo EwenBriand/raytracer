@@ -75,3 +75,8 @@ Math::Vector3D Boxes::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Boxes::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

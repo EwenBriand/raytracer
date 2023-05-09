@@ -26,6 +26,7 @@ class Cylinders : public IPrimitives {
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
     Math::Vector3D getNormal() const;
+    void setIntersexe(const Math::Point3D &value) override;
 };
 
 #endif /* CAEFB936_1C79_48F5_B406_9DC688A7D20F */

@@ -73,7 +73,7 @@ bool Directional::is_cut(const Math::Point3D &point,
         if (primitives[k]->hit(ray)) {
             // std::cout << "point " << point << std::endl;
             // std::cout << "tmp " << tmp << std::endl;
-            double dist = primitives[k]->getIntersexe().distance(point);
+            // double dist = primitives[k]->getIntersexe().distance(point);
             // if (((dist < 0) ? (dist * (-1)) : dist) > 0.0001) {
             if (primitives[k]->getIntersexe() != point) {
                 // std::cout << "\nhited" << std::endl;
@@ -144,7 +144,6 @@ Color Directional::define_color(Math::Point3D inter, Math::Vector3D normal,
 {
     Color blended = blinn_phong(inter, inter.vectorTo(_point), normal, _color);
     // Color blended = _color;
-    std::cout << "blended " << blended << std::endl;
     int r =
         (unsigned char) ((1.0 - t) * origin_color.getR() + t * blended.getR());
     int g =

@@ -51,3 +51,8 @@ Math::Vector3D Triangles::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Triangles::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

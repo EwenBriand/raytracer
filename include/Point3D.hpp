@@ -37,6 +37,8 @@ namespace Math
         float distance(const Point3D &point) const;
         Vector3D vectorTo(const Math::Point3D &point) const;
         Point3D normalize() const;
+        float distanceTo(const Math::Point3D &point) const;
+
     };
 
 } // namespace Math

@@ -49,3 +49,8 @@ Math::Vector3D Torus::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Torus::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

@@ -72,3 +72,8 @@ Math::Vector3D Planes::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Planes::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

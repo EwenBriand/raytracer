@@ -30,6 +30,8 @@ class Cones : public IPrimitives {
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
     Math::Vector3D getNormal() const;
+    void setIntersexe(const Math::Point3D &value) override;
+
 };
 
 #endif /* C7304198_8C73_4EEC_BDEE_FF214F9B8958 */

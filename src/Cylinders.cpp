@@ -82,3 +82,8 @@ Math::Vector3D Cylinders::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Cylinders::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

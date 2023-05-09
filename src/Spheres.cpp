@@ -76,3 +76,9 @@ Math::Vector3D Spheres::getNormal() const
 
     return (Math::Vector3D){nx / length, ny / length, nz / length};
 }
+
+void Spheres::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}
+

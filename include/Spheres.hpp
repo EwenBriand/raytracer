@@ -25,6 +25,7 @@ class Spheres : public IPrimitives {
     Color getColor() const override;
     Math::Point3D getIntersexe() const override;
     Math::Vector3D getNormal() const;
+    void setIntersexe(const Math::Point3D &value) override;
 };
 
 #endif /* BE5DD2F6_0056_455A_9E60_33757B907054 */
