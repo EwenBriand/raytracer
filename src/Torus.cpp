@@ -7,7 +7,7 @@
 
 #include "Torus.hpp"
 
-Torus::Torus(const libconfig::Setting &setting)
+Primitive::Torus::Torus(const libconfig::Setting &setting)
 {
     try
     {
@@ -28,11 +28,11 @@ Torus::Torus(const libconfig::Setting &setting)
     }
 }
 
-Torus::~Torus()
+Primitive::Torus::~Torus()
 {
 }
 
-bool Torus::hit(const Ray &ray)
+bool Primitive::Torus::hit(const Math::Ray &ray)
 {
     // Définir les constantes pour la formule du tore
     const float R = _radiusMajor;
@@ -128,7 +128,7 @@ bool Torus::hit(const Ray &ray)
     return false;
 }
 
-Color Torus::getColor() const
+Color Primitive::Torus::getColor() const
 {
     return _color;
 }

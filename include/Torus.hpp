@@ -13,16 +13,31 @@
 
 #include "IPrimitives.hpp"
 
-class Torus : public IPrimitives
-{
-    private:
-        float _radiusMinor;
-        float _radiusMajor;
-    public:
-        Torus(const libconfig::Setting &setting);
-        ~Torus() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
-};
+namespace Primitive {
+    class Torus : public IPrimitives
+    {
+        private:
+            /**
+             * @brief radius minor of the torus
+             *
+             */
+            float _radiusMinor;
+            /**
+             * @brief radius major of the torus
+             *
+             */
+            float _radiusMajor;
+        public:
+            /**
+             * @brief Construct a new Torus object from a libconfig::Setting
+             *
+             * @param setting
+             */
+            Torus(const libconfig::Setting &setting);
+            ~Torus() override;
+            bool hit(const Math::Ray &ray) override;
+            Color getColor() const override;
+    };
+}
 
 #endif /* D4E88905_726D_4F79_AFCA_7257590B44E5 */

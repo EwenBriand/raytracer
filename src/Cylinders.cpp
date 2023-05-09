@@ -7,7 +7,7 @@
 
 #include "Cylinders.hpp"
 
-Cylinders::Cylinders(const libconfig::Setting &setting)
+Primitive::Cylinders::Cylinders(const libconfig::Setting &setting)
 {
     try
     {
@@ -34,11 +34,11 @@ Cylinders::Cylinders(const libconfig::Setting &setting)
     }
 }
 
-Cylinders::~Cylinders()
+Primitive::Cylinders::~Cylinders()
 {
 }
 
-bool Cylinders::hit(const Ray &ray)
+bool Primitive::Cylinders::hit(const Math::Ray &ray)
 {
     double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2);
     double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX())
@@ -64,7 +64,7 @@ bool Cylinders::hit(const Ray &ray)
     return true;
 }
 
-Color Cylinders::getColor() const
+Color Primitive::Cylinders::getColor() const
 {
     return _color;
 }

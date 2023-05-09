@@ -18,14 +18,43 @@
 class Lights
 {
     private:
+        /**
+         * @brief ambient light intensity
+         *
+         */
         float _ambient;
+        /**
+         * @brief diffuse light intensity
+         *
+         */
         float _diffuse;
+        /**
+         * @brief true if the light is ambient
+         *
+         */
         bool _isAmbientLight;
+        /**
+         * @brief true if the light is directional
+         *
+         */
         bool _isDirectionalLight;
+        /**
+         * @brief position of the light
+         *
+         */
         Math::Point3D _point;
+        /**
+         * @brief color of the light
+         *
+         */
         Color _color;
 
     public:
+        /**
+         * @brief Construct a new Lights object
+         *
+         * @param setting
+         */
         Lights(const libconfig::Setting &setting);
         Lights() = default;
         ~Lights();

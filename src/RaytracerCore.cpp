@@ -22,16 +22,18 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
         for (int j = 0; j < _camera.getResolutionY(); j++) {
             float u = (float)i / _camera.getResolutionX();
             float v = (float)j / _camera.getResolutionY();
-            Ray ray = _camera.getRay(u, v);
+            Math::Ray ray = _camera.getRay(u, v);
             image->setPixel(i, j, sf::Color::Black);
 
             for (long unsigned int k = 0; k < _primitives.size(); k++) {
                 if (_primitives[k]->hit(ray)) {
                     image->setPixel(i, j, sf::Color(_primitives[k]->getColor().getR(), _primitives[k]->getColor().getG(), _primitives[k]->getColor().getB()));
+                    std::cout << "x";
                     break;
                 }
             }
         }
+        std::cout << std::endl;
     }
     return image;
 }

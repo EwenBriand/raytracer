@@ -7,7 +7,7 @@
 
 #include "Planes.hpp"
 
-Planes::Planes(const libconfig::Setting &setting)
+Primitive::Planes::Planes(const libconfig::Setting &setting)
 {
     try
     {
@@ -31,11 +31,11 @@ Planes::Planes(const libconfig::Setting &setting)
     }
 }
 
-Planes::~Planes()
+Primitive::Planes::~Planes()
 {
 }
 
-bool Planes::hit(const Ray &ray)
+bool Primitive::Planes::hit(const Math::Ray &ray)
 {
     double denominator = _normal.dot(ray.getDirection());
 
@@ -57,7 +57,7 @@ bool Planes::hit(const Ray &ray)
         return true;
 }
 
-Color Planes::getColor() const
+Color Primitive::Planes::getColor() const
 {
     return _color;
 }

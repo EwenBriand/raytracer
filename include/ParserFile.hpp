@@ -22,19 +22,70 @@
 class ParserFile
 {
     public:
+        /**
+         * @brief Construct a new Parser File object
+         *
+         * @param filename
+         */
         ParserFile(std::string filename);
         ~ParserFile();
+        /**
+         * @brief Set the Camera object
+         *
+         * @param root
+         */
         void setCamera(const libconfig::Setting &root);
+        /**
+         * @brief Set the Primitives object
+         *
+         * @param root
+         */
         void setPrimitives(const libconfig::Setting &root);
+        /**
+         * @brief Set the Lights object
+         *
+         * @param root
+         */
         void setLights(const libconfig::Setting &root);
+        /**
+         * @brief Get the Camera object
+         *
+         * @return Camera
+         */
         Camera getCamera() const;
-        std::vector<std::shared_ptr<IPrimitives> > getPrimitives() const;
+        /**
+         * @brief Get the Primitives object
+         *
+         * @return std::vector<std::shared_ptr<Primitive::IPrimitives>>
+         */
+        std::vector<std::shared_ptr<Primitive::IPrimitives> > getPrimitives() const;
+        /**
+         * @brief Get the Lights object
+         *
+         * @return std::vector<Lights>
+         */
         std::vector<Lights> getLights() const;
     private:
+        /**
+         * @brief The camera of the scene
+         *
+         */
         Camera _camera;
-        std::vector<std::shared_ptr<IPrimitives> > _primitives;
+        /**
+         * @brief The primitives of the scene
+         *
+         */
+        std::vector<std::shared_ptr<Primitive::IPrimitives> > _primitives;
+        /**
+         * @brief The lights of the scene
+         *
+         */
         std::vector<Lights> _lights;
-        AbstractFactory *_factory;
+        /**
+         * @brief The factory of the primitives
+         *
+         */
+        Primitive::AbstractFactory *_factory;
 };
 
 #endif /* DEA803B7_0073_403F_AFAB_9646A6CEAFEC */

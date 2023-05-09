@@ -12,18 +12,27 @@
 #include <libconfig.h++>
 
 #include "IPrimitives.hpp"
-#include "IPlugins.hpp"
 
-class Spheres : public IPrimitives
-{
-    private:
-        double _radius;
-    public:
-        Spheres(const libconfig::Setting &setting);
-        Spheres(Math::Point3D origin, double radius);
-        ~Spheres() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
-};
+namespace Primitive {
+    class Spheres : public IPrimitives
+    {
+        private:
+            /**
+             * @brief radius of the sphere
+             *
+             */
+            double _radius;
+        public:
+            /**
+             * @brief Construct a new Spheres object from a libconfig::Setting
+             *
+             * @param setting
+             */
+            Spheres(const libconfig::Setting &setting);
+            ~Spheres() override;
+            bool hit(const Math::Ray &ray) override;
+            Color getColor() const override;
+    };
+}
 
 #endif /* BE5DD2F6_0056_455A_9E60_33757B907054 */

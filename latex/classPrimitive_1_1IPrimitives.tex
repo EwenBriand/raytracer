@@ -1,0 +1,72 @@
+\hypertarget{classPrimitive_1_1IPrimitives}{}\doxysection{Primitive\+::IPrimitives Class Reference}
+\label{classPrimitive_1_1IPrimitives}\index{Primitive::IPrimitives@{Primitive::IPrimitives}}
+Inheritance diagram for Primitive\+::IPrimitives\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.221374cm]{classPrimitive_1_1IPrimitives}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}{hit}} (const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&ray)=0
+\begin{DoxyCompactList}\small\item\em Check if the ray hit the primitive. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}{get\+Color}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a5af7fa79cffe89934767e1f0f9c9bf39}\label{classPrimitive_1_1IPrimitives_a5af7fa79cffe89934767e1f0f9c9bf39}} 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a5af7fa79cffe89934767e1f0f9c9bf39}{\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The position of the primitive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a864aa5b21cac2f6cb802fdd84362c247}\label{classPrimitive_1_1IPrimitives_a864aa5b21cac2f6cb802fdd84362c247}} 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a864aa5b21cac2f6cb802fdd84362c247}{\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em The color of the primitive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a4cb8fe0e77a3383def5848907100e73f}\label{classPrimitive_1_1IPrimitives_a4cb8fe0e77a3383def5848907100e73f}} 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a4cb8fe0e77a3383def5848907100e73f}{\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em The rotation of the primitive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}\label{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}} 
+float \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}{\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}\label{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}} 
+\index{Primitive::IPrimitives@{Primitive::IPrimitives}!getColor@{getColor}}
+\index{getColor@{getColor}!Primitive::IPrimitives@{Primitive::IPrimitives}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classColor}{Color}} Primitive\+::\+IPrimitives\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the color of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the color of the primitive 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPrimitive_1_1Triangles_a0e48ee4d1ef30899b929679d6c3c0a93}{Primitive\+::\+Triangles}}, \mbox{\hyperlink{classPrimitive_1_1Torus_a4c131436d529d7f4f28b64536f7865d7}{Primitive\+::\+Torus}}, \mbox{\hyperlink{classPrimitive_1_1Spheres_a15ff19ccc855345c89158fa96416fc83}{Primitive\+::\+Spheres}}, \mbox{\hyperlink{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}{Primitive\+::\+Planes}}, \mbox{\hyperlink{classPrimitive_1_1Cylinders_aaca0ec6cc10c9b0515a70d06aee6115c}{Primitive\+::\+Cylinders}}, \mbox{\hyperlink{classPrimitive_1_1Cones_a440abb1bc3fbc65870dbcc46766cdc10}{Primitive\+::\+Cones}}, and \mbox{\hyperlink{classPrimitive_1_1Boxes_a5f7d8ee6af7aa5660a80a40872c0ba3b}{Primitive\+::\+Boxes}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}\label{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}} 
+\index{Primitive::IPrimitives@{Primitive::IPrimitives}!hit@{hit}}
+\index{hit@{hit}!Primitive::IPrimitives@{Primitive::IPrimitives}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily virtual bool Primitive\+::\+IPrimitives\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&}]{ray }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the ray hit the primitive. 
+
+\begin{DoxyReturn}{Returns}
+true if the ray hit the primitive 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPrimitive_1_1Triangles_ab1ddda0ad8663e8f53cb5423bcdb8668}{Primitive\+::\+Triangles}}, \mbox{\hyperlink{classPrimitive_1_1Torus_a81f6db3eed80ef46af20f65bf0e01dd4}{Primitive\+::\+Torus}}, \mbox{\hyperlink{classPrimitive_1_1Spheres_a6a76feac1d4bde2136df8f48280bd7af}{Primitive\+::\+Spheres}}, \mbox{\hyperlink{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}{Primitive\+::\+Planes}}, \mbox{\hyperlink{classPrimitive_1_1Cylinders_a5d0d4c2d28fdced62d4abd456f7a11b2}{Primitive\+::\+Cylinders}}, \mbox{\hyperlink{classPrimitive_1_1Cones_a9090e27e57d41211274ac13fa4e38916}{Primitive\+::\+Cones}}, and \mbox{\hyperlink{classPrimitive_1_1Boxes_ae9fc9d227f7dc11020c90e6f5ab419bf}{Primitive\+::\+Boxes}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IPrimitives.\+hpp\end{DoxyCompactItemize}

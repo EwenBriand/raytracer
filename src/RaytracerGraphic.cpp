@@ -104,7 +104,6 @@ void RaytracerGraphic::run()
 
             processMenuInput(event);
         }
-
         _window.clear();
         _window.draw(sprite);
         renderMenu(_window);

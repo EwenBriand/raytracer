@@ -19,19 +19,75 @@ namespace Math
     class Point3D
     {
         private:
+            /**
+             * @brief x coordinate
+             *
+             */
             float _x;
+            /**
+             * @brief y coordinate
+             *
+             */
             float _y;
+            /**
+             * @brief z coordinate
+             *
+             */
             float _z;
         public:
+            /**
+             * @brief Construct a new Point 3D object
+             *
+             * @param x
+             * @param y
+             * @param z
+             */
             Point3D(float x, float y, float z);
             Point3D() = default;
             ~Point3D();
+            /**
+             * @brief Set the Point object
+             *
+             * @param x
+             * @param y
+             * @param z
+             */
             void setPoint(float x, float y, float z);
+            /**
+             * @brief Set the Point object from a libconfig::Setting
+             *
+             * @param setting
+             */
             void setPoint(const libconfig::Setting &setting);
+            /**
+             * @brief Get the X object
+             *
+             * @return float
+             */
             float getX() const;
+            /**
+             * @brief Get the Y object
+             *
+             * @return float
+             */
             float getY() const;
+            /**
+             * @brief Get the Z object
+             *
+             * @return float
+             */
             float getZ() const;
+            /**
+             * @brief Do a cross product between two points
+             *
+             * @return Point3D
+             */
             Point3D cross(const Point3D &point) const;
+            /**
+             * @brief Do a dot product between two points
+             *
+             * @return float
+             */
             float dot(const Point3D &point) const;
     };
 

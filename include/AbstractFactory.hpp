@@ -13,13 +13,26 @@
 #include "AllPrimitives.hpp"
 #include "PrimitiveBuilder.hpp"
 
-class AbstractFactory
-{
-    public:
-        AbstractFactory();
-        virtual ~AbstractFactory() = default;
-        std::shared_ptr<IPrimitives> createPrimitive(const std::string type, const libconfig::Setting &setting);
+namespace Primitive {
+    class AbstractFactory
+    {
+        public:
+            AbstractFactory();
+            virtual ~AbstractFactory() = default;
+            /**
+             * @brief Create a Primitive object for the Factory
+             *
+             * @param type
+             * @param setting
+             * @return std::shared_ptr<IPrimitives>
+             */
+            std::shared_ptr<IPrimitives> createPrimitive(const std::string type, const libconfig::Setting &setting);
 
-    private:
-        std::map<std::string, std::shared_ptr<PrimitiveBuilder>> builders_;
-};
+        private:
+            /**
+             * @brief Map of all the builders
+             *
+             */
+            std::map<std::string, std::shared_ptr<PrimitiveBuilder>> builders_;
+    };
+}

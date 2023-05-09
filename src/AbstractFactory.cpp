@@ -10,7 +10,7 @@
 #include <map>
 #include "AllPrimitives.hpp"
 
-AbstractFactory::AbstractFactory()
+Primitive::AbstractFactory::AbstractFactory()
 {
     builders_["spheres"] = std::make_shared<SphereBuilder>();
     builders_["planes"] = std::make_shared<PlaneBuilder>();
@@ -21,7 +21,7 @@ AbstractFactory::AbstractFactory()
     builders_["boxes"] = std::make_shared<BoxBuilder>();
 }
 
-std::shared_ptr<IPrimitives> AbstractFactory::createPrimitive(const std::string type, const libconfig::Setting &setting)
+std::shared_ptr<Primitive::IPrimitives> Primitive::AbstractFactory::createPrimitive(const std::string type, const libconfig::Setting &setting)
 {
     if (builders_.count(type))
         return builders_[type]->build(setting);

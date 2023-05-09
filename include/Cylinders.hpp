@@ -12,18 +12,41 @@
 #include <libconfig.h++>
 #include "IPrimitives.hpp"
 
-class Cylinders : public IPrimitives
-{
-    private:
-        float _radius;
-        int _height;
-        float scale;
-        bool _isLimited;
-    public:
-        Cylinders(const libconfig::Setting &setting);
-        ~Cylinders() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
-};
+namespace Primitive {
+    class Cylinders : public IPrimitives
+    {
+        private:
+            /**
+             * @brief The radius of the cylinder
+             *
+             */
+            float _radius;
+            /**
+             * @brief The height of the cylinder
+             *
+             */
+            int _height;
+            /**
+             * @brief The scale of the cylinder
+             *
+             */
+            float scale;
+            /**
+             * @brief Is the cylinder limited
+             *
+             */
+            bool _isLimited;
+        public:
+            /**
+             * @brief Construct a new Cylinders object from a libconfig::Setting
+             *
+             * @param setting
+             */
+            Cylinders(const libconfig::Setting &setting);
+            ~Cylinders() override;
+            bool hit(const Math::Ray &ray) override;
+            Color getColor() const override;
+    };
+}
 
 #endif /* CAEFB936_1C79_48F5_B406_9DC688A7D20F */

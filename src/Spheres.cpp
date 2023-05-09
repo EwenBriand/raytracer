@@ -7,7 +7,7 @@
 
 #include "Spheres.hpp"
 
-Spheres::Spheres(const libconfig::Setting &setting)
+Primitive::Spheres::Spheres(const libconfig::Setting &setting)
 {
     try
     {
@@ -35,17 +35,11 @@ Spheres::Spheres(const libconfig::Setting &setting)
     }
 }
 
-Spheres::Spheres(Math::Point3D position, double radius)
-{
-    _position = position;
-    _radius = radius;
-}
-
-Spheres::~Spheres()
+Primitive::Spheres::~Spheres()
 {
 }
 
-bool Spheres::hit(const Ray &ray)
+bool Primitive::Spheres::hit(const Math::Ray &ray)
 {
     float a = ray.getDirection().dot(ray.getDirection());
     float b = 2 * ray.getDirection().dot(ray.getOrigin() - _position);
@@ -60,7 +54,7 @@ bool Spheres::hit(const Ray &ray)
     return false;
 }
 
-Color Spheres::getColor() const
+Color Primitive::Spheres::getColor() const
 {
     return _color;
 }

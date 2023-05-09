@@ -1,0 +1,149 @@
+\hypertarget{classCamera}{}\doxysection{Camera Class Reference}
+\label{classCamera}\index{Camera@{Camera}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCamera_af30c06724d212ffdf25a51b8b2abd2a9}{Camera}} (const libconfig\+::\+Setting \&setting)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classCamera}{Camera}} object from a libconfig\+::\+Setting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCamera_af3700f280cfdd1080f141d5074c99738}{Camera}} (\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} position, \mbox{\hyperlink{classMath_1_1Rectangle3D}{Math\+::\+Rectangle3D}} screen)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classCamera}{Camera}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCamera_a3b2fba22f0a8207aa345324b70295a63}{get\+ResolutionX}} () const
+\begin{DoxyCompactList}\small\item\em Get the resolution X of the camera. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCamera_ac045a922c69f2360370833e96c108d90}{get\+ResolutionY}} () const
+\begin{DoxyCompactList}\small\item\em Get the resolution Y of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classCamera_ad7ae61ad8c886cefd42175b59333b6fa}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classCamera_a003fda8a25e4f970b7a8fd207b5c8c10}{get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the rotation of the camera. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCamera_aaa42ba9be9e1599496b9cca178521259}{get\+Field\+Of\+View}} () const
+\begin{DoxyCompactList}\small\item\em Get the field of view of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \mbox{\hyperlink{classCamera_aecb800e5fc50be49a1dd41740d94382e}{get\+Ray}} (float x, float y) const
+\begin{DoxyCompactList}\small\item\em Get the ray from the camera to the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCamera_af30c06724d212ffdf25a51b8b2abd2a9}\label{classCamera_af30c06724d212ffdf25a51b8b2abd2a9}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{setting }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classCamera}{Camera}} object from a libconfig\+::\+Setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_af3700f280cfdd1080f141d5074c99738}\label{classCamera_af3700f280cfdd1080f141d5074c99738}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}}}]{position,  }\item[{\mbox{\hyperlink{classMath_1_1Rectangle3D}{Math\+::\+Rectangle3D}}}]{screen }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classCamera}{Camera}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+{\em screen} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera_aaa42ba9be9e1599496b9cca178521259}\label{classCamera_aaa42ba9be9e1599496b9cca178521259}} 
+\index{Camera@{Camera}!getFieldOfView@{getFieldOfView}}
+\index{getFieldOfView@{getFieldOfView}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFieldOfView()}{getFieldOfView()}}
+{\footnotesize\ttfamily float Camera\+::get\+Field\+Of\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the field of view of the camera. 
+
+\begin{DoxyReturn}{Returns}
+field of view of the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ad7ae61ad8c886cefd42175b59333b6fa}\label{classCamera_ad7ae61ad8c886cefd42175b59333b6fa}} 
+\index{Camera@{Camera}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Camera\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the camera. 
+
+\begin{DoxyReturn}{Returns}
+position of the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_aecb800e5fc50be49a1dd41740d94382e}\label{classCamera_aecb800e5fc50be49a1dd41740d94382e}} 
+\index{Camera@{Camera}!getRay@{getRay}}
+\index{getRay@{getRay}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getRay()}{getRay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} Camera\+::get\+Ray (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Get the ray from the camera to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ray from the camera to the screen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a3b2fba22f0a8207aa345324b70295a63}\label{classCamera_a3b2fba22f0a8207aa345324b70295a63}} 
+\index{Camera@{Camera}!getResolutionX@{getResolutionX}}
+\index{getResolutionX@{getResolutionX}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getResolutionX()}{getResolutionX()}}
+{\footnotesize\ttfamily int Camera\+::get\+ResolutionX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the resolution X of the camera. 
+
+\begin{DoxyReturn}{Returns}
+resolution X of the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ac045a922c69f2360370833e96c108d90}\label{classCamera_ac045a922c69f2360370833e96c108d90}} 
+\index{Camera@{Camera}!getResolutionY@{getResolutionY}}
+\index{getResolutionY@{getResolutionY}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getResolutionY()}{getResolutionY()}}
+{\footnotesize\ttfamily int Camera\+::get\+ResolutionY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the resolution Y of the camera. 
+
+\begin{DoxyReturn}{Returns}
+resolution Y of the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a003fda8a25e4f970b7a8fd207b5c8c10}\label{classCamera_a003fda8a25e4f970b7a8fd207b5c8c10}} 
+\index{Camera@{Camera}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Camera\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the rotation of the camera. 
+
+\begin{DoxyReturn}{Returns}
+rotation of the camera 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Camera.\+hpp\end{DoxyCompactItemize}

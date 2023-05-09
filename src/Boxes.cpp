@@ -7,7 +7,7 @@
 
 #include "Boxes.hpp"
 
-Boxes::Boxes(const libconfig::Setting &setting)
+Primitive::Boxes::Boxes(const libconfig::Setting &setting)
 {
     try
     {
@@ -30,11 +30,11 @@ Boxes::Boxes(const libconfig::Setting &setting)
     }
 }
 
-Boxes::~Boxes()
+Primitive::Boxes::~Boxes()
 {
 }
 
-bool Boxes::hit(const Ray &ray)
+bool Primitive::Boxes::hit(const Math::Ray &ray)
 {
     float tmin = (_position.getX() - ray.getOrigin().getX()) / ray.getDirection().getX();
     float tmax = ((_position.getX() + _width) - ray.getOrigin().getX()) / ray.getDirection().getX();
@@ -46,16 +46,14 @@ bool Boxes::hit(const Ray &ray)
     float t0 = std::max(std::max(std::min(tmin, tmax), std::min(tymin, tymax)), std::min(tzmin, tzmax));
     float t1 = std::min(std::min(std::max(tmin, tmax), std::max(tymin, tymax)), std::max(tzmin, tzmax));
 
-    if (t1 < 0) {
+    if (t1 < 0)
         return false;
-    }
-    if (t0 > t1) {
+    if (t0 > t1)
         return false;
-    }
     return true;
 }
 
-Color Boxes::getColor() const
+Color Primitive::Boxes::getColor() const
 {
     return _color;
 }

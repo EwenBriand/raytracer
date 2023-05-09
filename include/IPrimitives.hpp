@@ -15,16 +15,42 @@
 #include "Color.hpp"
 #include "Ray.hpp"
 
-class IPrimitives {
-    protected:
-        Math::Point3D _position;
-        Color _color;
-        Math::Vector3D _rotation;
-        float _scale;
-    public:
-        virtual ~IPrimitives() = default;
-        virtual bool hit(const Ray &ray) = 0;
-        virtual Color getColor() const = 0;
-};
+namespace Primitive {
+    class IPrimitives {
+        protected:
+            /**
+             * @brief The position of the primitive
+             *
+             */
+            Math::Point3D _position;
+            /**
+             * @brief The color of the primitive
+             *
+             */
+            Color _color;
+            /**
+             * @brief The rotation of the primitive
+             *
+             */
+            Math::Vector3D _rotation;
+            /**
+             * @brief The scale of the primitive
+             *
+             */
+            float _scale;
+        public:
+            virtual ~IPrimitives() = default;
+            /**
+             * @brief Check if the ray hit the primitive
+             * @return true if the ray hit the primitive
+            */
+            virtual bool hit(const Math::Ray &ray) = 0;
+            /**
+             * @brief Get the color of the primitive
+             * @return the color of the primitive
+            */
+            virtual Color getColor() const = 0;
+    };
+}
 
 #endif /* D0BF50CA_8DC2_492F_8976_E70BDD268926 */

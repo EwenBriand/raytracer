@@ -10,7 +10,7 @@
 ParserFile::ParserFile(std::string filename)
 {
     libconfig::Config cfg;
-    _factory = new AbstractFactory();
+    _factory = new Primitive::AbstractFactory();
     try
     {
         cfg.readFile(filename.c_str());
@@ -154,7 +154,7 @@ std::vector<Lights> ParserFile::getLights() const
     return _lights;
 }
 
-std::vector<std::shared_ptr<IPrimitives> > ParserFile::getPrimitives() const
+std::vector<std::shared_ptr<Primitive::IPrimitives> > ParserFile::getPrimitives() const
 {
     return _primitives;
 }

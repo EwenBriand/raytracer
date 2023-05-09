@@ -7,18 +7,18 @@
 
 #include "Ray.hpp"
 
-Ray::Ray(const Math::Point3D &origin, const Math::Vector3D &direction)
+Math::Ray::Ray(const Math::Point3D &origin, const Math::Vector3D &direction)
 {
     _origin = origin;
     _direction = direction;
 }
 
-Math::Point3D Ray::getOrigin() const
+Math::Point3D Math::Ray::getOrigin() const
 {
     return _origin;
 }
 
-Math::Vector3D Ray::getDirection() const
+Math::Vector3D Math::Ray::getDirection() const
 {
     return _direction;
 }

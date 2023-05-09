@@ -10,20 +10,38 @@
 
 #include <iostream>
 #include <libconfig.h++>
-#include "IPlugins.hpp"
 #include "IPrimitives.hpp"
 
-class Planes : public IPrimitives
-{
-    private:
-        Math::Point3D _p2;
-        Math::Point3D _p3;
-        Math::Vector3D _normal;
-    public:
-        Planes(const libconfig::Setting &setting);
-        ~Planes() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
-};
+namespace Primitive {
+    class Planes : public IPrimitives
+    {
+        private:
+            /**
+             * @brief Point 1 of the plane
+             *
+             */
+            Math::Point3D _p2;
+            /**
+             * @brief Point 2 of the plane
+             *
+             */
+            Math::Point3D _p3;
+            /**
+             * @brief Normal of the plane
+             *
+             */
+            Math::Vector3D _normal;
+        public:
+            /**
+             * @brief Construct a new Planes object from a libconfig::Setting
+             *
+             * @param setting
+             */
+            Planes(const libconfig::Setting &setting);
+            ~Planes() override;
+            bool hit(const Math::Ray &ray) override;
+            Color getColor() const override;
+    };
+}
 
 #endif /* F2AA8B37_71DB_4B85_9E0D_E45189DC1639 */

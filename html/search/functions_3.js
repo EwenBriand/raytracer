@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['getb_104',['getB',['../classColor.html#a3ab0388e3d4016e24852fd159b7ace7f',1,'Color']]],
+  ['getbottom_105',['getBottom',['../classMath_1_1Rectangle3D.html#ac2da4b6ab5984f684e6fbdc063f2aa50',1,'Math::Rectangle3D']]],
+  ['getcamera_106',['getCamera',['../classParserFile.html#a000358ee7a570ac2cf15b11564b8afaf',1,'ParserFile']]],
+  ['getcolor_107',['getColor',['../classPrimitive_1_1Boxes.html#a5f7d8ee6af7aa5660a80a40872c0ba3b',1,'Primitive::Boxes::getColor()'],['../classPrimitive_1_1Cones.html#a440abb1bc3fbc65870dbcc46766cdc10',1,'Primitive::Cones::getColor()'],['../classPrimitive_1_1Cylinders.html#aaca0ec6cc10c9b0515a70d06aee6115c',1,'Primitive::Cylinders::getColor()'],['../classPrimitive_1_1IPrimitives.html#a68bc12d9bfc0111fb4bb35c4c2364a39',1,'Primitive::IPrimitives::getColor()'],['../classPrimitive_1_1Planes.html#afb81616adff1f7d290d2b2a7c28785b9',1,'Primitive::Planes::getColor()'],['../classPrimitive_1_1Spheres.html#a15ff19ccc855345c89158fa96416fc83',1,'Primitive::Spheres::getColor()'],['../classPrimitive_1_1Torus.html#a4c131436d529d7f4f28b64536f7865d7',1,'Primitive::Torus::getColor()'],['../classPrimitive_1_1Triangles.html#a0e48ee4d1ef30899b929679d6c3c0a93',1,'Primitive::Triangles::getColor()']]],
+  ['getdirection_108',['getDirection',['../classMath_1_1Ray.html#a135410f7ad6082abd8ec8d13c3c854c2',1,'Math::Ray']]],
+  ['getfieldofview_109',['getFieldOfView',['../classCamera.html#aaa42ba9be9e1599496b9cca178521259',1,'Camera']]],
+  ['getg_110',['getG',['../classColor.html#a70ba0d8ede9b4eb6943035c44661993b',1,'Color']]],
+  ['getleft_111',['getLeft',['../classMath_1_1Rectangle3D.html#a80247fac295db8502fdba16df7a67814',1,'Math::Rectangle3D']]],
+  ['getlights_112',['getLights',['../classParserFile.html#abe46fc4ba384118748aa3c4b1c0cb36e',1,'ParserFile']]],
+  ['getorigin_113',['getOrigin',['../classMath_1_1Ray.html#a6a0f4eb2a0a261f586fa1375cda17c4f',1,'Math::Ray::getOrigin()'],['../classMath_1_1Rectangle3D.html#a9dabf6013f12f221a7e189303d7ff2f4',1,'Math::Rectangle3D::getOrigin()']]],
+  ['getposition_114',['getPosition',['../classCamera.html#ad7ae61ad8c886cefd42175b59333b6fa',1,'Camera']]],
+  ['getprimitives_115',['getPrimitives',['../classParserFile.html#a20f71914ac83ab3545b1b6d13be39b3f',1,'ParserFile']]],
+  ['getr_116',['getR',['../classColor.html#a254bf624ae16c3f799518d50bc1cf1ae',1,'Color']]],
+  ['getray_117',['getRay',['../classCamera.html#aecb800e5fc50be49a1dd41740d94382e',1,'Camera']]],
+  ['getresolutionx_118',['getResolutionX',['../classCamera.html#a3b2fba22f0a8207aa345324b70295a63',1,'Camera']]],
+  ['getresolutiony_119',['getResolutionY',['../classCamera.html#ac045a922c69f2360370833e96c108d90',1,'Camera']]],
+  ['getrotation_120',['getRotation',['../classCamera.html#a003fda8a25e4f970b7a8fd207b5c8c10',1,'Camera']]],
+  ['getx_121',['getX',['../classMath_1_1Point3D.html#a9f4dec4a7cd55bad7ddf69b52c781a32',1,'Math::Point3D::getX()'],['../classMath_1_1Vector3D.html#a558a77439f379df267c865b5c9ca27af',1,'Math::Vector3D::getX()']]],
+  ['gety_122',['getY',['../classMath_1_1Point3D.html#a1dc267c9dcc475b0cf33bae0f4072087',1,'Math::Point3D::getY()'],['../classMath_1_1Vector3D.html#af9e0cb6057adfb4e4ef5cfbd4a386002',1,'Math::Vector3D::getY()']]],
+  ['getz_123',['getZ',['../classMath_1_1Point3D.html#aaf6d01d9dd115c7e386a75e420fbe78e',1,'Math::Point3D::getZ()'],['../classMath_1_1Vector3D.html#ac42ce08589745cff628ca27fc80a3020',1,'Math::Vector3D::getZ()']]]
+];

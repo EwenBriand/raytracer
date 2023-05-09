@@ -7,7 +7,7 @@
 
 #include "Triangles.hpp"
 
-Triangles::Triangles(const libconfig::Setting &setting)
+Primitive::Triangles::Triangles(const libconfig::Setting &setting)
 {
     try
     {
@@ -30,16 +30,31 @@ Triangles::Triangles(const libconfig::Setting &setting)
     }
 }
 
-Triangles::~Triangles()
+Primitive::Triangles::~Triangles()
 {
 }
 
-bool Triangles::hit(const Ray &/*ray*/)
+bool Primitive::Triangles::hit(const Math::Ray &ray)
 {
+    float t = (_sommet1 - ray.getOrigin()).dot(_normal) / ray.getDirection().dot(_normal);
+    Math::Point3D p = ray.getOrigin() + ray.getDirection() * t;
+    Math::Point3D v1 = _sommet2 - _sommet1;
+    Math::Point3D v2 = _sommet3 - _sommet1;
+    Math::Point3D v3 = p - _sommet1;
+    float dot11 = v1.dot(v1);
+    float dot12 = v1.dot(v2);
+    float dot13 = v1.dot(v3);
+    float dot22 = v2.dot(v2);
+    float dot23 = v2.dot(v3);
+    float invDenom = 1 / (dot11 * dot22 - dot12 * dot12);
+    float u = (dot22 * dot13 - dot12 * dot23) * invDenom;
+    float v = (dot11 * dot23 - dot12 * dot13) * invDenom;
+    if ((u >= 0) && (v >= 0) && (u + v <= 1))
+        return true;
     return false;
 }
 
-Color Triangles::getColor() const
+Color Primitive::Triangles::getColor() const
 {
     return _color;
 }

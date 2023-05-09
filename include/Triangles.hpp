@@ -13,18 +13,40 @@
 
 #include "IPrimitives.hpp"
 
-class Triangles : public IPrimitives
-{
-    private:
-        Math::Point3D _sommet1;
-        Math::Point3D _sommet2;
-        Math::Point3D _sommet3;
-        Math::Point3D _normal;
-    public:
-        Triangles(const libconfig::Setting &setting);
-        ~Triangles() override;
-        bool hit(const Ray &ray) override;
-        Color getColor() const override;
-};
-
+namespace Primitive {
+    class Triangles : public IPrimitives
+    {
+        private:
+            /**
+             * @brief Point 1 of the triangle
+             *
+             */
+            Math::Point3D _sommet1;
+            /**
+             * @brief Point 2 of the triangle
+             *
+             */
+            Math::Point3D _sommet2;
+            /**
+             * @brief Point 3 of the triangle
+             *
+             */
+            Math::Point3D _sommet3;
+            /**
+             * @brief Normal of the triangle
+             *
+             */
+            Math::Point3D _normal;
+        public:
+            /**
+             * @brief Construct a new Triangles object from a libconfig::Setting
+             *
+             * @param setting
+             */
+            Triangles(const libconfig::Setting &setting);
+            ~Triangles() override;
+            bool hit(const Math::Ray &ray) override;
+            Color getColor() const override;
+    };
+}
 #endif /* E6FB8944_93AB_44F6_84DC_8F965B067DC4 */

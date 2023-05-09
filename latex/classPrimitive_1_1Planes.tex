@@ -1,0 +1,78 @@
+\hypertarget{classPrimitive_1_1Planes}{}\doxysection{Primitive\+::Planes Class Reference}
+\label{classPrimitive_1_1Planes}\index{Primitive::Planes@{Primitive::Planes}}
+Inheritance diagram for Primitive\+::Planes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPrimitive_1_1Planes}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrimitive_1_1Planes_af9a5116383f42aaccefdb4fea400cb90}{Planes}} (const libconfig\+::\+Setting \&setting)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classPrimitive_1_1Planes}{Planes}} object from a libconfig\+::\+Setting. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}{hit}} (const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&ray) override
+\begin{DoxyCompactList}\small\item\em Check if the ray hit the primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}{get\+Color}} () const override
+\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrimitive_1_1Planes_af9a5116383f42aaccefdb4fea400cb90}\label{classPrimitive_1_1Planes_af9a5116383f42aaccefdb4fea400cb90}} 
+\index{Primitive::Planes@{Primitive::Planes}!Planes@{Planes}}
+\index{Planes@{Planes}!Primitive::Planes@{Primitive::Planes}}
+\doxysubsubsection{\texorpdfstring{Planes()}{Planes()}}
+{\footnotesize\ttfamily Primitive\+::\+Planes\+::\+Planes (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{setting }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classPrimitive_1_1Planes}{Planes}} object from a libconfig\+::\+Setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}\label{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}} 
+\index{Primitive::Planes@{Primitive::Planes}!getColor@{getColor}}
+\index{getColor@{getColor}!Primitive::Planes@{Primitive::Planes}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Primitive\+::\+Planes\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the color of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the color of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}{Primitive\+::\+IPrimitives}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}\label{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}} 
+\index{Primitive::Planes@{Primitive::Planes}!hit@{hit}}
+\index{hit@{hit}!Primitive::Planes@{Primitive::Planes}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool Primitive\+::\+Planes\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&}]{ray }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the ray hit the primitive. 
+
+\begin{DoxyReturn}{Returns}
+true if the ray hit the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}{Primitive\+::\+IPrimitives}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Planes.\+hpp\end{DoxyCompactItemize}

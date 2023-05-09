@@ -7,33 +7,33 @@
 
 #include "Rectangle3D.hpp"
 
-Rectangle3D::Rectangle3D(const Math::Point3D &origin, const Math::Vector3D &bottom, const Math::Vector3D &left)
+Math::Rectangle3D::Rectangle3D(const Math::Point3D &origin, const Math::Vector3D &bottom, const Math::Vector3D &left)
 {
     _origin = origin;
     _bottom = bottom;
     _left = left;
 }
 
-Rectangle3D::~Rectangle3D()
+Math::Rectangle3D::~Rectangle3D()
 {
 }
 
-Math::Point3D Rectangle3D::getOrigin() const
+Math::Point3D Math::Rectangle3D::getOrigin() const
 {
     return _origin;
 }
 
-Math::Vector3D Rectangle3D::getBottom() const
+Math::Vector3D Math::Rectangle3D::getBottom() const
 {
     return _bottom;
 }
 
-Math::Vector3D Rectangle3D::getLeft() const
+Math::Vector3D Math::Rectangle3D::getLeft() const
 {
     return _left;
 }
 
-Math::Point3D Rectangle3D::pointAt(float u, float v) const
+Math::Point3D Math::Rectangle3D::pointAt(float u, float v) const
 {
     return _origin + _bottom * u + _left * v;
 }

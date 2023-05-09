@@ -13,12 +13,33 @@
 
 class RaytracerCore {
     public:
+        /**
+         * @brief Construct a new Raytracer Core object
+         *
+         * @param sceneFile
+         */
         RaytracerCore(const std::string &sceneFile);
+        /**
+         * @brief Render the image
+         *
+         */
         std::shared_ptr<sf::Image> renderImage();
 
     private:
+        /**
+         * @brief Parse the file
+         *
+         */
         ParserFile _file;
-        std::vector<std::shared_ptr<IPrimitives> > _primitives;
+        /**
+         * @brief Vector of all the primitives
+         *
+         */
+        std::vector<std::shared_ptr<Primitive::IPrimitives> > _primitives;
+        /**
+         * @brief Camera of the scene
+         *
+         */
         Camera _camera;
 };
 

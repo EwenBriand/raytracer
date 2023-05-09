@@ -7,7 +7,7 @@
 
 #include "Cones.hpp"
 
-Cones::Cones(const libconfig::Setting &setting)
+Primitive::Cones::Cones(const libconfig::Setting &setting)
 {
     try
     {
@@ -49,10 +49,10 @@ Cones::Cones(const libconfig::Setting &setting)
     }
 }
 
-Cones::~Cones()
+Primitive::Cones::~Cones()
 {}
 
-bool Cones::hit(const Ray &ray)
+bool Primitive::Cones::hit(const Math::Ray &ray)
 {
     double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2) - pow(ray.getDirection().getY(), 2) * pow(tan(_angle), 2);
     double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX())
@@ -76,7 +76,7 @@ bool Cones::hit(const Ray &ray)
     return false;
 }
 
-Color Cones::getColor() const
+Color Primitive::Cones::getColor() const
 {
     return _color;
 }

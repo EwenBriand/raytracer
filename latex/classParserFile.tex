@@ -1,0 +1,129 @@
+\hypertarget{classParserFile}{}\doxysection{Parser\+File Class Reference}
+\label{classParserFile}\index{ParserFile@{ParserFile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParserFile_afcc7af7cf521cfe4845b664d1579b336}{Parser\+File}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Construct a new Parser File object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParserFile_a8b6789240fc31b0a0635f96071674f87}{set\+Camera}} (const libconfig\+::\+Setting \&root)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classCamera}{Camera}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParserFile_ab55bef8fe3cb99fe57f6df0a44e83ead}{set\+Primitives}} (const libconfig\+::\+Setting \&root)
+\begin{DoxyCompactList}\small\item\em Set the Primitives object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParserFile_a0cf01b0e43efd311591aab4eae68f138}{set\+Lights}} (const libconfig\+::\+Setting \&root)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classLights}{Lights}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCamera}{Camera}} \mbox{\hyperlink{classParserFile_a000358ee7a570ac2cf15b11564b8afaf}{get\+Camera}} () const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classCamera}{Camera}} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $>$ $>$ \mbox{\hyperlink{classParserFile_a20f71914ac83ab3545b1b6d13be39b3f}{get\+Primitives}} () const
+\begin{DoxyCompactList}\small\item\em Get the Primitives object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classLights}{Lights}} $>$ \mbox{\hyperlink{classParserFile_abe46fc4ba384118748aa3c4b1c0cb36e}{get\+Lights}} () const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classLights}{Lights}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParserFile_afcc7af7cf521cfe4845b664d1579b336}\label{classParserFile_afcc7af7cf521cfe4845b664d1579b336}} 
+\index{ParserFile@{ParserFile}!ParserFile@{ParserFile}}
+\index{ParserFile@{ParserFile}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{ParserFile()}{ParserFile()}}
+{\footnotesize\ttfamily Parser\+File\+::\+Parser\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Construct a new Parser File object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParserFile_a000358ee7a570ac2cf15b11564b8afaf}\label{classParserFile_a000358ee7a570ac2cf15b11564b8afaf}} 
+\index{ParserFile@{ParserFile}!getCamera@{getCamera}}
+\index{getCamera@{getCamera}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{getCamera()}{getCamera()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCamera}{Camera}} Parser\+File\+::get\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \mbox{\hyperlink{classCamera}{Camera}} object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classCamera}{Camera}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParserFile_abe46fc4ba384118748aa3c4b1c0cb36e}\label{classParserFile_abe46fc4ba384118748aa3c4b1c0cb36e}} 
+\index{ParserFile@{ParserFile}!getLights@{getLights}}
+\index{getLights@{getLights}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{getLights()}{getLights()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classLights}{Lights}}$>$ Parser\+File\+::get\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \mbox{\hyperlink{classLights}{Lights}} object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Lights$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParserFile_a20f71914ac83ab3545b1b6d13be39b3f}\label{classParserFile_a20f71914ac83ab3545b1b6d13be39b3f}} 
+\index{ParserFile@{ParserFile}!getPrimitives@{getPrimitives}}
+\index{getPrimitives@{getPrimitives}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{getPrimitives()}{getPrimitives()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}}$>$ $>$ Parser\+File\+::get\+Primitives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Primitives object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Primitive\+::\+IPrimitives$>$$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParserFile_a8b6789240fc31b0a0635f96071674f87}\label{classParserFile_a8b6789240fc31b0a0635f96071674f87}} 
+\index{ParserFile@{ParserFile}!setCamera@{setCamera}}
+\index{setCamera@{setCamera}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{setCamera()}{setCamera()}}
+{\footnotesize\ttfamily void Parser\+File\+::set\+Camera (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{root }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classCamera}{Camera}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParserFile_a0cf01b0e43efd311591aab4eae68f138}\label{classParserFile_a0cf01b0e43efd311591aab4eae68f138}} 
+\index{ParserFile@{ParserFile}!setLights@{setLights}}
+\index{setLights@{setLights}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{setLights()}{setLights()}}
+{\footnotesize\ttfamily void Parser\+File\+::set\+Lights (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{root }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classLights}{Lights}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParserFile_ab55bef8fe3cb99fe57f6df0a44e83ead}\label{classParserFile_ab55bef8fe3cb99fe57f6df0a44e83ead}} 
+\index{ParserFile@{ParserFile}!setPrimitives@{setPrimitives}}
+\index{setPrimitives@{setPrimitives}!ParserFile@{ParserFile}}
+\doxysubsubsection{\texorpdfstring{setPrimitives()}{setPrimitives()}}
+{\footnotesize\ttfamily void Parser\+File\+::set\+Primitives (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{root }\end{DoxyParamCaption})}
+
+
+
+Set the Primitives object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Parser\+File.\+hpp\end{DoxyCompactItemize}
