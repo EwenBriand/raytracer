@@ -20,7 +20,11 @@ float \mbox{\hyperlink{classMath_1_1Vector3D_ac42ce08589745cff628ca27fc80a3020}{
 float \mbox{\hyperlink{classMath_1_1Vector3D_ad04181c15539ca3d4d1592fbce30fb20}{length}} () const
 \begin{DoxyCompactList}\small\item\em Get the length of the vector. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classMath_1_1Vector3D_a93e3b69a74f39ada4bc8b9be8a7106d6}{dot}} (const \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \&other) const
-\begin{DoxyCompactList}\small\item\em Do the dot product between two vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Do the dot product between two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \mbox{\hyperlink{classMath_1_1Vector3D_a5d735e7d0435c18fcf720ea01ca87e19}{normalize}} () const
+\begin{DoxyCompactList}\small\item\em Normalize the vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \mbox{\hyperlink{classMath_1_1Vector3D_aad817be070a206feded182a65461834f}{cross}} (const \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \&other) const
+\begin{DoxyCompactList}\small\item\em Do the cross product between two vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -61,6 +65,24 @@ Construct a new \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} object.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMath_1_1Vector3D_aad817be070a206feded182a65461834f}\label{classMath_1_1Vector3D_aad817be070a206feded182a65461834f}} 
+\index{Math::Vector3D@{Math::Vector3D}!cross@{cross}}
+\index{cross@{cross}!Math::Vector3D@{Math::Vector3D}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} Math\+::\+Vector3\+D\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Do the cross product between two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classMath_1_1Vector3D_a93e3b69a74f39ada4bc8b9be8a7106d6}\label{classMath_1_1Vector3D_a93e3b69a74f39ada4bc8b9be8a7106d6}} 
 \index{Math::Vector3D@{Math::Vector3D}!dot@{dot}}
 \index{dot@{dot}!Math::Vector3D@{Math::Vector3D}}
@@ -130,6 +152,19 @@ Get the length of the vector.
 
 \begin{DoxyReturn}{Returns}
 float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMath_1_1Vector3D_a5d735e7d0435c18fcf720ea01ca87e19}\label{classMath_1_1Vector3D_a5d735e7d0435c18fcf720ea01ca87e19}} 
+\index{Math::Vector3D@{Math::Vector3D}!normalize@{normalize}}
+\index{normalize@{normalize}!Math::Vector3D@{Math::Vector3D}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} Math\+::\+Vector3\+D\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Normalize the vector. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classMath_1_1Vector3D_a36eb0dfdab0d3d10fcf2c1ea0b60af86}\label{classMath_1_1Vector3D_a36eb0dfdab0d3d10fcf2c1ea0b60af86}} 
 \index{Math::Vector3D@{Math::Vector3D}!setVector3D@{setVector3D}}

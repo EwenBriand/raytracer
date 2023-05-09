@@ -97,6 +97,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a68bc12d9bfc0111fb4bb35c4c2364a39"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classColor.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrimitive_1_1IPrimitives.html#a68bc12d9bfc0111fb4bb35c4c2364a39">getColor</a> () const =0</td></tr>
 <tr class="memdesc:a68bc12d9bfc0111fb4bb35c4c2364a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of the primitive.  <a href="classPrimitive_1_1IPrimitives.html#a68bc12d9bfc0111fb4bb35c4c2364a39">More...</a><br /></td></tr>
 <tr class="separator:a68bc12d9bfc0111fb4bb35c4c2364a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272968cb0071bde43d8528ea0ea51ed1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrimitive_1_1IPrimitives.html#a272968cb0071bde43d8528ea0ea51ed1">getIntersexe</a> () const =0</td></tr>
+<tr class="memdesc:a272968cb0071bde43d8528ea0ea51ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the intersexe of the primitive.  <a href="classPrimitive_1_1IPrimitives.html#a272968cb0071bde43d8528ea0ea51ed1">More...</a><br /></td></tr>
+<tr class="separator:a272968cb0071bde43d8528ea0ea51ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24d34b1aaa93f9728d2a88eac34c17f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classMath_1_1Vector3D.html">Math::Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrimitive_1_1IPrimitives.html#ab24d34b1aaa93f9728d2a88eac34c17f">getNormal</a> () const =0</td></tr>
+<tr class="memdesc:ab24d34b1aaa93f9728d2a88eac34c17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the normal of the primitive.  <a href="classPrimitive_1_1IPrimitives.html#ab24d34b1aaa93f9728d2a88eac34c17f">More...</a><br /></td></tr>
+<tr class="separator:ab24d34b1aaa93f9728d2a88eac34c17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -116,6 +122,10 @@ Protected Attributes</h2></td></tr>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrimitive_1_1IPrimitives.html#a1d77839449dcef7863791da50768ec1f">_scale</a></td></tr>
 <tr class="memdesc:a1d77839449dcef7863791da50768ec1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scale of the primitive. <br /></td></tr>
 <tr class="separator:a1d77839449dcef7863791da50768ec1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6831fd139bfb685fd536a876fe558609"><td class="memItemLeft" align="right" valign="top"><a id="a6831fd139bfb685fd536a876fe558609"></a>
+<a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrimitive_1_1IPrimitives.html#a6831fd139bfb685fd536a876fe558609">_intersexe</a> = <a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a>(0, 0, 0)</td></tr>
+<tr class="memdesc:a6831fd139bfb685fd536a876fe558609"><td class="mdescLeft">&#160;</td><td class="mdescRight">The intersexe of the primitive. <br /></td></tr>
+<tr class="separator:a6831fd139bfb685fd536a876fe558609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a68bc12d9bfc0111fb4bb35c4c2364a39"></a>
@@ -145,6 +155,66 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <dl class="section return"><dt>Returns</dt><dd>the color of the primitive </dd></dl>
 
 <p>Implemented in <a class="el" href="classPrimitive_1_1Triangles.html#a0e48ee4d1ef30899b929679d6c3c0a93">Primitive::Triangles</a>, <a class="el" href="classPrimitive_1_1Torus.html#a4c131436d529d7f4f28b64536f7865d7">Primitive::Torus</a>, <a class="el" href="classPrimitive_1_1Spheres.html#a15ff19ccc855345c89158fa96416fc83">Primitive::Spheres</a>, <a class="el" href="classPrimitive_1_1Planes.html#afb81616adff1f7d290d2b2a7c28785b9">Primitive::Planes</a>, <a class="el" href="classPrimitive_1_1Cylinders.html#aaca0ec6cc10c9b0515a70d06aee6115c">Primitive::Cylinders</a>, <a class="el" href="classPrimitive_1_1Cones.html#a440abb1bc3fbc65870dbcc46766cdc10">Primitive::Cones</a>, and <a class="el" href="classPrimitive_1_1Boxes.html#a5f7d8ee6af7aa5660a80a40872c0ba3b">Primitive::Boxes</a>.</p>
+
+</div>
+</div>
+<a id="a272968cb0071bde43d8528ea0ea51ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a272968cb0071bde43d8528ea0ea51ed1">&#9670;&nbsp;</a></span>getIntersexe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a> Primitive::IPrimitives::getIntersexe </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the intersexe of the primitive. </p>
+<dl class="section return"><dt>Returns</dt><dd>the intersexe of the primitive </dd></dl>
+
+<p>Implemented in <a class="el" href="classPrimitive_1_1Triangles.html#a40ae2d61d8e73040b1f453d9bfd925c8">Primitive::Triangles</a>, <a class="el" href="classPrimitive_1_1Torus.html#a441c80ea9bfe2e1626dcb89557ad4c21">Primitive::Torus</a>, <a class="el" href="classPrimitive_1_1Spheres.html#a54443d4325c8cf286a57a7c36239da68">Primitive::Spheres</a>, <a class="el" href="classPrimitive_1_1Planes.html#a3b5349f9920f0f3b10a2742a76530c27">Primitive::Planes</a>, <a class="el" href="classPrimitive_1_1Cylinders.html#a7ed3672e0ae22d9e34a4825490175eb5">Primitive::Cylinders</a>, <a class="el" href="classPrimitive_1_1Cones.html#a2d3b1e212be687d2bd8a4eb8aa35bfd5">Primitive::Cones</a>, and <a class="el" href="classPrimitive_1_1Boxes.html#af50ffc1972779e1ffc42460af5dfcf96">Primitive::Boxes</a>.</p>
+
+</div>
+</div>
+<a id="ab24d34b1aaa93f9728d2a88eac34c17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24d34b1aaa93f9728d2a88eac34c17f">&#9670;&nbsp;</a></span>getNormal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classMath_1_1Vector3D.html">Math::Vector3D</a> Primitive::IPrimitives::getNormal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the normal of the primitive. </p>
+<dl class="section return"><dt>Returns</dt><dd>the normal of the primitive </dd></dl>
+
+<p>Implemented in <a class="el" href="classPrimitive_1_1Triangles.html#ac28a12add6df4d06ebb83fa2a22aa870">Primitive::Triangles</a>, <a class="el" href="classPrimitive_1_1Torus.html#ac36b93cac8fed160df838a335e2f338d">Primitive::Torus</a>, <a class="el" href="classPrimitive_1_1Spheres.html#ab34bf73ba653820acb6b751ce0bf2684">Primitive::Spheres</a>, <a class="el" href="classPrimitive_1_1Planes.html#a6b67a7a4ea6e7b4fcd2f39bea8a2479e">Primitive::Planes</a>, <a class="el" href="classPrimitive_1_1Cylinders.html#a534a8dd407f3c2bbc6233976757fc58d">Primitive::Cylinders</a>, <a class="el" href="classPrimitive_1_1Cones.html#a43fc1153372a9412b5fc6524f22f7c74">Primitive::Cones</a>, and <a class="el" href="classPrimitive_1_1Boxes.html#abbc03292232e5f37af6ccada357b2978">Primitive::Boxes</a>.</p>
 
 </div>
 </div>

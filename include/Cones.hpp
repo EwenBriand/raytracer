@@ -49,7 +49,7 @@ namespace Primitive
         bool hit(const Math::Ray &ray) override;
         Color getColor() const override;
         Math::Point3D getIntersexe() const override;
-        Math::Vector3D getNormal() const;
+        Math::Vector3D getNormal() const override;
     };
 } // namespace Primitive
 

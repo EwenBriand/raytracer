@@ -12,7 +12,11 @@ Inheritance diagram for Primitive\+::IPrimitives\+:\begin{figure}[H]
 virtual bool \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}{hit}} (const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&ray)=0
 \begin{DoxyCompactList}\small\item\em Check if the ray hit the primitive. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}{get\+Color}} () const =0
-\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a272968cb0071bde43d8528ea0ea51ed1}{get\+Intersexe}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the intersexe of the primitive. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab24d34b1aaa93f9728d2a88eac34c17f}{get\+Normal}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the normal of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,7 +31,10 @@ virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1
 \begin{DoxyCompactList}\small\item\em The rotation of the primitive. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}\label{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}} 
 float \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a1d77839449dcef7863791da50768ec1f}{\+\_\+scale}}
-\begin{DoxyCompactList}\small\item\em The scale of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The scale of the primitive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a6831fd139bfb685fd536a876fe558609}\label{classPrimitive_1_1IPrimitives_a6831fd139bfb685fd536a876fe558609}} 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a6831fd139bfb685fd536a876fe558609}{\+\_\+intersexe}} = \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}}(0, 0, 0)
+\begin{DoxyCompactList}\small\item\em The intersexe of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -47,6 +54,40 @@ the color of the primitive
 
 
 Implemented in \mbox{\hyperlink{classPrimitive_1_1Triangles_a0e48ee4d1ef30899b929679d6c3c0a93}{Primitive\+::\+Triangles}}, \mbox{\hyperlink{classPrimitive_1_1Torus_a4c131436d529d7f4f28b64536f7865d7}{Primitive\+::\+Torus}}, \mbox{\hyperlink{classPrimitive_1_1Spheres_a15ff19ccc855345c89158fa96416fc83}{Primitive\+::\+Spheres}}, \mbox{\hyperlink{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}{Primitive\+::\+Planes}}, \mbox{\hyperlink{classPrimitive_1_1Cylinders_aaca0ec6cc10c9b0515a70d06aee6115c}{Primitive\+::\+Cylinders}}, \mbox{\hyperlink{classPrimitive_1_1Cones_a440abb1bc3fbc65870dbcc46766cdc10}{Primitive\+::\+Cones}}, and \mbox{\hyperlink{classPrimitive_1_1Boxes_a5f7d8ee6af7aa5660a80a40872c0ba3b}{Primitive\+::\+Boxes}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_a272968cb0071bde43d8528ea0ea51ed1}\label{classPrimitive_1_1IPrimitives_a272968cb0071bde43d8528ea0ea51ed1}} 
+\index{Primitive::IPrimitives@{Primitive::IPrimitives}!getIntersexe@{getIntersexe}}
+\index{getIntersexe@{getIntersexe}!Primitive::IPrimitives@{Primitive::IPrimitives}}
+\doxysubsubsection{\texorpdfstring{getIntersexe()}{getIntersexe()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Primitive\+::\+IPrimitives\+::get\+Intersexe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the intersexe of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the intersexe of the primitive 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPrimitive_1_1Triangles_a40ae2d61d8e73040b1f453d9bfd925c8}{Primitive\+::\+Triangles}}, \mbox{\hyperlink{classPrimitive_1_1Torus_a441c80ea9bfe2e1626dcb89557ad4c21}{Primitive\+::\+Torus}}, \mbox{\hyperlink{classPrimitive_1_1Spheres_a54443d4325c8cf286a57a7c36239da68}{Primitive\+::\+Spheres}}, \mbox{\hyperlink{classPrimitive_1_1Planes_a3b5349f9920f0f3b10a2742a76530c27}{Primitive\+::\+Planes}}, \mbox{\hyperlink{classPrimitive_1_1Cylinders_a7ed3672e0ae22d9e34a4825490175eb5}{Primitive\+::\+Cylinders}}, \mbox{\hyperlink{classPrimitive_1_1Cones_a2d3b1e212be687d2bd8a4eb8aa35bfd5}{Primitive\+::\+Cones}}, and \mbox{\hyperlink{classPrimitive_1_1Boxes_af50ffc1972779e1ffc42460af5dfcf96}{Primitive\+::\+Boxes}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1IPrimitives_ab24d34b1aaa93f9728d2a88eac34c17f}\label{classPrimitive_1_1IPrimitives_ab24d34b1aaa93f9728d2a88eac34c17f}} 
+\index{Primitive::IPrimitives@{Primitive::IPrimitives}!getNormal@{getNormal}}
+\index{getNormal@{getNormal}!Primitive::IPrimitives@{Primitive::IPrimitives}}
+\doxysubsubsection{\texorpdfstring{getNormal()}{getNormal()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} Primitive\+::\+IPrimitives\+::get\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the normal of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the normal of the primitive 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPrimitive_1_1Triangles_ac28a12add6df4d06ebb83fa2a22aa870}{Primitive\+::\+Triangles}}, \mbox{\hyperlink{classPrimitive_1_1Torus_ac36b93cac8fed160df838a335e2f338d}{Primitive\+::\+Torus}}, \mbox{\hyperlink{classPrimitive_1_1Spheres_ab34bf73ba653820acb6b751ce0bf2684}{Primitive\+::\+Spheres}}, \mbox{\hyperlink{classPrimitive_1_1Planes_a6b67a7a4ea6e7b4fcd2f39bea8a2479e}{Primitive\+::\+Planes}}, \mbox{\hyperlink{classPrimitive_1_1Cylinders_a534a8dd407f3c2bbc6233976757fc58d}{Primitive\+::\+Cylinders}}, \mbox{\hyperlink{classPrimitive_1_1Cones_a43fc1153372a9412b5fc6524f22f7c74}{Primitive\+::\+Cones}}, and \mbox{\hyperlink{classPrimitive_1_1Boxes_abbc03292232e5f37af6ccada357b2978}{Primitive\+::\+Boxes}}.
 
 \mbox{\Hypertarget{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}\label{classPrimitive_1_1IPrimitives_ab9ff9059226b2929021a7fc0daa9b39e}} 
 \index{Primitive::IPrimitives@{Primitive::IPrimitives}!hit@{hit}}

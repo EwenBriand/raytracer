@@ -99,6 +99,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8af334e175071008d73e61b3d267ee50"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMath_1_1Point3D.html#a8af334e175071008d73e61b3d267ee50">dot</a> (const <a class="el" href="classMath_1_1Point3D.html">Point3D</a> &amp;point) const</td></tr>
 <tr class="memdesc:a8af334e175071008d73e61b3d267ee50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do a dot product between two points.  <a href="classMath_1_1Point3D.html#a8af334e175071008d73e61b3d267ee50">More...</a><br /></td></tr>
 <tr class="separator:a8af334e175071008d73e61b3d267ee50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228ac80c12356d2a8eb0eb61fd55c509"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMath_1_1Point3D.html#a228ac80c12356d2a8eb0eb61fd55c509">distance</a> (const <a class="el" href="classMath_1_1Point3D.html">Point3D</a> &amp;point) const</td></tr>
+<tr class="memdesc:a228ac80c12356d2a8eb0eb61fd55c509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance between two points.  <a href="classMath_1_1Point3D.html#a228ac80c12356d2a8eb0eb61fd55c509">More...</a><br /></td></tr>
+<tr class="separator:a228ac80c12356d2a8eb0eb61fd55c509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31d0f5f84e6a78c83a7a8cf212efea9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMath_1_1Vector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMath_1_1Point3D.html#ae31d0f5f84e6a78c83a7a8cf212efea9">vectorTo</a> (const <a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a> &amp;point) const</td></tr>
+<tr class="memdesc:ae31d0f5f84e6a78c83a7a8cf212efea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector to the point.  <a href="classMath_1_1Point3D.html#ae31d0f5f84e6a78c83a7a8cf212efea9">More...</a><br /></td></tr>
+<tr class="separator:ae31d0f5f84e6a78c83a7a8cf212efea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4938b8d5dae8b0ff46dd8688815d896c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMath_1_1Point3D.html">Point3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMath_1_1Point3D.html#a4938b8d5dae8b0ff46dd8688815d896c">normalize</a> () const</td></tr>
+<tr class="memdesc:a4938b8d5dae8b0ff46dd8688815d896c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize the vector.  <a href="classMath_1_1Point3D.html#a4938b8d5dae8b0ff46dd8688815d896c">More...</a><br /></td></tr>
+<tr class="separator:a4938b8d5dae8b0ff46dd8688815d896c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6d1d766090ab75eca7f0dc2292e802dc"></a>
@@ -164,6 +173,27 @@ Public Member Functions</h2></td></tr>
 
 <p>Do a cross product between two points. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMath_1_1Point3D.html">Point3D</a> </dd></dl>
+
+</div>
+</div>
+<a id="a228ac80c12356d2a8eb0eb61fd55c509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228ac80c12356d2a8eb0eb61fd55c509">&#9670;&nbsp;</a></span>distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Math::Point3D::distance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMath_1_1Point3D.html">Point3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the distance between two points. </p>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
 </div>
 </div>
@@ -248,6 +278,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4938b8d5dae8b0ff46dd8688815d896c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4938b8d5dae8b0ff46dd8688815d896c">&#9670;&nbsp;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMath_1_1Point3D.html">Point3D</a> Math::Point3D::normalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normalize the vector. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMath_1_1Point3D.html">Point3D</a> </dd></dl>
+
+</div>
+</div>
 <a id="ab9b824a382938c9f7a6f924d75903ac9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9b824a382938c9f7a6f924d75903ac9">&#9670;&nbsp;</a></span>setPoint() <span class="overload">[1/2]</span></h2>
 
@@ -315,6 +365,33 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ae31d0f5f84e6a78c83a7a8cf212efea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31d0f5f84e6a78c83a7a8cf212efea9">&#9670;&nbsp;</a></span>vectorTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMath_1_1Vector3D.html">Vector3D</a> Math::Point3D::vectorTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMath_1_1Point3D.html">Math::Point3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the vector to the point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classMath_1_1Vector3D.html">Vector3D</a> </dd></dl>
 
 </div>
 </div>

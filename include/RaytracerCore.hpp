@@ -41,7 +41,11 @@ class RaytracerCore {
      *
      */
     Camera _camera;
-    std::vector<ILights *> _lights;
+    /**
+     * @brief Vector of all the lights
+     *
+     */
+    std::vector<Light::ILights *> _lights;
 };
 
 #endif /* !RAYTRACERCORE_HPP_ */

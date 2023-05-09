@@ -18,7 +18,13 @@ float \mbox{\hyperlink{classMath_1_1Point3D_aaf6d01d9dd115c7e386a75e420fbe78e}{g
 \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \mbox{\hyperlink{classMath_1_1Point3D_a8825a54513df4d91017b9d43b9407bec}{cross}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \&point) const
 \begin{DoxyCompactList}\small\item\em Do a cross product between two points. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classMath_1_1Point3D_a8af334e175071008d73e61b3d267ee50}{dot}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \&point) const
-\begin{DoxyCompactList}\small\item\em Do a dot product between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Do a dot product between two points. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classMath_1_1Point3D_a228ac80c12356d2a8eb0eb61fd55c509}{distance}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \&point) const
+\begin{DoxyCompactList}\small\item\em Get the distance between two points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} \mbox{\hyperlink{classMath_1_1Point3D_ae31d0f5f84e6a78c83a7a8cf212efea9}{vector\+To}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&point) const
+\begin{DoxyCompactList}\small\item\em Get the vector to the point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \mbox{\hyperlink{classMath_1_1Point3D_a4938b8d5dae8b0ff46dd8688815d896c}{normalize}} () const
+\begin{DoxyCompactList}\small\item\em Normalize the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -56,6 +62,19 @@ Do a cross product between two points.
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMath_1_1Point3D_a228ac80c12356d2a8eb0eb61fd55c509}\label{classMath_1_1Point3D_a228ac80c12356d2a8eb0eb61fd55c509}} 
+\index{Math::Point3D@{Math::Point3D}!distance@{distance}}
+\index{distance@{distance}!Math::Point3D@{Math::Point3D}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily float Math\+::\+Point3\+D\+::distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Get the distance between two points. 
+
+\begin{DoxyReturn}{Returns}
+float 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classMath_1_1Point3D_a8af334e175071008d73e61b3d267ee50}\label{classMath_1_1Point3D_a8af334e175071008d73e61b3d267ee50}} 
 \index{Math::Point3D@{Math::Point3D}!dot@{dot}}
@@ -109,6 +128,19 @@ Get the Z object.
 \begin{DoxyReturn}{Returns}
 float 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classMath_1_1Point3D_a4938b8d5dae8b0ff46dd8688815d896c}\label{classMath_1_1Point3D_a4938b8d5dae8b0ff46dd8688815d896c}} 
+\index{Math::Point3D@{Math::Point3D}!normalize@{normalize}}
+\index{normalize@{normalize}!Math::Point3D@{Math::Point3D}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} Math\+::\+Point3\+D\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Normalize the vector. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Point3D}{Point3D}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classMath_1_1Point3D_ab9b824a382938c9f7a6f924d75903ac9}\label{classMath_1_1Point3D_ab9b824a382938c9f7a6f924d75903ac9}} 
 \index{Math::Point3D@{Math::Point3D}!setPoint@{setPoint}}
 \index{setPoint@{setPoint}!Math::Point3D@{Math::Point3D}}
@@ -143,6 +175,24 @@ Set the Point object.
 {\em z} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classMath_1_1Point3D_ae31d0f5f84e6a78c83a7a8cf212efea9}\label{classMath_1_1Point3D_ae31d0f5f84e6a78c83a7a8cf212efea9}} 
+\index{Math::Point3D@{Math::Point3D}!vectorTo@{vectorTo}}
+\index{vectorTo@{vectorTo}!Math::Point3D@{Math::Point3D}}
+\doxysubsubsection{\texorpdfstring{vectorTo()}{vectorTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} Math\+::\+Point3\+D\+::vector\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector to the point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Vector3D}{Vector3D}} 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -51,13 +51,13 @@ void ParserFile::setLights(const libconfig::Setting &root)
         if (lights.exists("ambiante"))
             for (int i = 0; i < lights["ambiante"].getLength(); i++) {
                 const libconfig::Setting &light = lights["ambiante"][i];
-                _lights.push_back(new Diffuse(light));
+                _lights.push_back(new Light::Diffuse(light));
                 std::cout << "Ambiante created\n" << std::endl;
             }
         if (lights.exists("directional"))
             for (int i = 0; i < lights["directional"].getLength(); i++) {
                 const libconfig::Setting &light = lights["directional"][i];
-                _lights.push_back(new Directional(light));
+                _lights.push_back(new Light::Directional(light));
                 std::cout << "Directional created\n" << std::endl;
             }
     } catch (const libconfig::SettingNotFoundException &nfex) {
@@ -138,7 +138,7 @@ Camera ParserFile::getCamera() const
     return _camera;
 }
 
-std::vector<ILights *> ParserFile::getLights() const
+std::vector<Light::ILights *> ParserFile::getLights() const
 {
     return _lights;
 }

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['ray_131',['Ray',['../classMath_1_1Ray.html#add9196df81085d22263aef350f67ab94',1,'Math::Ray']]],
-  ['raytracercore_132',['RaytracerCore',['../classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28',1,'RaytracerCore']]],
-  ['raytracergraphic_133',['RaytracerGraphic',['../classRaytracerGraphic.html#a57c78ada8c262158e8c491b81b6d4e41',1,'RaytracerGraphic']]],
-  ['rectangle3d_134',['Rectangle3D',['../classMath_1_1Rectangle3D.html#a3aa05cb2ac7cb86f14a79b4a14c3ac75',1,'Math::Rectangle3D']]],
-  ['renderimage_135',['renderImage',['../classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031',1,'RaytracerCore']]],
-  ['run_136',['run',['../classRaytracerGraphic.html#a44bb2c4675c851bd382897196c16c28a',1,'RaytracerGraphic']]]
+  ['normalize_154',['normalize',['../classMath_1_1Point3D.html#a4938b8d5dae8b0ff46dd8688815d896c',1,'Math::Point3D::normalize()'],['../classMath_1_1Vector3D.html#a5d735e7d0435c18fcf720ea01ca87e19',1,'Math::Vector3D::normalize()']]],
+  ['normalized_155',['normalized',['../classColor.html#ace23686c173ad785f9815d511b82c6c8',1,'Color']]]
 ];

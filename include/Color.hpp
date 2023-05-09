@@ -72,6 +72,11 @@ class Color {
      * @return int
      */
     int getB() const;
+    /**
+     * @brief Normalize the color
+     *
+     * @return Color
+     */
     Color normalized();
 };
 std::ostream &operator<<(std::ostream &s, const Color &color);

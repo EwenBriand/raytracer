@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['vector3d_66',['Vector3D',['../classMath_1_1Vector3D.html',1,'Math::Vector3D'],['../classMath_1_1Vector3D.html#a02c3884496590261375e96f862429690',1,'Math::Vector3D::Vector3D(float x, float y, float z)'],['../classMath_1_1Vector3D.html#aefd7cfaabbccde46fe0baf6217cfa0f7',1,'Math::Vector3D::Vector3D(const Point3D &amp;point)']]]
+  ['torus_76',['Torus',['../classPrimitive_1_1Torus.html',1,'Primitive::Torus'],['../classPrimitive_1_1Torus.html#a632e167b029400de7230aa873b3985d1',1,'Primitive::Torus::Torus()']]],
+  ['torusbuilder_77',['TorusBuilder',['../classPrimitive_1_1TorusBuilder.html',1,'Primitive']]],
+  ['trianglebuilder_78',['TriangleBuilder',['../classPrimitive_1_1TriangleBuilder.html',1,'Primitive']]],
+  ['triangles_79',['Triangles',['../classPrimitive_1_1Triangles.html',1,'Primitive::Triangles'],['../classPrimitive_1_1Triangles.html#a048d01e9681005f9dcba440e5aa52012',1,'Primitive::Triangles::Triangles()']]]
 ];

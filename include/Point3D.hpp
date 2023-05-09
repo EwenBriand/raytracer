@@ -89,8 +89,24 @@ namespace Math
          * @return float
          */
         float dot(const Point3D &point) const;
+        /**
+         * @brief Get the distance between two points
+         *
+         * @return float
+         */
         float distance(const Point3D &point) const;
+        /**
+         * @brief Get the vector to the point
+         *
+         * @param point
+         * @return Vector3D
+         */
         Vector3D vectorTo(const Math::Point3D &point) const;
+        /**
+         * @brief Normalize the vector
+         *
+         * @return Point3D
+         */
         Point3D normalize() const;
     };
 

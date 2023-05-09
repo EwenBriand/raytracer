@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['setcamera_54',['setCamera',['../classParserFile.html#a8b6789240fc31b0a0635f96071674f87',1,'ParserFile']]],
-  ['setcolor_55',['setColor',['../classColor.html#a09b7627d2f6fb0dedf67c7f759431765',1,'Color::setColor(int r, int g, int b)'],['../classColor.html#a23679ee103a5c1bbd6fdafce9b58fa0f',1,'Color::setColor(const libconfig::Setting &amp;setting)']]],
-  ['setlights_56',['setLights',['../classParserFile.html#a0cf01b0e43efd311591aab4eae68f138',1,'ParserFile']]],
-  ['setpoint_57',['setPoint',['../classMath_1_1Point3D.html#abd3272c64be3d97ab9cadfd1eeba76d3',1,'Math::Point3D::setPoint(float x, float y, float z)'],['../classMath_1_1Point3D.html#ab9b824a382938c9f7a6f924d75903ac9',1,'Math::Point3D::setPoint(const libconfig::Setting &amp;setting)']]],
-  ['setprimitives_58',['setPrimitives',['../classParserFile.html#ab55bef8fe3cb99fe57f6df0a44e83ead',1,'ParserFile']]],
-  ['setvector3d_59',['setVector3D',['../classMath_1_1Vector3D.html#a45c861f30da2fda957f8f160f55dcf70',1,'Math::Vector3D::setVector3D(float x, float y, float z)'],['../classMath_1_1Vector3D.html#a36eb0dfdab0d3d10fcf2c1ea0b60af86',1,'Math::Vector3D::setVector3D(const libconfig::Setting &amp;setting)']]],
-  ['spherebuilder_60',['SphereBuilder',['../classPrimitive_1_1SphereBuilder.html',1,'Primitive']]],
-  ['spheres_61',['Spheres',['../classPrimitive_1_1Spheres.html',1,'Primitive::Spheres'],['../classPrimitive_1_1Spheres.html#aff1fd92127a05ecbd33822f2ef8e1c92',1,'Primitive::Spheres::Spheres()']]]
+  ['ray_62',['Ray',['../classMath_1_1Ray.html',1,'Math::Ray'],['../classMath_1_1Ray.html#add9196df81085d22263aef350f67ab94',1,'Math::Ray::Ray()']]],
+  ['raytracercore_63',['RaytracerCore',['../classRaytracerCore.html',1,'RaytracerCore'],['../classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28',1,'RaytracerCore::RaytracerCore()']]],
+  ['raytracergraphic_64',['RaytracerGraphic',['../classRaytracerGraphic.html',1,'RaytracerGraphic'],['../classRaytracerGraphic.html#a57c78ada8c262158e8c491b81b6d4e41',1,'RaytracerGraphic::RaytracerGraphic()']]],
+  ['rectangle3d_65',['Rectangle3D',['../classMath_1_1Rectangle3D.html',1,'Math::Rectangle3D'],['../classMath_1_1Rectangle3D.html#a3aa05cb2ac7cb86f14a79b4a14c3ac75',1,'Math::Rectangle3D::Rectangle3D()']]],
+  ['renderimage_66',['renderImage',['../classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031',1,'RaytracerCore']]],
+  ['run_67',['run',['../classRaytracerGraphic.html#a44bb2c4675c851bd382897196c16c28a',1,'RaytracerGraphic']]]
 ];

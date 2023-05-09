@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['iprimitives_76',['IPrimitives',['../classPrimitive_1_1IPrimitives.html',1,'Primitive']]]
+  ['diffuse_91',['Diffuse',['../classLight_1_1Diffuse.html',1,'Light']]],
+  ['directional_92',['Directional',['../classLight_1_1Directional.html',1,'Light']]]
 ];

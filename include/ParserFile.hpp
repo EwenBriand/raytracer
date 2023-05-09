@@ -64,7 +64,7 @@ class ParserFile {
      *
      * @return std::vector<Lights>
      */
-    std::vector<ILights *> getLights() const;
+    std::vector<Light::ILights *> getLights() const;
 
   private:
     /**
@@ -81,7 +81,7 @@ class ParserFile {
      * @brief The lights of the scene
      *
      */
-    std::vector<ILights *> _lights;
+    std::vector<Light::ILights *> _lights;
     /**
      * @brief The factory of the primitives
      *

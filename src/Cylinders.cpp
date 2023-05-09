@@ -25,7 +25,6 @@ Primitive::Cylinders::Cylinders(const libconfig::Setting &setting)
         else
             _height = 0;
         std::cout << _height << std::endl;
-
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }

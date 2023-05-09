@@ -64,6 +64,9 @@ $(function() {
 &#160;
 
 <h3><a id="index_b"></a>- b -</h3><ul>
+<li>blinn_phong()
+: <a class="el" href="classLight_1_1Directional.html#ae23952c1b1e64666910ff5182992cebf">Light::Directional</a>
+</li>
 <li>Boxes()
 : <a class="el" href="classPrimitive_1_1Boxes.html#ad150ec9041da610a46b29a81fdfb45f2">Primitive::Boxes</a>
 </li>
@@ -95,6 +98,7 @@ $(function() {
 </li>
 <li>cross()
 : <a class="el" href="classMath_1_1Point3D.html#a8825a54513df4d91017b9d43b9407bec">Math::Point3D</a>
+, <a class="el" href="classMath_1_1Vector3D.html#aad817be070a206feded182a65461834f">Math::Vector3D</a>
 </li>
 <li>Cylinders()
 : <a class="el" href="classPrimitive_1_1Cylinders.html#aaa009522b717e5f9b3d0e60cd8527c35">Primitive::Cylinders</a>
@@ -103,6 +107,20 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>define_color()
+: <a class="el" href="classLight_1_1Diffuse.html#a4102716411bb745c591031916ae02f97">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#ae863d4946268b3818f6d3677cc0b0b9e">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#ae9b529aafa121be980af9a761e784be6">Light::ILights</a>
+</li>
+<li>Diffuse()
+: <a class="el" href="classLight_1_1Diffuse.html#a14018a353cffa01839bb247a2d3c6105">Light::Diffuse</a>
+</li>
+<li>Directional()
+: <a class="el" href="classLight_1_1Directional.html#a59f23e40d0b7ef5cc4ee012efe8fc8ae">Light::Directional</a>
+</li>
+<li>distance()
+: <a class="el" href="classMath_1_1Point3D.html#a228ac80c12356d2a8eb0eb61fd55c509">Math::Point3D</a>
+</li>
 <li>dot()
 : <a class="el" href="classMath_1_1Point3D.html#a8af334e175071008d73e61b3d267ee50">Math::Point3D</a>
 , <a class="el" href="classMath_1_1Vector3D.html#a93e3b69a74f39ada4bc8b9be8a7106d6">Math::Vector3D</a>
@@ -124,7 +142,10 @@ $(function() {
 : <a class="el" href="classParserFile.html#a000358ee7a570ac2cf15b11564b8afaf">ParserFile</a>
 </li>
 <li>getColor()
-: <a class="el" href="classPrimitive_1_1Boxes.html#a5f7d8ee6af7aa5660a80a40872c0ba3b">Primitive::Boxes</a>
+: <a class="el" href="classLight_1_1Diffuse.html#a71a0d909919cd1aed8a61923fcfade52">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#a08fe738029bb25e41ba80e824218818d">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a15d99692cd11be9967671581b30ecc2c">Light::ILights</a>
+, <a class="el" href="classPrimitive_1_1Boxes.html#a5f7d8ee6af7aa5660a80a40872c0ba3b">Primitive::Boxes</a>
 , <a class="el" href="classPrimitive_1_1Cones.html#a440abb1bc3fbc65870dbcc46766cdc10">Primitive::Cones</a>
 , <a class="el" href="classPrimitive_1_1Cylinders.html#aaca0ec6cc10c9b0515a70d06aee6115c">Primitive::Cylinders</a>
 , <a class="el" href="classPrimitive_1_1IPrimitives.html#a68bc12d9bfc0111fb4bb35c4c2364a39">Primitive::IPrimitives</a>
@@ -134,7 +155,10 @@ $(function() {
 , <a class="el" href="classPrimitive_1_1Triangles.html#a0e48ee4d1ef30899b929679d6c3c0a93">Primitive::Triangles</a>
 </li>
 <li>getDirection()
-: <a class="el" href="classMath_1_1Ray.html#a135410f7ad6082abd8ec8d13c3c854c2">Math::Ray</a>
+: <a class="el" href="classLight_1_1Diffuse.html#aa8f1919ff2e6a1dcf0e024b2ca0821f7">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#ac62799bd9faebeed7156baf7cd30cfa5">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a060edd4fe2c385b57a53a9076c0bb265">Light::ILights</a>
+, <a class="el" href="classMath_1_1Ray.html#a135410f7ad6082abd8ec8d13c3c854c2">Math::Ray</a>
 </li>
 <li>getFieldOfView()
 : <a class="el" href="classCamera.html#aaa42ba9be9e1599496b9cca178521259">Camera</a>
@@ -142,18 +166,53 @@ $(function() {
 <li>getG()
 : <a class="el" href="classColor.html#a70ba0d8ede9b4eb6943035c44661993b">Color</a>
 </li>
+<li>getIntersexe()
+: <a class="el" href="classPrimitive_1_1Boxes.html#af50ffc1972779e1ffc42460af5dfcf96">Primitive::Boxes</a>
+, <a class="el" href="classPrimitive_1_1Cones.html#a2d3b1e212be687d2bd8a4eb8aa35bfd5">Primitive::Cones</a>
+, <a class="el" href="classPrimitive_1_1Cylinders.html#a7ed3672e0ae22d9e34a4825490175eb5">Primitive::Cylinders</a>
+, <a class="el" href="classPrimitive_1_1IPrimitives.html#a272968cb0071bde43d8528ea0ea51ed1">Primitive::IPrimitives</a>
+, <a class="el" href="classPrimitive_1_1Planes.html#a3b5349f9920f0f3b10a2742a76530c27">Primitive::Planes</a>
+, <a class="el" href="classPrimitive_1_1Spheres.html#a54443d4325c8cf286a57a7c36239da68">Primitive::Spheres</a>
+, <a class="el" href="classPrimitive_1_1Torus.html#a441c80ea9bfe2e1626dcb89557ad4c21">Primitive::Torus</a>
+, <a class="el" href="classPrimitive_1_1Triangles.html#a40ae2d61d8e73040b1f453d9bfd925c8">Primitive::Triangles</a>
+</li>
 <li>getLeft()
 : <a class="el" href="classMath_1_1Rectangle3D.html#a80247fac295db8502fdba16df7a67814">Math::Rectangle3D</a>
 </li>
 <li>getLights()
-: <a class="el" href="classParserFile.html#abe46fc4ba384118748aa3c4b1c0cb36e">ParserFile</a>
+: <a class="el" href="classParserFile.html#a9a6c4991460aeeec6bf32e50ccab8139">ParserFile</a>
+</li>
+<li>getNormal()
+: <a class="el" href="classPrimitive_1_1Boxes.html#abbc03292232e5f37af6ccada357b2978">Primitive::Boxes</a>
+, <a class="el" href="classPrimitive_1_1Cones.html#a43fc1153372a9412b5fc6524f22f7c74">Primitive::Cones</a>
+, <a class="el" href="classPrimitive_1_1Cylinders.html#a534a8dd407f3c2bbc6233976757fc58d">Primitive::Cylinders</a>
+, <a class="el" href="classPrimitive_1_1IPrimitives.html#ab24d34b1aaa93f9728d2a88eac34c17f">Primitive::IPrimitives</a>
+, <a class="el" href="classPrimitive_1_1Planes.html#a6b67a7a4ea6e7b4fcd2f39bea8a2479e">Primitive::Planes</a>
+, <a class="el" href="classPrimitive_1_1Spheres.html#ab34bf73ba653820acb6b751ce0bf2684">Primitive::Spheres</a>
+, <a class="el" href="classPrimitive_1_1Torus.html#ac36b93cac8fed160df838a335e2f338d">Primitive::Torus</a>
+, <a class="el" href="classPrimitive_1_1Triangles.html#ac28a12add6df4d06ebb83fa2a22aa870">Primitive::Triangles</a>
 </li>
 <li>getOrigin()
 : <a class="el" href="classMath_1_1Ray.html#a6a0f4eb2a0a261f586fa1375cda17c4f">Math::Ray</a>
 , <a class="el" href="classMath_1_1Rectangle3D.html#a9dabf6013f12f221a7e189303d7ff2f4">Math::Rectangle3D</a>
 </li>
+<li>getPoint()
+: <a class="el" href="classLight_1_1Diffuse.html#af1f8d6cf2bf332d0d7d6a62c307e45c2">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#ac011e6e13afc05af012d15085e04294e">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a4171920401ee069935579100784e1720">Light::ILights</a>
+</li>
 <li>getPosition()
 : <a class="el" href="classCamera.html#ad7ae61ad8c886cefd42175b59333b6fa">Camera</a>
+</li>
+<li>getPower()
+: <a class="el" href="classLight_1_1Diffuse.html#abac68cfa4fd6dfb5cd1d6b6b6aea879c">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#a55e445b518fa5a9f90389952507d1c3d">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a061e1abd27fdf36a3f195e4b75d6b529">Light::ILights</a>
+</li>
+<li>getPrimitive()
+: <a class="el" href="classLight_1_1Diffuse.html#a4d9ead7a1d213222b85768d3109809c4">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#a9339a878261b53d272b8852e20d99d91">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a2478c8b5280c4ff45ea9dbd76fe2c42d">Light::ILights</a>
 </li>
 <li>getPrimitives()
 : <a class="el" href="classParserFile.html#a20f71914ac83ab3545b1b6d13be39b3f">ParserFile</a>
@@ -202,12 +261,29 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_i"></a>- i -</h3><ul>
+<li>is_cut()
+: <a class="el" href="classLight_1_1Diffuse.html#a9ee90e84950e20a602078139fc4b6349">Light::Diffuse</a>
+, <a class="el" href="classLight_1_1Directional.html#a13960e2095697f96856115275d2d9f3a">Light::Directional</a>
+, <a class="el" href="classLight_1_1ILights.html#a06bd72570db3259995d23887e8e3dcd8">Light::ILights</a>
+</li>
+</ul>
+
+
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>length()
 : <a class="el" href="classMath_1_1Vector3D.html#ad04181c15539ca3d4d1592fbce30fb20">Math::Vector3D</a>
 </li>
-<li>Lights()
-: <a class="el" href="classLights.html#ae0a015f1418d69caa89f88dd97c63cf0">Lights</a>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>normalize()
+: <a class="el" href="classMath_1_1Point3D.html#a4938b8d5dae8b0ff46dd8688815d896c">Math::Point3D</a>
+, <a class="el" href="classMath_1_1Vector3D.html#a5d735e7d0435c18fcf720ea01ca87e19">Math::Vector3D</a>
+</li>
+<li>normalized()
+: <a class="el" href="classColor.html#ace23686c173ad785f9815d511b82c6c8">Color</a>
 </li>
 </ul>
 
@@ -288,6 +364,9 @@ $(function() {
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>Vector3D()
 : <a class="el" href="classMath_1_1Vector3D.html#a02c3884496590261375e96f862429690">Math::Vector3D</a>
+</li>
+<li>vectorTo()
+: <a class="el" href="classMath_1_1Point3D.html#ae31d0f5f84e6a78c83a7a8cf212efea9">Math::Point3D</a>
 </li>
 </ul>
 </div><!-- contents -->

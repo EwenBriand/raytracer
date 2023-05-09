@@ -14,7 +14,11 @@ Inheritance diagram for Primitive\+::Cylinders\+:\begin{figure}[H]
 bool \mbox{\hyperlink{classPrimitive_1_1Cylinders_a5d0d4c2d28fdced62d4abd456f7a11b2}{hit}} (const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&ray) override
 \begin{DoxyCompactList}\small\item\em Check if the ray hit the primitive. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1Cylinders_aaca0ec6cc10c9b0515a70d06aee6115c}{get\+Color}} () const override
-\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classPrimitive_1_1Cylinders_a7ed3672e0ae22d9e34a4825490175eb5}{get\+Intersexe}} () const override
+\begin{DoxyCompactList}\small\item\em Get the intersexe of the primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classPrimitive_1_1Cylinders_a534a8dd407f3c2bbc6233976757fc58d}{get\+Normal}} () const override
+\begin{DoxyCompactList}\small\item\em Get the normal of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -53,6 +57,40 @@ the color of the primitive
 
 
 Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}{Primitive\+::\+IPrimitives}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1Cylinders_a7ed3672e0ae22d9e34a4825490175eb5}\label{classPrimitive_1_1Cylinders_a7ed3672e0ae22d9e34a4825490175eb5}} 
+\index{Primitive::Cylinders@{Primitive::Cylinders}!getIntersexe@{getIntersexe}}
+\index{getIntersexe@{getIntersexe}!Primitive::Cylinders@{Primitive::Cylinders}}
+\doxysubsubsection{\texorpdfstring{getIntersexe()}{getIntersexe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Primitive\+::\+Cylinders\+::get\+Intersexe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the intersexe of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the intersexe of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a272968cb0071bde43d8528ea0ea51ed1}{Primitive\+::\+IPrimitives}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1Cylinders_a534a8dd407f3c2bbc6233976757fc58d}\label{classPrimitive_1_1Cylinders_a534a8dd407f3c2bbc6233976757fc58d}} 
+\index{Primitive::Cylinders@{Primitive::Cylinders}!getNormal@{getNormal}}
+\index{getNormal@{getNormal}!Primitive::Cylinders@{Primitive::Cylinders}}
+\doxysubsubsection{\texorpdfstring{getNormal()}{getNormal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} Primitive\+::\+Cylinders\+::get\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the normal of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the normal of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab24d34b1aaa93f9728d2a88eac34c17f}{Primitive\+::\+IPrimitives}}.
 
 \mbox{\Hypertarget{classPrimitive_1_1Cylinders_a5d0d4c2d28fdced62d4abd456f7a11b2}\label{classPrimitive_1_1Cylinders_a5d0d4c2d28fdced62d4abd456f7a11b2}} 
 \index{Primitive::Cylinders@{Primitive::Cylinders}!hit@{hit}}

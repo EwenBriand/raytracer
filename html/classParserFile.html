@@ -81,7 +81,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab55bef8fe3cb99fe57f6df0a44e83ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Primitives object.  <a href="classParserFile.html#ab55bef8fe3cb99fe57f6df0a44e83ead">More...</a><br /></td></tr>
 <tr class="separator:ab55bef8fe3cb99fe57f6df0a44e83ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cf01b0e43efd311591aab4eae68f138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParserFile.html#a0cf01b0e43efd311591aab4eae68f138">setLights</a> (const libconfig::Setting &amp;root)</td></tr>
-<tr class="memdesc:a0cf01b0e43efd311591aab4eae68f138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classLights.html">Lights</a> object.  <a href="classParserFile.html#a0cf01b0e43efd311591aab4eae68f138">More...</a><br /></td></tr>
+<tr class="memdesc:a0cf01b0e43efd311591aab4eae68f138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Lights object.  <a href="classParserFile.html#a0cf01b0e43efd311591aab4eae68f138">More...</a><br /></td></tr>
 <tr class="separator:a0cf01b0e43efd311591aab4eae68f138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a000358ee7a570ac2cf15b11564b8afaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCamera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParserFile.html#a000358ee7a570ac2cf15b11564b8afaf">getCamera</a> () const</td></tr>
 <tr class="memdesc:a000358ee7a570ac2cf15b11564b8afaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classCamera.html">Camera</a> object.  <a href="classParserFile.html#a000358ee7a570ac2cf15b11564b8afaf">More...</a><br /></td></tr>
@@ -89,9 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20f71914ac83ab3545b1b6d13be39b3f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classPrimitive_1_1IPrimitives.html">Primitive::IPrimitives</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParserFile.html#a20f71914ac83ab3545b1b6d13be39b3f">getPrimitives</a> () const</td></tr>
 <tr class="memdesc:a20f71914ac83ab3545b1b6d13be39b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Primitives object.  <a href="classParserFile.html#a20f71914ac83ab3545b1b6d13be39b3f">More...</a><br /></td></tr>
 <tr class="separator:a20f71914ac83ab3545b1b6d13be39b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe46fc4ba384118748aa3c4b1c0cb36e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLights.html">Lights</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParserFile.html#abe46fc4ba384118748aa3c4b1c0cb36e">getLights</a> () const</td></tr>
-<tr class="memdesc:abe46fc4ba384118748aa3c4b1c0cb36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classLights.html">Lights</a> object.  <a href="classParserFile.html#abe46fc4ba384118748aa3c4b1c0cb36e">More...</a><br /></td></tr>
-<tr class="separator:abe46fc4ba384118748aa3c4b1c0cb36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a6c4991460aeeec6bf32e50ccab8139"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classLight_1_1ILights.html">Light::ILights</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParserFile.html#a9a6c4991460aeeec6bf32e50ccab8139">getLights</a> () const</td></tr>
+<tr class="memdesc:a9a6c4991460aeeec6bf32e50ccab8139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Lights object.  <a href="classParserFile.html#a9a6c4991460aeeec6bf32e50ccab8139">More...</a><br /></td></tr>
+<tr class="separator:a9a6c4991460aeeec6bf32e50ccab8139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afcc7af7cf521cfe4845b664d1579b336"></a>
@@ -141,14 +141,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abe46fc4ba384118748aa3c4b1c0cb36e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe46fc4ba384118748aa3c4b1c0cb36e">&#9670;&nbsp;</a></span>getLights()</h2>
+<a id="a9a6c4991460aeeec6bf32e50ccab8139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a6c4991460aeeec6bf32e50ccab8139">&#9670;&nbsp;</a></span>getLights()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classLights.html">Lights</a>&gt; ParserFile::getLights </td>
+          <td class="memname">std::vector&lt;<a class="el" href="classLight_1_1ILights.html">Light::ILights</a> *&gt; ParserFile::getLights </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -156,7 +156,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classLights.html">Lights</a> object. </p>
+<p>Get the Lights object. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Lights&gt; </dd></dl>
 
 </div>
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the <a class="el" href="classLights.html">Lights</a> object. </p>
+<p>Set the Lights object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>

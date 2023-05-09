@@ -39,6 +39,10 @@ namespace Primitive
          *
          */
         float _scale;
+        /**
+         * @brief The intersexe of the primitive
+         *
+         */
         Math::Point3D _intersexe = Math::Point3D(0, 0, 0);
 
       public:
@@ -53,7 +57,15 @@ namespace Primitive
          * @return the color of the primitive
          */
         virtual Color getColor() const = 0;
+        /**
+         * @brief Get the intersexe of the primitive
+         * @return the intersexe of the primitive
+         */
         virtual Math::Point3D getIntersexe() const = 0;
+        /**
+         * @brief Get the normal of the primitive
+         * @return the normal of the primitive
+         */
         virtual Math::Vector3D getNormal() const = 0;
     };
 } // namespace Primitive

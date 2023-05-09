@@ -14,7 +14,11 @@ Inheritance diagram for Primitive\+::Planes\+:\begin{figure}[H]
 bool \mbox{\hyperlink{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}{hit}} (const \mbox{\hyperlink{classMath_1_1Ray}{Math\+::\+Ray}} \&ray) override
 \begin{DoxyCompactList}\small\item\em Check if the ray hit the primitive. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classPrimitive_1_1Planes_afb81616adff1f7d290d2b2a7c28785b9}{get\+Color}} () const override
-\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the color of the primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classPrimitive_1_1Planes_a3b5349f9920f0f3b10a2742a76530c27}{get\+Intersexe}} () const override
+\begin{DoxyCompactList}\small\item\em Get the intersexe of the primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classPrimitive_1_1Planes_a6b67a7a4ea6e7b4fcd2f39bea8a2479e}{get\+Normal}} () const override
+\begin{DoxyCompactList}\small\item\em Get the normal of the primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -53,6 +57,40 @@ the color of the primitive
 
 
 Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a68bc12d9bfc0111fb4bb35c4c2364a39}{Primitive\+::\+IPrimitives}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1Planes_a3b5349f9920f0f3b10a2742a76530c27}\label{classPrimitive_1_1Planes_a3b5349f9920f0f3b10a2742a76530c27}} 
+\index{Primitive::Planes@{Primitive::Planes}!getIntersexe@{getIntersexe}}
+\index{getIntersexe@{getIntersexe}!Primitive::Planes@{Primitive::Planes}}
+\doxysubsubsection{\texorpdfstring{getIntersexe()}{getIntersexe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Primitive\+::\+Planes\+::get\+Intersexe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the intersexe of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the intersexe of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_a272968cb0071bde43d8528ea0ea51ed1}{Primitive\+::\+IPrimitives}}.
+
+\mbox{\Hypertarget{classPrimitive_1_1Planes_a6b67a7a4ea6e7b4fcd2f39bea8a2479e}\label{classPrimitive_1_1Planes_a6b67a7a4ea6e7b4fcd2f39bea8a2479e}} 
+\index{Primitive::Planes@{Primitive::Planes}!getNormal@{getNormal}}
+\index{getNormal@{getNormal}!Primitive::Planes@{Primitive::Planes}}
+\doxysubsubsection{\texorpdfstring{getNormal()}{getNormal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} Primitive\+::\+Planes\+::get\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the normal of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the normal of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrimitive_1_1IPrimitives_ab24d34b1aaa93f9728d2a88eac34c17f}{Primitive\+::\+IPrimitives}}.
 
 \mbox{\Hypertarget{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}\label{classPrimitive_1_1Planes_a498f204b5b999a4cb554d1c5a51aabe8}} 
 \index{Primitive::Planes@{Primitive::Planes}!hit@{hit}}

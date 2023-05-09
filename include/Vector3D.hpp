@@ -97,7 +97,18 @@ namespace Math
          * @return float
          */
         float dot(const Vector3D &other) const;
+        /**
+         * @brief Normalize the vector
+         *
+         * @return Vector3D
+         */
         Vector3D normalize() const;
+        /**
+         * @brief Do the cross product between two vectors
+         *
+         * @param other
+         * @return Vector3D
+         */
         Vector3D cross(const Vector3D &other) const;
     };
 

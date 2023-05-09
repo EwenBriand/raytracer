@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['length_125',['length',['../classMath_1_1Vector3D.html#ad04181c15539ca3d4d1592fbce30fb20',1,'Math::Vector3D']]],
-  ['lights_126',['Lights',['../classLights.html#ae0a015f1418d69caa89f88dd97c63cf0',1,'Lights']]]
+  ['is_5fcut_152',['is_cut',['../classLight_1_1Diffuse.html#a9ee90e84950e20a602078139fc4b6349',1,'Light::Diffuse::is_cut()'],['../classLight_1_1Directional.html#a13960e2095697f96856115275d2d9f3a',1,'Light::Directional::is_cut()'],['../classLight_1_1ILights.html#a06bd72570db3259995d23887e8e3dcd8',1,'Light::ILights::is_cut()']]]
 ];

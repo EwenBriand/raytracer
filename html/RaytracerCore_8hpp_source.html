@@ -77,24 +77,25 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYTRACERCORE_HPP_</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">    #define RAYTRACERCORE_HPP_</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #include &quot;ParserFile.hpp&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">    #include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define RAYTRACERCORE_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ParserFile.hpp&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classRaytracerCore.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRaytracerCore.html">RaytracerCore</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28">   21</a></span>&#160;        <a class="code" href="classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28">RaytracerCore</a>(<span class="keyword">const</span> std::string &amp;sceneFile);</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031">   26</a></span>&#160;        std::shared_ptr&lt;sf::Image&gt; <a class="code" href="classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031">renderImage</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28">   21</a></span>&#160;    <a class="code" href="classRaytracerCore.html#a9aa3ccf04125ddb484fb5f5250a9be28">RaytracerCore</a>(<span class="keyword">const</span> std::string &amp;sceneFile);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031">   26</a></span>&#160;    std::shared_ptr&lt;sf::Image&gt; <a class="code" href="classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031">renderImage</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classParserFile.html">ParserFile</a> _file;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::vector&lt;std::shared_ptr&lt;Primitive::IPrimitives&gt; &gt; _primitives;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classCamera.html">Camera</a> _camera;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !RAYTRACERCORE_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.hpp:20</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classParserFile.html">ParserFile</a> _file;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;std::shared_ptr&lt;Primitive::IPrimitives&gt;&gt; _primitives;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classCamera.html">Camera</a> _camera;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;Light::ILights *&gt; _lights;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !RAYTRACERCORE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> Camera.hpp:19</div></div>
 <div class="ttc" id="aclassParserFile_html"><div class="ttname"><a href="classParserFile.html">ParserFile</a></div><div class="ttdef"><b>Definition:</b> ParserFile.hpp:23</div></div>
 <div class="ttc" id="aclassRaytracerCore_html"><div class="ttname"><a href="classRaytracerCore.html">RaytracerCore</a></div><div class="ttdef"><b>Definition:</b> RaytracerCore.hpp:14</div></div>
 <div class="ttc" id="aclassRaytracerCore_html_a5e7459eedda27359715846b31a8ca031"><div class="ttname"><a href="classRaytracerCore.html#a5e7459eedda27359715846b31a8ca031">RaytracerCore::renderImage</a></div><div class="ttdeci">std::shared_ptr&lt; sf::Image &gt; renderImage()</div><div class="ttdoc">Render the image.</div></div>

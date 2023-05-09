@@ -1,0 +1,174 @@
+\hypertarget{classILights}{}\doxysection{ILights Class Reference}
+\label{classILights}\index{ILights@{ILights}}
+Inheritance diagram for ILights\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classILights}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classILights_a511301af17dbc2f2edf4a9f0f077710b}{get\+Color}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classColor}{Color}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classILights_a7f4b046189b83a05d5f8a6db97758cef}{get\+Point}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Point object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classILights_af27dfa5385ce8032c10a284ebb58f815}{get\+Direction}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Direction object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $\ast$ \mbox{\hyperlink{classILights_a0a6b19b986e9af0c27c8001c1d04d2e4}{get\+Primitive}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Primitive object. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classILights_a29be870544d5579b5377e5b65ff18279}{get\+Power}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the Power object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classILights_ac7426e181ce3d451e3523dd5f8eaf2be}{is\+\_\+cut}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&point, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $>$$>$ primitives) const =0
+\begin{DoxyCompactList}\small\item\em Check if the light is cut by a primitive. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classILights_a2d4259e0bbae77f593b5dd63b6693cea}{define\+\_\+color}} (\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} inter, \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} normal, const \mbox{\hyperlink{classColor}{Color}} \&origin\+\_\+color, double t, bool \mbox{\hyperlink{classILights_ac7426e181ce3d451e3523dd5f8eaf2be}{is\+\_\+cut}})=0
+\begin{DoxyCompactList}\small\item\em Define the color of the pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classILights_a2d4259e0bbae77f593b5dd63b6693cea}\label{classILights_a2d4259e0bbae77f593b5dd63b6693cea}} 
+\index{ILights@{ILights}!define\_color@{define\_color}}
+\index{define\_color@{define\_color}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{define\_color()}{define\_color()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classColor}{Color}} ILights\+::define\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}}}]{inter,  }\item[{\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}}}]{normal,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{origin\+\_\+color,  }\item[{double}]{t,  }\item[{bool}]{is\+\_\+cut }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Define the color of the pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inter} & \\
+\hline
+{\em normal} & \\
+\hline
+{\em origin\+\_\+color} & \\
+\hline
+{\em t} & \\
+\hline
+{\em is\+\_\+cut} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classColor}{Color}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDirectional_af98cd874cd4e0004021fc044fdf49a1f}{Directional}}, and \mbox{\hyperlink{classDiffuse_aa96925727b91c57ee2d5b4fa3a58dabd}{Diffuse}}.
+
+\mbox{\Hypertarget{classILights_a511301af17dbc2f2edf4a9f0f077710b}\label{classILights_a511301af17dbc2f2edf4a9f0f077710b}} 
+\index{ILights@{ILights}!getColor@{getColor}}
+\index{getColor@{getColor}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classColor}{Color}} ILights\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the \mbox{\hyperlink{classColor}{Color}} object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classColor}{Color}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_ae9a16f71d357907e059d03cef93566b9}{Diffuse}}, and \mbox{\hyperlink{classDirectional_a60cba077f656e48d4de0dde3902d27e7}{Directional}}.
+
+\mbox{\Hypertarget{classILights_af27dfa5385ce8032c10a284ebb58f815}\label{classILights_af27dfa5385ce8032c10a284ebb58f815}} 
+\index{ILights@{ILights}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} ILights\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Direction object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_ae824f44862150f7f2176d1c08e7696d2}{Diffuse}}, and \mbox{\hyperlink{classDirectional_a6e26432519e6f7b1497e396575fc8d7e}{Directional}}.
+
+\mbox{\Hypertarget{classILights_a7f4b046189b83a05d5f8a6db97758cef}\label{classILights_a7f4b046189b83a05d5f8a6db97758cef}} 
+\index{ILights@{ILights}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} ILights\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Point object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_a0858563cacd0df41ed7bd20644a153d0}{Diffuse}}, and \mbox{\hyperlink{classDirectional_a2c4b4adf148c06d4c211f33eabaad16c}{Directional}}.
+
+\mbox{\Hypertarget{classILights_a29be870544d5579b5377e5b65ff18279}\label{classILights_a29be870544d5579b5377e5b65ff18279}} 
+\index{ILights@{ILights}!getPower@{getPower}}
+\index{getPower@{getPower}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily virtual float ILights\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Power object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_aa6770dbc83dc3f4e10c767a7629059da}{Diffuse}}, and \mbox{\hyperlink{classDirectional_aec3e755b185173e93ea99610324f8c5a}{Directional}}.
+
+\mbox{\Hypertarget{classILights_a0a6b19b986e9af0c27c8001c1d04d2e4}\label{classILights_a0a6b19b986e9af0c27c8001c1d04d2e4}} 
+\index{ILights@{ILights}!getPrimitive@{getPrimitive}}
+\index{getPrimitive@{getPrimitive}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{getPrimitive()}{getPrimitive()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}}$\ast$ ILights\+::get\+Primitive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the Primitive object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}}$\ast$ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_a91ef4689c40ecea949a19b2226211b09}{Diffuse}}, and \mbox{\hyperlink{classDirectional_aced4dcbf6ed1b53e609825c51434ea2b}{Directional}}.
+
+\mbox{\Hypertarget{classILights_ac7426e181ce3d451e3523dd5f8eaf2be}\label{classILights_ac7426e181ce3d451e3523dd5f8eaf2be}} 
+\index{ILights@{ILights}!is\_cut@{is\_cut}}
+\index{is\_cut@{is\_cut}!ILights@{ILights}}
+\doxysubsubsection{\texorpdfstring{is\_cut()}{is\_cut()}}
+{\footnotesize\ttfamily virtual bool ILights\+::is\+\_\+cut (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&}]{point,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $>$$>$}]{primitives }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the light is cut by a primitive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+{\em primitives} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiffuse_a949c5e10bf051e135ad817c27c321541}{Diffuse}}, and \mbox{\hyperlink{classDirectional_acc9416418e0647c53c5a37d156bfda2a}{Directional}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ILights.\+hpp\end{DoxyCompactItemize}

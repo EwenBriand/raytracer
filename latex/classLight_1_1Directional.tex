@@ -1,0 +1,220 @@
+\hypertarget{classLight_1_1Directional}{}\doxysection{Light\+::Directional Class Reference}
+\label{classLight_1_1Directional}\index{Light::Directional@{Light::Directional}}
+Inheritance diagram for Light\+::Directional\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLight_1_1Directional}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLight_1_1Directional_a59f23e40d0b7ef5cc4ee012efe8fc8ae}{Directional}} (const libconfig\+::\+Setting \&setting)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classLight_1_1Directional}{Directional}} object from a libconfig\+::\+Setting. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classLight_1_1Directional_a08fe738029bb25e41ba80e824218818d}{get\+Color}} () const override
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classColor}{Color}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \mbox{\hyperlink{classLight_1_1Directional_ac011e6e13afc05af012d15085e04294e}{get\+Point}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Point object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} \mbox{\hyperlink{classLight_1_1Directional_ac62799bd9faebeed7156baf7cd30cfa5}{get\+Direction}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Direction object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $\ast$ \mbox{\hyperlink{classLight_1_1Directional_a9339a878261b53d272b8852e20d99d91}{get\+Primitive}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Primitive object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classLight_1_1Directional_a55e445b518fa5a9f90389952507d1c3d}{get\+Power}} () const override
+\begin{DoxyCompactList}\small\item\em Get the Power object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLight_1_1Directional_a13960e2095697f96856115275d2d9f3a}{is\+\_\+cut}} (const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&point, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $>$$>$ primitives) const override
+\begin{DoxyCompactList}\small\item\em Check if the light is cut by a primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classLight_1_1Directional_ae23952c1b1e64666910ff5182992cebf}{blinn\+\_\+phong}} (\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} inter, \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} dir, \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} normal, \mbox{\hyperlink{classColor}{Color}} c)
+\begin{DoxyCompactList}\small\item\em Blinn-\/\+Phong shading. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classLight_1_1Directional_ae863d4946268b3818f6d3677cc0b0b9e}{define\+\_\+color}} (\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} inter, \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} normal, const \mbox{\hyperlink{classColor}{Color}} \&origin\+\_\+color, double t, bool \mbox{\hyperlink{classLight_1_1Directional_a13960e2095697f96856115275d2d9f3a}{is\+\_\+cut}}) override
+\begin{DoxyCompactList}\small\item\em Define the color of the pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLight_1_1Directional_a59f23e40d0b7ef5cc4ee012efe8fc8ae}\label{classLight_1_1Directional_a59f23e40d0b7ef5cc4ee012efe8fc8ae}} 
+\index{Light::Directional@{Light::Directional}!Directional@{Directional}}
+\index{Directional@{Directional}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{Directional()}{Directional()}}
+{\footnotesize\ttfamily Light\+::\+Directional\+::\+Directional (\begin{DoxyParamCaption}\item[{const libconfig\+::\+Setting \&}]{setting }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classLight_1_1Directional}{Directional}} object from a libconfig\+::\+Setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLight_1_1Directional_ae23952c1b1e64666910ff5182992cebf}\label{classLight_1_1Directional_ae23952c1b1e64666910ff5182992cebf}} 
+\index{Light::Directional@{Light::Directional}!blinn\_phong@{blinn\_phong}}
+\index{blinn\_phong@{blinn\_phong}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{blinn\_phong()}{blinn\_phong()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Light\+::\+Directional\+::blinn\+\_\+phong (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}}}]{inter,  }\item[{\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}}}]{dir,  }\item[{\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}}}]{normal,  }\item[{\mbox{\hyperlink{classColor}{Color}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Blinn-\/\+Phong shading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inter} & \\
+\hline
+{\em dir} & \\
+\hline
+{\em normal} & \\
+\hline
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classColor}{Color}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLight_1_1Directional_ae863d4946268b3818f6d3677cc0b0b9e}\label{classLight_1_1Directional_ae863d4946268b3818f6d3677cc0b0b9e}} 
+\index{Light::Directional@{Light::Directional}!define\_color@{define\_color}}
+\index{define\_color@{define\_color}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{define\_color()}{define\_color()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Light\+::\+Directional\+::define\+\_\+color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}}}]{inter,  }\item[{\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}}}]{normal,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{origin\+\_\+color,  }\item[{double}]{t,  }\item[{bool}]{is\+\_\+cut }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Define the color of the pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inter} & \\
+\hline
+{\em normal} & \\
+\hline
+{\em origin\+\_\+color} & \\
+\hline
+{\em t} & \\
+\hline
+{\em is\+\_\+cut} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classColor}{Color}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_ae9b529aafa121be980af9a761e784be6}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_a08fe738029bb25e41ba80e824218818d}\label{classLight_1_1Directional_a08fe738029bb25e41ba80e824218818d}} 
+\index{Light::Directional@{Light::Directional}!getColor@{getColor}}
+\index{getColor@{getColor}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Light\+::\+Directional\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \mbox{\hyperlink{classColor}{Color}} object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classColor}{Color}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a15d99692cd11be9967671581b30ecc2c}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_ac62799bd9faebeed7156baf7cd30cfa5}\label{classLight_1_1Directional_ac62799bd9faebeed7156baf7cd30cfa5}} 
+\index{Light::Directional@{Light::Directional}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} Light\+::\+Directional\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Direction object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Vector3D}{Math\+::\+Vector3D}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a060edd4fe2c385b57a53a9076c0bb265}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_ac011e6e13afc05af012d15085e04294e}\label{classLight_1_1Directional_ac011e6e13afc05af012d15085e04294e}} 
+\index{Light::Directional@{Light::Directional}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} Light\+::\+Directional\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Point object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a4171920401ee069935579100784e1720}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_a55e445b518fa5a9f90389952507d1c3d}\label{classLight_1_1Directional_a55e445b518fa5a9f90389952507d1c3d}} 
+\index{Light::Directional@{Light::Directional}!getPower@{getPower}}
+\index{getPower@{getPower}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily float Light\+::\+Directional\+::get\+Power (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Power object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a061e1abd27fdf36a3f195e4b75d6b529}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_a9339a878261b53d272b8852e20d99d91}\label{classLight_1_1Directional_a9339a878261b53d272b8852e20d99d91}} 
+\index{Light::Directional@{Light::Directional}!getPrimitive@{getPrimitive}}
+\index{getPrimitive@{getPrimitive}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{getPrimitive()}{getPrimitive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}}$\ast$ Light\+::\+Directional\+::get\+Primitive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Primitive object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}}$\ast$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a2478c8b5280c4ff45ea9dbd76fe2c42d}{Light\+::\+ILights}}.
+
+\mbox{\Hypertarget{classLight_1_1Directional_a13960e2095697f96856115275d2d9f3a}\label{classLight_1_1Directional_a13960e2095697f96856115275d2d9f3a}} 
+\index{Light::Directional@{Light::Directional}!is\_cut@{is\_cut}}
+\index{is\_cut@{is\_cut}!Light::Directional@{Light::Directional}}
+\doxysubsubsection{\texorpdfstring{is\_cut()}{is\_cut()}}
+{\footnotesize\ttfamily bool Light\+::\+Directional\+::is\+\_\+cut (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Point3D}{Math\+::\+Point3D}} \&}]{point,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPrimitive_1_1IPrimitives}{Primitive\+::\+IPrimitives}} $>$$>$}]{primitives }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if the light is cut by a primitive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \\
+\hline
+{\em primitives} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLight_1_1ILights_a06bd72570db3259995d23887e8e3dcd8}{Light\+::\+ILights}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Directional.\+hpp\end{DoxyCompactItemize}
