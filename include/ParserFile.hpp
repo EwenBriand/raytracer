@@ -64,7 +64,7 @@ class ParserFile {
      *
      * @return std::vector<Lights>
      */
-    std::vector<Light::ILights *> getLights() const;
+    std::vector<std::shared_ptr<Light::ILights>> getLights() const;
 
   private:
     /**
@@ -81,12 +81,12 @@ class ParserFile {
      * @brief The lights of the scene
      *
      */
-    std::vector<Light::ILights *> _lights;
+    std::vector<std::shared_ptr<Light::ILights>> _lights;
     /**
      * @brief The factory of the primitives
      *
      */
-    Primitive::AbstractFactory *_factory;
+    AbstractFactory *_factory;
 };
 
 #endif /* DEA803B7_0073_403F_AFAB_9646A6CEAFEC */

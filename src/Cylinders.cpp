@@ -43,15 +43,9 @@ Primitive::Cylinders::~Cylinders()
 
 bool Primitive::Cylinders::hit(const Math::Ray &ray)
 {
-    double a =
-        pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2);
-    double b = 2
-        * (ray.getDirection().getX()
-                * (ray.getOrigin().getX() - _position.getX())
-            + ray.getDirection().getZ()
-                * (ray.getOrigin().getZ() - _position.getZ()));
-    double c = pow(ray.getOrigin().getX() - _position.getX(), 2)
-        + pow(ray.getOrigin().getZ() - _position.getZ(), 2) - pow(_radius, 2);
+    double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2);
+    double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX()) + ray.getDirection().getZ() * (ray.getOrigin().getZ() - _position.getZ()));
+    double c = pow(ray.getOrigin().getX() - _position.getX(), 2) + pow(ray.getOrigin().getZ() - _position.getZ(), 2) - pow(_radius, 2);
 
     double discriminant = pow(b, 2) - 4 * a * c;
 
@@ -65,12 +59,13 @@ bool Primitive::Cylinders::hit(const Math::Ray &ray)
     }
     double y = ray.getOrigin().getY() + t * ray.getDirection().getY();
 
-    if (_isLimited
-        && (y < _position.getY() || y > _position.getY() + _height)) {
+    if (_isLimited && (y < _position.getY() || y > _position.getY() + _height)) {
         return false;
     }
+    _intersexe = ray.getOrigin() + ray.getDirection() * t;
     return true;
 }
+
 
 Color Primitive::Cylinders::getColor() const
 {
@@ -84,5 +79,10 @@ Math::Point3D Primitive::Cylinders::getIntersexe() const
 
 Math::Vector3D Primitive::Cylinders::getNormal() const
 {
-    return Math::Vector3D(0, 0, 0);
+    Math::Vector3D normal = Math::Vector3D(
+        _intersexe.getX() - _position.getX(),
+        0,
+        _intersexe.getZ() - _position.getZ()
+    );
+    return normal.normalize();
 }
