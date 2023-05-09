@@ -99,3 +99,8 @@ Math::Vector3D Primitive::Cones::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Primitive::Cones::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

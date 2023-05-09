@@ -67,6 +67,12 @@ namespace Primitive
          * @return the normal of the primitive
          */
         virtual Math::Vector3D getNormal() const = 0;
+        /**
+         * @brief Set the Intersexe object
+         *
+         * @param value
+         */
+        virtual void setIntersexe(const Math::Point3D &value) = 0;
     };
 } // namespace Primitive
 

@@ -116,8 +116,6 @@ float Math::Point3D::distance(const Math::Point3D &point) const
 
 Math::Vector3D Math::Point3D::vectorTo(const Math::Point3D &point) const
 {
-    // std::cout << "xB : " << point.getX() << " xA : " << _x << std::endl;
-    // std::cout << "dx : " << point.getX() - _x << std::endl;
     float dx = point.getX() - _x;
     float dy = point.getY() - _y;
     float dz = point.getZ() - _z;
@@ -128,4 +126,10 @@ Math::Point3D Math::Point3D::normalize() const
 {
     float length = sqrt(pow(_x, 2) + pow(_y, 2) + pow(_z, 2));
     return Math::Point3D(_x / length, _y / length, _z / length);
+}
+
+float Math::Point3D::distanceTo(const Math::Point3D &point) const
+{
+    return sqrt(pow(point.getX() - _x, 2) + pow(point.getY() - _y, 2)
+        + pow(point.getZ() - _z, 2));
 }
