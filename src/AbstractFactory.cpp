@@ -8,25 +8,35 @@
 #include "AbstractFactory.hpp"
 #include <functional>
 #include <map>
-#include "AllPrimitives.hpp"
 
-Primitive::AbstractFactory::AbstractFactory()
+AbstractFactory::AbstractFactory()
 {
-    builders_["spheres"] = std::make_shared<SphereBuilder>();
-    builders_["planes"] = std::make_shared<PlaneBuilder>();
-    builders_["triangles"] = std::make_shared<TriangleBuilder>();
-    builders_["cones"] = std::make_shared<ConeBuilder>();
-    builders_["cylinders"] = std::make_shared<CylinderBuilder>();
-    builders_["torus"] = std::make_shared<TorusBuilder>();
-    builders_["boxes"] = std::make_shared<BoxBuilder>();
+    _primitives["spheres"] = std::make_shared<Primitive::SphereBuilder>();
+    _primitives["planes"] = std::make_shared<Primitive::PlaneBuilder>();
+    _primitives["triangles"] = std::make_shared<Primitive::TriangleBuilder>();
+    _primitives["cones"] = std::make_shared<Primitive::ConeBuilder>();
+    _primitives["cylinders"] = std::make_shared<Primitive::CylinderBuilder>();
+    _primitives["torus"] = std::make_shared<Primitive::TorusBuilder>();
+    _primitives["boxes"] = std::make_shared<Primitive::BoxBuilder>();
+
+    _lights["diffuse"] = std::make_shared<Light::DiffuseBuilder>();
+    _lights["directional"] = std::make_shared<Light::DirectionalBuilder>();
 }
 
-std::shared_ptr<Primitive::IPrimitives> Primitive::AbstractFactory::createPrimitive(const std::string type, const libconfig::Setting &setting)
+std::shared_ptr<Primitive::IPrimitives> AbstractFactory::createPrimitive(const std::string type, const libconfig::Setting &setting)
 {
-    if (builders_.count(type))
-        return builders_[type]->build(setting);
+    if (_primitives.count(type))
+        return _primitives[type]->build(setting);
     else
         throw std::runtime_error("Unknown primitive type: " + type);
+}
+
+std::shared_ptr<Light::ILights> AbstractFactory::createLight(const std::string type, const libconfig::Setting &setting)
+{
+    if (_lights.count(type))
+        return _lights[type]->build(setting);
+    else
+        throw std::runtime_error("Unknown light type: " + type);
 }
 
 // std::shared_ptr<IPrimitives> AbstractFactory::createPrimitive(const std::string type,

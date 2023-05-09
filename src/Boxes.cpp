@@ -16,11 +16,17 @@ Primitive::Boxes::Boxes(const libconfig::Setting &setting)
         std::cout << _color << std::endl;
         _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
+        setting.lookupValue("scale", _scale);
+        if (!_scale)
+            _scale = 1;
         setting.lookupValue("w", _width);
+        _width *= _scale;
         std::cout << _width << std::endl;
         setting.lookupValue("h", _height);
+        _height *= _scale;
         std::cout << _height << std::endl;
         setting.lookupValue("d", _depth);
+        _depth *= _scale;
         std::cout << _depth << std::endl;
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
