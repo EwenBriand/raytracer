@@ -9,8 +9,7 @@
 
 Primitive::Cones::Cones(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _position.setPoint(setting);
         std::cout << _position << std::endl;
         _color.setColor(setting["color"]);
@@ -19,8 +18,7 @@ Primitive::Cones::Cones(const libconfig::Setting &setting)
         std::cout << _rotation << std::endl;
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
-        if (_isLimited)
-        {
+        if (_isLimited) {
             setting.lookupValue("r", _radius);
             std::cout << _radius << std::endl;
             setting.lookupValue("h", _height);
@@ -29,7 +27,9 @@ Primitive::Cones::Cones(const libconfig::Setting &setting)
             if (_height == 0)
                 _angle = 0;
             else
-                _angle = atan(_height / (sqrtf(_radius * _radius + _height * _height))) * 180 / M_PI;
+                _angle = atan(_height
+                             / (sqrtf(_radius * _radius + _height * _height)))
+                    * 180 / M_PI;
             setting.lookupValue("scale", _scale);
             if (!_scale)
                 _scale = 1;
@@ -42,23 +42,32 @@ Primitive::Cones::Cones(const libconfig::Setting &setting)
             std::cout << _angle << std::endl;
             _height = 1000000000;
         }
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
 
 Primitive::Cones::~Cones()
-{}
+{
+}
 
 bool Primitive::Cones::hit(const Math::Ray &ray)
 {
-    double a = pow(ray.getDirection().getX(), 2) + pow(ray.getDirection().getZ(), 2) - pow(ray.getDirection().getY(), 2) * pow(tan(_angle), 2);
-    double b = 2 * (ray.getDirection().getX() * (ray.getOrigin().getX() - _position.getX())
-                    + ray.getDirection().getZ() * (ray.getOrigin().getZ() - _position.getZ())
-                    - ray.getDirection().getY() * (ray.getOrigin().getY() - _position.getY()) * pow(tan(_angle), 2));
-    double c = pow(ray.getOrigin().getX() - _position.getX(), 2) + pow(ray.getOrigin().getZ() - _position.getZ(), 2) - pow(ray.getOrigin().getY() - _position.getY(), 2) * pow(tan(_angle), 2);
+    double a = pow(ray.getDirection().getX(), 2)
+        + pow(ray.getDirection().getZ(), 2)
+        - pow(ray.getDirection().getY(), 2) * pow(tan(_angle), 2);
+    double b = 2
+        * (ray.getDirection().getX()
+                * (ray.getOrigin().getX() - _position.getX())
+            + ray.getDirection().getZ()
+                * (ray.getOrigin().getZ() - _position.getZ())
+            - ray.getDirection().getY()
+                * (ray.getOrigin().getY() - _position.getY())
+                * pow(tan(_angle), 2));
+    double c = pow(ray.getOrigin().getX() - _position.getX(), 2)
+        + pow(ray.getOrigin().getZ() - _position.getZ(), 2)
+        - pow(ray.getOrigin().getY() - _position.getY(), 2)
+            * pow(tan(_angle), 2);
 
     double discriminant = pow(b, 2) - 4 * a * c;
 
@@ -79,4 +88,14 @@ bool Primitive::Cones::hit(const Math::Ray &ray)
 Color Primitive::Cones::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Primitive::Cones::getIntersexe() const
+{
+    return _intersexe;
+}
+
+Math::Vector3D Primitive::Cones::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
 }

@@ -9,8 +9,7 @@
 
 Primitive::Triangles::Triangles(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _color.setColor(setting["color"]);
         std::cout << _color << std::endl;
         _rotation.setVector3D(setting["rotation"]);
@@ -23,9 +22,7 @@ Primitive::Triangles::Triangles(const libconfig::Setting &setting)
         std::cout << _sommet3 << std::endl;
         _normal = (_sommet2 - _sommet1).cross(_sommet3 - _sommet1);
         std::cout << _normal << std::endl;
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -36,7 +33,8 @@ Primitive::Triangles::~Triangles()
 
 bool Primitive::Triangles::hit(const Math::Ray &ray)
 {
-    float t = (_sommet1 - ray.getOrigin()).dot(_normal) / ray.getDirection().dot(_normal);
+    float t = (_sommet1 - ray.getOrigin()).dot(_normal)
+        / ray.getDirection().dot(_normal);
     Math::Point3D p = ray.getOrigin() + ray.getDirection() * t;
     Math::Point3D v1 = _sommet2 - _sommet1;
     Math::Point3D v2 = _sommet3 - _sommet1;
@@ -57,4 +55,14 @@ bool Primitive::Triangles::hit(const Math::Ray &ray)
 Color Primitive::Triangles::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Primitive::Triangles::getIntersexe() const
+{
+    return _intersexe;
+}
+
+Math::Vector3D Primitive::Triangles::getNormal() const
+{
+    return Math::Vector3D(0, 0, 0);
 }

@@ -20,7 +20,6 @@ set(SOURCES
     src/Color.cpp
     src/Cones.cpp
     src/Cylinders.cpp
-    src/Lights.cpp
     src/ParserFile.cpp
     src/Planes.cpp
     src/Point3D.cpp
@@ -33,6 +32,8 @@ set(SOURCES
     src/Spheres.cpp
     src/Torus.cpp
     src/Triangles.cpp
+    src/Directional.cpp
+    src/Diffuse.cpp
 )
 
 add_executable(raytracer ${SOURCES})

@@ -57,29 +57,61 @@ void Math::Vector3D::setVector3D(float x, float y, float z)
 
 void Math::Vector3D::setVector3D(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         setting.lookupValue("x", _x);
         setting.lookupValue("y", _y);
         setting.lookupValue("z", _z);
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
 
 std::ostream &operator<<(std::ostream &s, const Math::Vector3D &vector)
 {
-    s << "Vector3D(" << vector.getX() << ", " << vector.getY() << ", " << vector.getZ() << ")";
+    s << "Vector3D(" << vector.getX() << ", " << vector.getY() << ", "
+      << vector.getZ() << ")";
     return s;
 }
 
-float Math::Vector3D::dot(const Vector3D& other) const {
+float Math::Vector3D::dot(const Vector3D &other) const
+{
     return _x * other._x + _y * other._y + _z * other._z;
+}
+
+Math::Vector3D Math::Vector3D::normalize() const
+{
+    float length = sqrt(_x * _x + _y * _y + _z * _z);
+    return Vector3D(_x / length, _y / length, _z / length);
 }
 
 Math::Vector3D operator*(const Math::Vector3D &vector, const float &scalar)
 {
-    return Math::Vector3D(vector.getX() * scalar, vector.getY() * scalar, vector.getZ() * scalar);
+    return Math::Vector3D(vector.getX() * scalar, vector.getY() * scalar,
+        vector.getZ() * scalar);
+}
+
+Math::Vector3D operator/(const Math::Vector3D &vector, const float &scalar)
+{
+    return Math::Vector3D(vector.getX() / scalar, vector.getY() / scalar,
+        vector.getZ() / scalar);
+}
+
+Math::Vector3D operator-(const Math::Vector3D &a, const Math::Vector3D &b)
+{
+    Math::Vector3D result = {
+        a.getX() - b.getX(), a.getY() - b.getY(), a.getZ() - b.getZ()};
+    return result;
+}
+
+Math::Vector3D operator+(const Math::Vector3D &a, const Math::Vector3D &b)
+{
+    Math::Vector3D result = {
+        a.getX() + b.getX(), a.getY() + b.getY(), a.getZ() + b.getZ()};
+    return result;
+}
+
+Math::Vector3D Math::Vector3D::cross(const Vector3D &other) const
+{
+    return Math::Vector3D(_y * other._z - _z * other._y,
+        _z * other._x - _x * other._z, _x * other._y - _y * other._x);
 }

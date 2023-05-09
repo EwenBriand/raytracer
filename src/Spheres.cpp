@@ -9,8 +9,7 @@
 
 Primitive::Spheres::Spheres(const libconfig::Setting &setting)
 {
-    try
-    {
+    try {
         _position.setPoint(setting);
         std::cout << _position << std::endl;
 
@@ -28,9 +27,7 @@ Primitive::Spheres::Spheres(const libconfig::Setting &setting)
             _radius *= _scale;
         }
         std::cout << "scale " << _scale << std::endl;
-    }
-    catch(const std::exception& e)
-    {
+    } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
 }
@@ -43,18 +40,39 @@ bool Primitive::Spheres::hit(const Math::Ray &ray)
 {
     float a = ray.getDirection().dot(ray.getDirection());
     float b = 2 * ray.getDirection().dot(ray.getOrigin() - _position);
-    float c = (ray.getOrigin() - _position).dot(ray.getOrigin() - _position) - _radius * _radius;
+    float c = (ray.getOrigin() - _position).dot(ray.getOrigin() - _position)
+        - _radius * _radius;
     float delta = b * b - 4 * a * c;
     if (delta < 0)
         return false;
     float t1 = (-b + sqrt(delta)) / (2 * a);
     float t2 = (-b - sqrt(delta)) / (2 * a);
-    if (t1 > 0 && t2 > 0)
+    if (t1 > 0 && t2 > 0) {
+        _intersexe =
+            ray.getOrigin() + (ray.getDirection() * (t1 < t2 ? t1 : t2));
         return true;
+    }
     return false;
 }
 
 Color Primitive::Spheres::getColor() const
 {
     return _color;
+}
+
+Math::Point3D Primitive::Spheres::getIntersexe() const
+{
+    return _intersexe;
+}
+
+Math::Vector3D Primitive::Spheres::getNormal() const
+{
+    float nx = _intersexe.getX() - _position.getX();
+    float ny = _intersexe.getY() - _position.getY();
+    float nz = _intersexe.getZ() - _position.getZ();
+    float length = sqrt(nx * nx + ny * ny + nz * nz);
+
+    // std::cout << "length: " << length << std::endl;
+
+    return (Math::Vector3D){nx / length, ny / length, nz / length};
 }
