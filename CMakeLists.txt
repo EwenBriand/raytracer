@@ -38,16 +38,32 @@ set(SOURCES
 
 add_executable(raytracer ${SOURCES})
 
-# # Add the move_file target as a dependency of the raytracer target to ensure it is executed during the build
-# add_dependencies(raytracer move_file)
+# Trouver libconfig++ pour les systèmes Linux et macOS
+if (APPLE)
+    find_path(LIBCONFIG_INCLUDE_DIR libconfig.h++ PATH_SUFFIXES libconfig++)
+    find_library(LIBCONFIG_LIBRARY libconfig++.dylib)
+else()
+    find_path(LIBCONFIG_INCLUDE_DIR libconfig.h++ PATH_SUFFIXES libconfig++)
+    find_library(LIBCONFIG_LIBRARY libconfig++.so)
+endif()
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(libconfig++ DEFAULT_MSG LIBCONFIG_LIBRARY LIBCONFIG_INCLUDE_DIR)
+
+mark_as_advanced(LIBCONFIG_INCLUDE_DIR LIBCONFIG_LIBRARY)
+
+include_directories(${LIBCONFIG_INCLUDE_DIR})
+
+find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
+
+target_link_libraries(raytracer sfml-system sfml-window sfml-graphics)
+include_directories(${SFML_INCLUDE_DIR})
 
 target_link_libraries(
     raytracer
-    -lsfml-system
-    -lsfml-window
-    -lsfml-graphics
-    -ldl
-    -lconfig++
+    ${SFML_LIBRARIES}
+    ${LIBCONFIG_LIBRARY}
+    dl
 )
 
 add_custom_command(
