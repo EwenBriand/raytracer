@@ -17,13 +17,20 @@ Primitive::Cylinders::Cylinders(const libconfig::Setting &setting)
         _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
         setting.lookupValue("r", _radius);
-        std::cout << _radius << std::endl;
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
-        if (_isLimited)
+        setting.lookupValue("scale", _scale);
+        if (!_scale)
+            _scale = 1;
+        std::cout << "scale " << _scale << std::endl;
+        _radius *= _scale;
+        std::cout << _radius << std::endl;
+        if (_isLimited) {
             setting.lookupValue("h", _height);
-        else
+            _height *= _scale;
+        } else {
             _height = 0;
+        }
         std::cout << _height << std::endl;
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
