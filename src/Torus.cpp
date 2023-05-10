@@ -20,6 +20,8 @@ Primitive::Torus::Torus(const libconfig::Setting &setting)
         std::cout << _radiusMinor << std::endl;
         setting.lookupValue("R", _radiusMajor);
         std::cout << _radiusMajor << std::endl;
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -184,4 +186,9 @@ Math::Vector3D Primitive::Torus::getNormal() const
 void Primitive::Torus::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Torus::isNeon() const
+{
+    return _isNeon;
 }

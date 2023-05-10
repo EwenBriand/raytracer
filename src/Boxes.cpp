@@ -28,6 +28,8 @@ Primitive::Boxes::Boxes(const libconfig::Setting &setting)
         setting.lookupValue("d", _depth);
         _depth *= _scale;
         std::cout << _depth << std::endl;
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -121,4 +123,9 @@ Math::Vector3D Primitive::Boxes::getNormal() const
 void Primitive::Boxes::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Boxes::isNeon() const
+{
+    return _isNeon;
 }

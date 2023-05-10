@@ -16,6 +16,8 @@ Primitive::Cones::Cones(const libconfig::Setting &setting)
         std::cout << _color << std::endl;
         _rotation.setVector3D(setting["rotation"]);
         std::cout << _rotation << std::endl;
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
         if (_isLimited) {
@@ -99,4 +101,9 @@ Math::Vector3D Primitive::Cones::getNormal() const
 void Primitive::Cones::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Cones::isNeon() const
+{
+    return _isNeon;
 }

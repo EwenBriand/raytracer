@@ -35,6 +35,11 @@ namespace Primitive
          */
         Math::Vector3D _rotation;
         /**
+         * @brief Is the primitive a neon
+         *
+         */
+        bool _isNeon = false;
+        /**
          * @brief The scale of the primitive
          *
          */
@@ -73,6 +78,11 @@ namespace Primitive
          * @param value
          */
         virtual void setIntersexe(const Math::Point3D &value) = 0;
+        /**
+         * @brief Return if is a neon.
+         * @return bool (true or false)
+         */
+        virtual bool isNeon() const = 0;
     };
 } // namespace Primitive
 

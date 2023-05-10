@@ -19,6 +19,8 @@ Primitive::Cylinders::Cylinders(const libconfig::Setting &setting)
         setting.lookupValue("r", _radius);
         setting.lookupValue("limited", _isLimited);
         std::cout << _isLimited << std::endl;
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
         setting.lookupValue("scale", _scale);
         if (!_scale)
             _scale = 1;
@@ -90,4 +92,9 @@ Math::Vector3D Primitive::Cylinders::getNormal() const
 void Primitive::Cylinders::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Cylinders::isNeon() const
+{
+    return _isNeon;
 }

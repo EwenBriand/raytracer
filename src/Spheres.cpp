@@ -26,6 +26,8 @@ Primitive::Spheres::Spheres(const libconfig::Setting &setting)
         } else {
             _radius *= _scale;
         }
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
         std::cout << "scale " << _scale << std::endl;
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
@@ -78,4 +80,9 @@ Math::Vector3D Primitive::Spheres::getNormal() const
 void Primitive::Spheres::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Spheres::isNeon() const
+{
+    return _isNeon;
 }

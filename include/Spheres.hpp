@@ -36,6 +36,7 @@ namespace Primitive
         Math::Point3D getIntersexe() const override;
         Math::Vector3D getNormal() const override;
         void setIntersexe(const Math::Point3D &value) override;
+        bool isNeon() const override;
     };
 } // namespace Primitive
 
