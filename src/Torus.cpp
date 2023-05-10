@@ -54,3 +54,8 @@ void Torus::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Torus::isNeon() const
+{
+    return _isNeon;
+}

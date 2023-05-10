@@ -16,10 +16,8 @@ class BoxeNeon: public Boxes {
 
   public:
     BoxeNeon(const libconfig::Setting &setting);
-    ~BoxeNeon() override;
+    ~BoxeNeon() override = default;
     Color getColor() const override;
 };
-
-
 
 #endif /* !NEON_HPP_ */

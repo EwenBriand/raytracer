@@ -87,3 +87,8 @@ void Cylinders::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Cylinders::isNeon() const
+{
+    return _isNeon;
+}

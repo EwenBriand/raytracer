@@ -82,3 +82,7 @@ void Spheres::setIntersexe(const Math::Point3D &value)
     _intersexe = value;
 }
 
+bool Spheres::isNeon() const
+{
+    return _isNeon;
+}

@@ -77,3 +77,8 @@ void Planes::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Planes::isNeon() const
+{
+    return _isNeon;
+}

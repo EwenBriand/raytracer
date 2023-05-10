@@ -28,6 +28,7 @@ class Triangles : public IPrimitives {
     Math::Point3D getIntersexe() const override;
     Math::Vector3D getNormal() const;
     void setIntersexe(const Math::Point3D &value) override;
+    bool isNeon() const override;
 };
 
 #endif /* E6FB8944_93AB_44F6_84DC_8F965B067DC4 */

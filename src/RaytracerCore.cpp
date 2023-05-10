@@ -31,6 +31,8 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
 
             for (long unsigned int k = 0; k < _primitives.size(); k++) {
                 if (_primitives[k]->hit(ray)) {
+                    if (_primitives[k]->isNeon())
+                        _raysToBlur.push_back(ray);
                     if (closestPrimitive == nullptr) {
                         closestPrimitive = _primitives[k];
                         closestIntersexe = _primitives[k]->getIntersexe();
@@ -75,5 +77,5 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
 
 std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
 {
-    
+
 }

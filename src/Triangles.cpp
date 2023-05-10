@@ -56,3 +56,8 @@ void Triangles::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Triangles::isNeon() const
+{
+    return _isNeon;
+}

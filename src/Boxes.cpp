@@ -80,3 +80,8 @@ void Boxes::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Boxes::isNeon() const
+{
+    return _isNeon;
+}

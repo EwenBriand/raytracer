@@ -27,6 +27,7 @@ class Boxes : public IPrimitives {
     Math::Point3D getIntersexe() const override;
     Math::Vector3D getNormal() const;
     void setIntersexe(const Math::Point3D &value) override;
+    bool isNeon() const override;
 };
 
 #endif /* D428BE3F_E861_4C23_A929_D74DB520103F */

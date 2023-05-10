@@ -167,3 +167,8 @@ void Cones::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
 }
+
+bool Cones::isNeon() const
+{
+    return _isNeon;
+}
