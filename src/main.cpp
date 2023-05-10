@@ -23,6 +23,7 @@ int main(int ac, char **av)
     }
     RaytracerCore core(av[1]);
     std::shared_ptr<sf::Image> image = core.renderImage();
+    image = core.PostProcess(*image);
     RaytracerGraphic interface(image);
     interface.run();
     image->saveToFile("image.png");

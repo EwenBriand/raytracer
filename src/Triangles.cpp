@@ -22,6 +22,8 @@ Primitive::Triangles::Triangles(const libconfig::Setting &setting)
         std::cout << _sommet3 << std::endl;
         _normal = (_sommet2 - _sommet1).cross(_sommet3 - _sommet1);
         std::cout << _normal << std::endl;
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -70,4 +72,9 @@ Math::Vector3D Primitive::Triangles::getNormal() const
 void Primitive::Triangles::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Triangles::isNeon() const
+{
+    return _isNeon;
 }

@@ -23,6 +23,8 @@ Primitive::Planes::Planes(const libconfig::Setting &setting)
         Math::Point3D tmp((_p2 - _position).cross(_p3 - _position));
         std::cout << tmp << std::endl;
         _normal.setVector3D(tmp.getX(), tmp.getY(), tmp.getZ());
+        if (setting.exists("neon") == true)
+            setting.lookupValue("neon", _isNeon);
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
@@ -79,4 +81,9 @@ Math::Vector3D Primitive::Planes::getNormal() const
 void Primitive::Planes::setIntersexe(const Math::Point3D &value)
 {
     _intersexe = value;
+}
+
+bool Primitive::Planes::isNeon() const
+{
+    return _isNeon;
 }

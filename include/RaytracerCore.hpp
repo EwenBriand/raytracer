@@ -24,7 +24,11 @@ class RaytracerCore {
      *
      */
     std::shared_ptr<sf::Image> renderImage();
-
+    /**
+     * @brief Apply post process enhancements
+     *
+     */
+    std::shared_ptr<sf::Image> PostProcess(const sf::Image &image);
   private:
     /**
      * @brief Parse the file
@@ -46,6 +50,20 @@ class RaytracerCore {
      *
      */
     std::vector<std::shared_ptr<Light::ILights>> _lights;
+    /**
+     * @brief Vector of all the ray that intersect a Neon primitive
+     *
+     */
+    std::vector<Math::Ray> _raysToBlur;
+    /**
+     * @brief Vector of all the pixel that need to be blurred
+     *
+     */
+    std::vector<std::pair<float, float>> _coordsToBlur;
+
+    sf::Image GaussianBlur(const sf::Image &image);
+    sf::Image applyMask(const sf::Image &image);
+    sf::Image addImages(const sf::Image& image1, const sf::Image& image2);
 };
 
 #endif /* !RAYTRACERCORE_HPP_ */

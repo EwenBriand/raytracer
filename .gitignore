@@ -38,3 +38,6 @@ build
 Makefile
 *.png
 *.ppm
+
+.vscode
+vgcore*
