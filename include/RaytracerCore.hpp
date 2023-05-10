@@ -64,7 +64,6 @@ class RaytracerCore {
     sf::Image GaussianBlur(const sf::Image &image);
     sf::Image applyMask(const sf::Image &image);
     sf::Image addImages(const sf::Image& image1, const sf::Image& image2);
-
 };
 
 #endif /* !RAYTRACERCORE_HPP_ */

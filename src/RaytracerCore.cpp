@@ -81,7 +81,7 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
 std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
 {
     sf::Image blurredImg = image;
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < 50; i++) {
         blurredImg = GaussianBlur(blurredImg);
     }
     sf::Image linkedImage = addImages(image, blurredImg);
@@ -93,8 +93,6 @@ std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
     sf::Image resultImage = addImages(image, maxiBlurred);
     return std::make_shared<sf::Image>(resultImage);
 }
-
-
 
 sf::Image RaytracerCore::GaussianBlur(const sf::Image &image)
 {
