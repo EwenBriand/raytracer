@@ -19,7 +19,7 @@ AbstractFactory::AbstractFactory()
     _primitives["torus"] = std::make_shared<Primitive::TorusBuilder>();
     _primitives["boxes"] = std::make_shared<Primitive::BoxBuilder>();
 
-    _lights["diffuse"] = std::make_shared<Light::DiffuseBuilder>();
+    _lights["ambiante"] = std::make_shared<Light::DiffuseBuilder>();
     _lights["directional"] = std::make_shared<Light::DirectionalBuilder>();
 }
 
@@ -33,6 +33,7 @@ std::shared_ptr<Primitive::IPrimitives> AbstractFactory::createPrimitive(const s
 
 std::shared_ptr<Light::ILights> AbstractFactory::createLight(const std::string type, const libconfig::Setting &setting)
 {
+    printf("type: %s\n", type.c_str());
     if (_lights.count(type))
         return _lights[type]->build(setting);
     else
