@@ -65,7 +65,6 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
                         || _camera.getPosition().distance(
                                _lights[k]->getPrimitive()->getIntersexe())
                             < _camera.getPosition().distance(intersexe))) {
-                    // printf("lighting pos %i %i\n", i, j);
                     temp = Color(_lights[k]->getColor().getR(),
                         _lights[k]->getColor().getG(),
                         _lights[k]->getColor().getB());
@@ -82,30 +81,19 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
 std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
 {
     sf::Image blurredImg = image;
-    blurredImg = extendedGaussianBlur(blurredImg, 3);
-
-    sf::Image maskedImg = applyMask(blurredImg);
-        for (int i = 0; i < 30; i++)
-            blurredImg = GaussianBlur(maskedImg);
-    sf::Image resultImage = addImages(image, blurredImg);
+    for (int i = 0; i < 30; i++) {
+        blurredImg = GaussianBlur(blurredImg);
+    }
+    sf::Image linkedImage = addImages(image, blurredImg);
+    sf::Image maskedImage = applyMask(linkedImage);
+    sf::Image maxiBlurred = GaussianBlur(maskedImage);
+    for (int i = 0; i < 30; i++) {
+        maxiBlurred = GaussianBlur(maxiBlurred);
+    }
+    sf::Image resultImage = addImages(image, maxiBlurred);
     return std::make_shared<sf::Image>(resultImage);
 }
 
-sf::Image RaytracerCore::extendedGaussianBlur(const sf::Image& image, int radius)
-{
-    std::vector<std::pair<float, float>> coordsToBlurExpanded;
-
-    for (auto& coord : _coordsToBlur) {
-        for (int x = -radius; x <= radius; x++) {
-            for (int y = -radius; y <= radius; y++) {
-                coordsToBlurExpanded.push_back({ coord.first + x, coord.second + y });
-            }
-        }
-    }
-    _coordsToBlur = coordsToBlurExpanded;
-    sf::Image blurredImage = GaussianBlur(image);
-    return blurredImage;
-}
 
 
 sf::Image RaytracerCore::GaussianBlur(const sf::Image &image)
@@ -126,7 +114,7 @@ sf::Image RaytracerCore::GaussianBlur(const sf::Image &image)
                 int neighborX = x + i;
                 int neighborY = y + j;
                 float kernelValue = kernel[i+1][j+1];
-                weightedSum += kernelValue * (float)blurredImg.getPixel(neighborX, neighborY).r;
+                weightedSum += kernelValue * (float)image.getPixel(neighborX, neighborY).r;
             }
         }
         sf::Color blurredColor(weightedSum, weightedSum, weightedSum);

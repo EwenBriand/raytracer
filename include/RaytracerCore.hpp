@@ -62,8 +62,6 @@ class RaytracerCore {
     std::vector<std::pair<float, float>> _coordsToBlur;
 
     sf::Image GaussianBlur(const sf::Image &image);
-    sf::Image extendedGaussianBlur(const sf::Image& image, int radius);
-
     sf::Image applyMask(const sf::Image &image);
     sf::Image addImages(const sf::Image& image1, const sf::Image& image2);
 
