@@ -72,3 +72,8 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
     }
     return image;
 }
+
+std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
+{
+    
+}

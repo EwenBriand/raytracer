@@ -21,6 +21,7 @@ class IPrimitives {
     Math::Point3D _intersexe = Math::Point3D(0, 0, 0);
     Color _color;
     Math::Vector3D _rotation;
+    bool _isNeon = false;
 
   public:
     virtual ~IPrimitives() = default;
