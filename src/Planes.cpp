@@ -69,5 +69,9 @@ Math::Point3D Primitive::Planes::getIntersexe() const
 
 Math::Vector3D Primitive::Planes::getNormal() const
 {
-    return _normal;
+    Math::Vector3D ab = _position - _p2;
+    Math::Vector3D ac = _p3 - _position;
+
+    return ab.cross(ac);
+    // return _normal;
 }

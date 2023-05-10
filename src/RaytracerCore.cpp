@@ -25,10 +25,20 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
             float v = (float) j / _camera.getResolutionY();
             Math::Ray ray = _camera.getRay(u, v);
             image->setPixel(i, j, sf::Color::Black);
+            std::shared_ptr<Primitive::IPrimitives> closest = nullptr;
+            Math::Point3D intersexe;
+            Color temp = Color(0, 0, 0);
 
             for (long unsigned int k = 0; k < _primitives.size(); k++) {
-                if (_primitives[k]->hit(ray)) {
-                    auto temp = Color(_primitives[k]->getColor().getR(),
+                if (_primitives[k]->hit(ray)
+                    && (closest == nullptr
+                        || _camera.getPosition().distance(
+                               _primitives[k]->getIntersexe())
+                            < _camera.getPosition().distance(intersexe))) {
+                    closest = _primitives[k];
+                    intersexe = _primitives[k]->getIntersexe();
+
+                    temp = Color(_primitives[k]->getColor().getR(),
                         _primitives[k]->getColor().getG(),
                         _primitives[k]->getColor().getB());
                     for (long unsigned int l = 0; l < _lights.size(); l++)
@@ -41,23 +51,26 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
                             temp = _lights[l]->define_color(
                                 _primitives[k]->getIntersexe(),
                                 _primitives[k]->getNormal(), temp, 0.2, true);
-                    image->setPixel(i, j,
-                        sf::Color(temp.getR(), temp.getG(), temp.getB()));
-                    break;
                 }
             }
+
             for (long unsigned int k = 0; k < _lights.size(); k++) {
                 if (_lights[k]->getPrimitive() != nullptr
-                    && _lights[k]->getPrimitive()->hit(ray)) {
+                    && _lights[k]->getPrimitive()->hit(ray)
+                    && (closest == nullptr
+                        || _camera.getPosition().distance(
+                               _lights[k]->getPrimitive()->getIntersexe())
+                            < _camera.getPosition().distance(intersexe))) {
                     // printf("lighting pos %i %i\n", i, j);
-                    image->setPixel(i, j,
-                        sf::Color(_lights[k]->getColor().getR(),
-                            _lights[k]->getColor().getG(),
-                            _lights[k]->getColor().getB()));
-                    break;
+                    temp = Color(_lights[k]->getColor().getR(),
+                        _lights[k]->getColor().getG(),
+                        _lights[k]->getColor().getB());
                 }
             }
+            image->setPixel(
+                i, j, sf::Color(temp.getR(), temp.getG(), temp.getB()));
         }
     }
+
     return image;
 }
