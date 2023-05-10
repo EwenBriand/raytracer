@@ -92,7 +92,7 @@ Math::Vector3D Primitive::Boxes::getNormal() const
     else if (std::abs(_intersexe.getZ() - (_position.getZ() + _depth)) < eps)
         return Math::Vector3D(0, 0, 1);
 
-    return Math::Vector3D(0, 0, 0); // Default case, should not happen
+    return Math::Vector3D(0, 0, 0);
 }
 
 void Primitive::Boxes::setIntersexe(const Math::Point3D &value)
