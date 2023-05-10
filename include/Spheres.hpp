@@ -34,6 +34,7 @@ namespace Primitive
         bool hit(const Math::Ray &ray) override;
         Color getColor() const override;
         Math::Point3D getIntersexe() const override;
+        Math::Point3D getPosition() const;
         Math::Vector3D getNormal() const override;
         void setIntersexe(const Math::Point3D &value) override;
     };
