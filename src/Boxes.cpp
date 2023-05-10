@@ -77,45 +77,22 @@ Math::Point3D Primitive::Boxes::getIntersexe() const
 
 Math::Vector3D Primitive::Boxes::getNormal() const
 {
-    Math::Vector3D vertices[8] = {{0, 0, 0}, {_position.getX(), 0, 0},
-        {_position.getX(), _position.getY(), 0}, {0, _position.getY(), 0},
-        {0, 0, _position.getZ()}, {_position.getX(), 0, _position.getZ()},
-        {_position.getX(), _position.getY(), _position.getZ()},
-        {0, _position.getY(), _position.getZ()}};
+    double eps = 1e-5;
 
-    // Define the indices of the faces of the box
-    int pos = 0;
-    int indices[6][4] = {
-        {0, 1, 2, 3}, // bottom face
-        {1, 5, 6, 2}, // front face
-        {5, 4, 7, 6}, // top face
-        {4, 0, 3, 7}, // back face
-        {0, 4, 5, 1}, // left face
-        {3, 2, 6, 7}  // right face
-    };
+    if (std::abs(_intersexe.getX() - _position.getX()) < eps)
+        return Math::Vector3D(-1, 0, 0);
+    else if (std::abs(_intersexe.getX() - (_position.getX() + _width)) < eps)
+        return Math::Vector3D(1, 0, 0);
+    else if (std::abs(_intersexe.getY() - _position.getY()) < eps)
+        return Math::Vector3D(0, -1, 0);
+    else if (std::abs(_intersexe.getY() - (_position.getY() + _height)) < eps)
+        return Math::Vector3D(0, 1, 0);
+    else if (std::abs(_intersexe.getZ() - _position.getZ()) < eps)
+        return Math::Vector3D(0, 0, -1);
+    else if (std::abs(_intersexe.getZ() - (_position.getZ() + _depth)) < eps)
+        return Math::Vector3D(0, 0, 1);
 
-    // Calculate the normal vectors of each face
-    Math::Vector3D normals[6];
-    for (int i = 0; i < 6; i++) {
-        Math::Vector3D v1 = vertices[indices[i][1]] - vertices[indices[i][0]];
-        Math::Vector3D v2 = vertices[indices[i][2]] - vertices[indices[i][1]];
-        normals[i] = (v1.cross(v2)).normalize();
-    }
-
-    if (_intersexe.getY() == _position.getY() + _height)
-        pos = 0;
-    else if (_intersexe.getZ() == _position.getZ() - _depth)
-        pos = 1;
-    else if (_intersexe.getZ() == _position.getZ() - _depth)
-        pos = 2;
-    else if (_intersexe.getY() == _position.getY() + _height)
-        pos = 3;
-    else if (_intersexe.getX() == _position.getX() - _width)
-        pos = 4;
-    else if (_intersexe.getX() == _position.getX() + _width)
-        pos = 5;
-
-    return normals[pos];
+    return Math::Vector3D(0, 0, 0); // Default case, should not happen
 }
 
 void Primitive::Boxes::setIntersexe(const Math::Point3D &value)
