@@ -108,6 +108,13 @@ namespace Math
          * @return Point3D
          */
         Point3D normalize() const;
+        /**
+         * @brief Get the distance to the point
+         *
+         * @param point
+         * @return float
+         */
+        float distanceTo(const Math::Point3D &point) const;
     };
 
 } // namespace Math

@@ -72,7 +72,10 @@ Math::Vector3D Primitive::Spheres::getNormal() const
     float nz = _intersexe.getZ() - _position.getZ();
     float length = sqrt(nx * nx + ny * ny + nz * nz);
 
-    // std::cout << "length: " << length << std::endl;
-
     return (Math::Vector3D){nx / length, ny / length, nz / length};
+}
+
+void Primitive::Spheres::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
 }

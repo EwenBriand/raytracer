@@ -117,3 +117,8 @@ Math::Vector3D Primitive::Boxes::getNormal() const
 
     return normals[pos];
 }
+
+void Primitive::Boxes::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

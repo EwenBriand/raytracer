@@ -66,3 +66,8 @@ Math::Vector3D Primitive::Triangles::getNormal() const
 {
     return Math::Vector3D(0, 0, 0);
 }
+
+void Primitive::Triangles::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}

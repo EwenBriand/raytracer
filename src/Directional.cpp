@@ -63,8 +63,7 @@ bool Light::Directional::is_cut(const Math::Point3D &point, const std::vector<st
     for (long unsigned int k = 0; k < primitives.size(); k++) {
         Math::Point3D tmp(point);
         if (primitives[k]->hit(ray)) {
-            double dist = primitives[k]->getIntersexe().distance(point);
-            if (((dist < 0) ? (dist * (-1)) : dist) > 0.0001) {
+            if (primitives[k]->getIntersexe() != point) {
                 hited = true;
                 break;
             }

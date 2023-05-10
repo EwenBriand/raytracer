@@ -86,3 +86,8 @@ Math::Vector3D Primitive::Cylinders::getNormal() const
     );
     return normal.normalize();
 }
+
+void Primitive::Cylinders::setIntersexe(const Math::Point3D &value)
+{
+    _intersexe = value;
+}
