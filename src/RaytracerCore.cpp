@@ -80,6 +80,8 @@ std::shared_ptr<sf::Image> RaytracerCore::renderImage()
 
 std::shared_ptr<sf::Image> RaytracerCore::PostProcess(const sf::Image &image)
 {
+    if (_coordsToBlur.empty())
+        return std::make_shared<sf::Image>(image);
     sf::Image blurredImg = image;
     for (int i = 0; i < 50; i++) {
         blurredImg = GaussianBlur(blurredImg);
